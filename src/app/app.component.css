@@ -1,0 +1,366 @@
+/* Fond général */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Carte centrale */
+.card {
+  background: white;
+  padding: 40px;
+  width: 400px;
+  max-width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+input:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+input.feedback-correct {
+  background-color: #d4edda !important;
+  border-color: #28a745 !important;
+}
+
+input.feedback-wrong {
+  background-color: #f8d7da !important;
+  border-color: #dc3545 !important;
+}
+
+input.input-correct {
+  background-color: #d4edda !important;
+  border-color: #28a745 !important;
+}
+
+input.input-wrong {
+  background-color: #f8d7da !important;
+  border-color: #dc3545 !important;
+}
+
+/* Boutons */
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Barre de progression */
+.progress {
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.streak-badge {
+  font-size: 15px;
+  font-weight: bold;
+  color: #e67e22;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #eee;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+/* Effet bonne réponse */
+.correct {
+  background-color: #2ecc71 !important;
+  color: white;
+  border: 2px solid #2ecc71 !important;
+  animation: pulseGreen 0.4s ease;
+}
+
+/* Effet mauvaise réponse */
+.wrong {
+  background-color: #e74c3c !important;
+  color: white;
+  border: 2px solid #e74c3c !important;
+  animation: shake 0.4s ease;
+}
+
+/* Animation verte */
+@keyframes pulseGreen {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animation rouge */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.qcm-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+  background: #f1f1f1;
+  color: #333;
+  transition: 0.3s;
+  cursor: pointer;
+  border: 2px solid #ddd;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.qcm-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  background: #ccc;
+  color: #555;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.qcm-button:hover:not(:disabled) {
+  background: #ddd;
+}
+
+.qcm {
+  margin-top: 15px;
+}
+
+.qcm p {
+  margin: 5px 0;
+}
+
+/* Bonne réponse en vert */
+.qcm-correct {
+  background-color: #d4edda !important;
+  border-color: #28a745 !important;
+}
+
+/* Mauvaise réponse en rouge */
+.qcm-wrong {
+  background-color: #f8d7da !important;
+  border-color: #dc3545 !important;
+}
+
+.qcm-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Feedback couleur */
+.result .score {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+/* Popup En savoir plus */
+.wiki-popup {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 300px;
+  max-height: 70vh;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
+  text-align: left;
+}
+
+.wiki-popup h4 {
+  margin: 0 0 12px 0;
+  font-size: 15px;
+  color: #444;
+}
+
+.wiki-popup p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.close-btn {
+  float: right;
+  width: auto;
+  margin-top: 0;
+  padding: 2px 6px;
+  background: none;
+  color: #999;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.close-btn:hover:not(:disabled) {
+  background: #f0f0f0;
+  color: #333;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Feedback messages */
+.feedback-msg {
+  margin: 10px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.feedback-ok { color: #28a745; }
+.feedback-ko { color: #dc3545; }
+
+.correct-answer-reveal {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #155724;
+  background: #d4edda;
+  border-radius: 8px;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+/* Stats */
+.best-score {
+  color: #667eea;
+  font-weight: 600;
+  margin: 4px 0;
+}
+
+.stats-toggle {
+  background: #f1f1f1;
+  color: #333;
+  border: 2px solid #ddd;
+  margin-top: 10px;
+}
+
+.stats-toggle:hover:not(:disabled) {
+  background: #ddd;
+  transform: none;
+  box-shadow: none;
+}
+
+.stats-table {
+  margin-top: 10px;
+  overflow-x: auto;
+  text-align: left;
+}
+
+.stats-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.stats-table th,
+.stats-table td {
+  padding: 5px 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.stats-table th {
+  color: #888;
+  font-weight: 600;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

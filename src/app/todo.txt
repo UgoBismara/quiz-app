@@ -1,0 +1,9 @@
+- Rajouter toutes les questions - Catégoriser chaque questions
+- Changer le fond
+- Changer la couleur des boutons
+- Ajouter la plus de résulats dans le localStorage
+- Le 'En savoir plus' doit doit être une phrase complète
+- Faire quelque chose pour savoir si une question a déjà été bien répondu
+
+
+- Demander des idées d'évol à Claude

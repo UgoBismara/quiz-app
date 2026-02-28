@@ -1,0 +1,163 @@
+<div class="container">
+  <div class="card">
+    <h1>🧠 Quiz Challenge</h1>
+
+    <!-- Écran de démarrage -->
+    <div *ngIf="!started" class="start-screen">
+      <p>Choisis le nombre de questions</p>
+      <input type="number" [(ngModel)]="totalQuestions" min="1" (keyup.enter)="startQuiz()" />
+      <button (click)="startQuiz()">Commencer</button>
+    </div>
+
+    <!-- Quiz -->
+    <div *ngIf="started && !finished">
+      <div class="progress">
+        <div class="progress-header">
+          <span>Question {{ currentIndex + 1 }} / {{ totalQuestions }}</span>
+          <span *ngIf="streak >= 2" class="streak-badge">🔥 x{{ streak }}</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" [style.width.%]="(currentIndex / totalQuestions) * 100"></div>
+        </div>
+      </div>
+
+      <h2>{{ selectedQuestions[currentIndex]?.question }}</h2>
+
+      <!-- Mode normal (saisie libre) -->
+      <div *ngIf="attemptStage === 0">
+        <input
+          #answerInput
+          type="text"
+          [(ngModel)]="userAnswer"
+          (keyup.enter)="submitAnswer()"
+          placeholder="Ta réponse..."
+          [ngClass]="{
+            'input-correct': inputFeedback === 'correct',
+            'input-wrong': inputFeedback === 'wrong',
+          }"
+        />
+        <button (click)="submitAnswer()" [disabled]="!userAnswer.trim() || inputFeedback">
+          Valider
+        </button>
+
+        <div *ngIf="inputFeedback">
+          <p *ngIf="inputFeedback === 'correct'" class="feedback-msg feedback-ok">
+            {{ wasFuzzy ? '✓ Faute de frappe acceptée !' : '✓ Correct !' }}
+          </p>
+          <p *ngIf="inputFeedback === 'wrong'" class="feedback-msg feedback-ko">
+            ✗ Mauvaise réponse.
+          </p>
+          <button
+            *ngIf="inputFeedback === 'correct'"
+            (click)="openWikiPopup(selectedQuestions[currentIndex].answer)"
+            class="continue-btn"
+          >
+            En savoir plus
+          </button>
+          <button
+            *ngIf="inputFeedback === 'correct'"
+            (click)="continueAfterFeedback()"
+            class="continue-btn"
+          >
+            Question suivante
+          </button>
+          <button
+            *ngIf="inputFeedback === 'wrong'"
+            (click)="continueAfterFeedback()"
+            class="continue-btn"
+          >
+            Voir réponses (4 choix)
+          </button>
+        </div>
+      </div>
+
+      <!-- Mode QCM -->
+      <div *ngIf="attemptStage > 0" class="qcm">
+        <p *ngIf="attemptStage === 1">❌ Mauvaise réponse ! Choisis parmi 4 propositions :</p>
+        <p *ngIf="attemptStage === 2">❌ Toujours faux ! Choisis parmi 2 propositions :</p>
+
+        <button
+          *ngFor="let option of shuffledOptions; let i = index"
+          (click)="selectOption(option)"
+          class="qcm-button"
+          [ngClass]="{
+            'qcm-correct': showFeedback && option === selectedQuestions[currentIndex]?.answer && (selectedOption === option || attemptStage === 2),
+            'qcm-wrong':
+              showFeedback &&
+              selectedOption === option &&
+              option !== selectedQuestions[currentIndex]?.answer,
+          }"
+          [disabled]="showFeedback"
+        >
+          <span class="qcm-key">{{ i + 1 }}</span> {{ option }}
+        </button>
+
+        <div *ngIf="showFeedback">
+          <p
+            *ngIf="attemptStage === 2 && selectedOption !== selectedQuestions[currentIndex]?.answer"
+            class="correct-answer-reveal"
+          >
+            La bonne réponse : <strong>{{ selectedQuestions[currentIndex]?.answer }}</strong>
+          </p>
+          <button
+            *ngIf="!(attemptStage === 1 && selectedOption !== selectedQuestions[currentIndex]?.answer)"
+            (click)="openWikiPopup(selectedQuestions[currentIndex].answer)"
+            class="continue-btn"
+          >
+            En savoir plus
+          </button>
+          <button (click)="nextQuestionAfterQcm()" class="continue-btn">
+            {{
+              attemptStage === 1 && selectedOption !== selectedQuestions[currentIndex]?.answer
+                ? 'Passer à 2 choix'
+                : 'Question suivante'
+            }}
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="showWikiPopup" class="wiki-popup">
+        <div class="wiki-popup-content">
+          <button class="close-btn" (click)="closeWikiPopup()">✖</button>
+          <h4>En savoir plus :</h4>
+          <p>{{ wikiPopupText }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Résultat -->
+    <div *ngIf="started && finished" class="result">
+      <h2>🎉 Résultat</h2>
+      <p class="score">{{ score }} / {{ totalQuestions * 5 }} pts</p>
+
+      <p *ngIf="score === totalQuestions * 5">🔥 Parfait !</p>
+      <p *ngIf="score >= totalQuestions * 3 && score < totalQuestions * 5">👏 Bien joué !</p>
+      <p *ngIf="score < totalQuestions * 3">💪 Tu peux faire mieux !</p>
+
+      <p class="best-score" *ngIf="statsHistory.length > 1">
+        Meilleur score : {{ bestScore() }}%
+      </p>
+
+      <button (click)="statsVisible = !statsVisible" class="stats-toggle">
+        📊 {{ statsVisible ? 'Masquer' : 'Mes stats' }}
+      </button>
+
+      <div *ngIf="statsVisible" class="stats-table">
+        <table>
+          <thead>
+            <tr><th>Date</th><th>Score</th><th>%</th></tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let s of statsHistory.slice().reverse()">
+              <td>{{ s.date }}</td>
+              <td>{{ s.score }}/{{ s.maxScore }}</td>
+              <td>{{ (s.score / s.maxScore * 100).toFixed(0) }}%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <button (click)="restart()">Rejouer</button>
+    </div>
+  </div>
+</div>
