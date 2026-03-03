@@ -5,7 +5,7 @@
     <!-- Écran de démarrage -->
     <div *ngIf="!started" class="start-screen">
       <p>Choisis le nombre de questions</p>
-      <input type="number" [(ngModel)]="totalQuestions" min="1" (keyup.enter)="startQuiz()" />
+      <input type="number" [(ngModel)]="totalQuestions" min="1" />
       <button (click)="startQuiz()">Commencer</button>
     </div>
 
@@ -59,7 +59,7 @@
             (click)="continueAfterFeedback()"
             class="continue-btn"
           >
-            Question suivante
+            {{ currentIndex === selectedQuestions.length - 1 ? 'Voir les résultats' : 'Question suivante' }}
           </button>
           <button
             *ngIf="inputFeedback === 'wrong'"
@@ -110,7 +110,9 @@
             {{
               attemptStage === 1 && selectedOption !== selectedQuestions[currentIndex]?.answer
                 ? 'Passer à 2 choix'
-                : 'Question suivante'
+                : currentIndex === selectedQuestions.length - 1
+                  ? 'Voir les résultats'
+                  : 'Question suivante'
             }}
           </button>
         </div>

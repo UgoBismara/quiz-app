@@ -314,11 +314,14 @@ export class AppComponent implements OnInit {
 
   @HostListener('document:keydown', ['$event'])
   handleKeydown(event: KeyboardEvent) {
+    if (!this.started && !this.finished) {
+      if (event.key === 'Enter') this.startQuiz();
+      return;
+    }
     if (this.finished) {
       if (event.key === 'Enter') this.restart();
       return;
     }
-    if (!this.started) return;
     if (this.currentIndex >= this.selectedQuestions.length) return;
 
     switch (event.key) {
