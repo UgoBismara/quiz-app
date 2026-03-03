@@ -43,6 +43,8 @@ export class AppComponent implements OnInit {
   showWikiPopup: boolean = false;
   wikiPopupText: string = '';
   private wikiRequestId = 0;
+  private wikiParagraphs: string[] = [];
+  private wikiCurrentAnswer = '';
 
   // ─── Stats ───────────────────────────────────────────────────────────────
   statsHistory: SessionRecord[] = [];
@@ -84,11 +86,20 @@ export class AppComponent implements OnInit {
   // ─── Wiki popup ───────────────────────────────────────────────────────────
   openWikiPopup(answer: string) {
     this.showWikiPopup = true;
+
+    // Paragraphes déjà en cache pour cette réponse → juste en choisir un nouveau
+    if (answer === this.wikiCurrentAnswer && this.wikiParagraphs.length > 0) {
+      this.wikiPopupText = this.pickWikiParagraph();
+      return;
+    }
+
     this.wikiPopupText = 'Chargement...';
+    this.wikiCurrentAnswer = answer;
+    this.wikiParagraphs = [];
 
     const requestId = ++this.wikiRequestId;
-    const url = `https://fr.wikipedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrsearch=${encodeURIComponent(answer)}&gsrlimit=1&&exlimit=1&prop=extracts&explaintext=true`;
-    console.log('Fetching wiki for:', answer, url);
+    const url = `https://fr.wikipedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrsearch=${encodeURIComponent(answer)}&gsrlimit=1&prop=extracts&exlimit=1&explaintext=true`;
+
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -98,14 +109,22 @@ export class AppComponent implements OnInit {
           this.wikiPopupText = 'Aucune information trouvée.';
         } else {
           const page = Object.values(pages)[0] as any;
-          const intro: string = (page?.extract || '').trim();
-          if (!intro) {
+          const fullText: string = (page?.extract || '').trim();
+          if (!fullText) {
             this.wikiPopupText = 'Aucune information trouvée.';
           } else {
-            // Couper après 2 phrases complètes, max 500 caractères
-            const sentences = intro.match(/[^.!?]+[.!?]+/g) || [];
-            const text = sentences.slice(0, 2).join(' ').trim() || intro.substring(0, 300);
-            this.wikiPopupText = text;
+            // Découper en paragraphes, garder ceux > 60 car. et sans en-tête
+            // Exclure les paragraphes qui commencent par un pronom ou référence externe
+            const pronounStart = /^(Il |Elle |Ils |Elles |Son |Sa |Ses |Leur |Leurs |Celui |Celle |Ceux |Celles |Ce fut|Cette |Ces |Y |En |Après |Lors |Dès lors|Depuis lors)/i;
+            this.wikiParagraphs = fullText
+              .split(/\n+/)
+              .map((p: string) => p.trim())
+              .filter((p: string) => p.length > 60 && !/^=+/.test(p) && !pronounStart.test(p))
+              .map((p: string) => {
+                const sentences = p.match(/[^.!?]+[.!?]+/g) || [];
+                return sentences.slice(0, 2).join(' ').trim() || p.substring(0, 300);
+              });
+            this.wikiPopupText = this.pickWikiParagraph();
           }
         }
         this.cdr.detectChanges();
@@ -115,6 +134,13 @@ export class AppComponent implements OnInit {
         this.wikiPopupText = 'Aucune information trouvée.';
         this.cdr.detectChanges();
       });
+  }
+
+  private pickWikiParagraph(): string {
+    if (this.wikiParagraphs.length === 0) return 'Aucune information trouvée.';
+    const others = this.wikiParagraphs.filter((p) => p !== this.wikiPopupText);
+    const pool = others.length > 0 ? others : this.wikiParagraphs;
+    return pool[Math.floor(Math.random() * pool.length)];
   }
 
   closeWikiPopup() {
@@ -327,9 +353,7 @@ export class AppComponent implements OnInit {
 
         if (this.inputFeedback === 'correct' || this.showFeedback) {
           event.preventDefault();
-          if (!this.showWikiPopup) {
-            this.openWikiPopup(this.selectedQuestions[this.currentIndex].answer);
-          }
+          this.openWikiPopup(this.selectedQuestions[this.currentIndex].answer);
         }
         break;
       }

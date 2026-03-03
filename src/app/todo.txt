@@ -4,6 +4,9 @@
 - Ajouter la plus de résulats dans le localStorage
 - Le 'En savoir plus' doit doit être une phrase complète
 - Faire quelque chose pour savoir si une question a déjà été bien répondu
-
+- Pour la dernière question ne plus mettre 'Question suivante' mais autre chose
+- Afficher directement tout un paragraphe
+- Pouvoir lancer le quiz avec la touche 'Entrée'
+- Vérifier erreur de frappe (Louis X alors que la réponse est Louis XV)
 
 - Demander des idées d'évol à Claude

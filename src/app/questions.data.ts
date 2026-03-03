@@ -11,6 +11,7 @@ export type Theme =
   | 'Littérature'
   | 'Sciences'
   | 'Jeux Vidéo'
+  | 'Internet'
   | 'Séries TV'
   | 'Cuisine'
   | 'Animaux'
@@ -27,2426 +28,2598 @@ export interface Question {
 
 export const QUESTIONS: Question[] = [
   {
-    theme: 'Musique',
     question:
-      'Quel pianiste chinois né en 1982, parfois surnommé "La rockstar du classique", porte un nom rappelant deux fois l’organe charnu situé dans la bouche ?',
+      'Quel pianiste chinois né en 1982 et parfois surnommé "La rockstar du classique" porte un nom rappelant deux fois l’organe charnu placé dans la bouche ?',
     answer: 'Lang Lang',
-    options: ['Lang Lang', 'Yuja Wang', 'Yundi Li', 'Khatia Buniatishvili'],
+    options: ['Lang Lang', 'Yuja Wang', 'Khatia Buniatishvili', 'Daniil Trifonov'],
+    theme: 'Musique',
   },
   {
-    theme: 'Sport',
     question:
       'Quel nom utilise-t-on au bowling lorsque l’on fait tomber les dix quilles en deux lancers ?',
     answer: 'Spare',
     options: ['Spare', 'Strike', 'Split', 'Turkey'],
+    theme: 'Sport',
   },
   {
-    theme: 'Sciences',
     question:
-      "Quelle pâtisserie donne son nom à un petit fichier déposé sur le disque dur à l'insu de l'internaute lors de la consultation de certains sites web ?",
+      "Quelle pâtisserie donne son nom à un petit fichier déposé sur le disque dur à l'insu de l'internaute, lors de la consultation de certains sites web, et qui conserve des informations en vue d'une connexion ultérieure ?",
     answer: 'Cookie',
-    options: ['Cookie', 'Macaron', 'Biscuit', 'Brownie'],
+    options: ['Cookie', 'Macaron', 'Brownie', 'Muffin'],
+    theme: 'Sciences',
   },
   {
-    theme: 'Cinéma',
     question:
-      'À quel réalisateur japonais doit-on les films "Rashōmon" (1950) et "Les Sept Samouraïs" (1954) ?',
+      'À quel réalisateur japonais doit-on les films "Rashōmon" en 1950 et "Les Sept Samouraïs" en 1954 ? Né en 1910 et décédé en 1998, il est considéré comme le cinéaste japonais le plus influent du XXe siècle.',
     answer: 'Akira Kurosawa',
     options: ['Akira Kurosawa', 'Yasujirō Ozu', 'Kenji Mizoguchi', 'Hayao Miyazaki'],
-  },
-  {
-    theme: 'Histoire',
-    question:
-      'Quel président des États-Unis a présenté en janvier 1918 son programme des Quatorze Points ? Les initiales de son prénom et de son nom sont identiques.',
-    answer: 'Woodrow Wilson',
-    options: ['Woodrow Wilson', 'Warren G. Harding', 'William Howard Taft', 'Theodore Roosevelt'],
-  },
-  {
-    theme: 'Sciences',
-    question:
-      'Quel adjectif qualifie la maladie auto-immune appelée entéropathie au gluten, dite "maladie _______" ?',
-    answer: 'Coeliaque',
-    options: ['Coeliaque', 'Chronique', 'Hépatique', 'Lactique'],
-  },
-  {
-    theme: 'Géographie',
-    question:
-      'Quelle ville française abrite la Place de Jaude, où se trouve une statue de Vercingétorix réalisée par Auguste Bartholdi ?',
-    answer: 'Clermont-Ferrand',
-    options: ['Clermont-Ferrand', 'Limoges', 'Dijon', 'Orléans'],
-  },
-  {
-    theme: 'Musique',
-    question:
-      'À quel groupe italien doit-on les titres "I Wanna Be Your Slave" et "The Loneliest", après leur victoire à l’Eurovision 2021 ?',
-    answer: 'Måneskin',
-    options: ['Måneskin', 'Subsonica', 'Il Volo', 'Negramaro'],
-  },
-  {
-    theme: 'Cuisine',
-    question:
-      'Avec quelle plante, appelée aussi Herbe du Saint-Esprit, les religieuses de Niort ont-elles créé une confiserie typique portant le même nom ?',
-    answer: 'Angélique',
-    options: ['Angélique', 'Réglisse', 'Verveine', 'Gentiane'],
-  },
-  {
-    theme: 'Culture Générale',
-    question: 'Dans l’acronyme EHPAD, quel mot est représenté par la lettre D ?',
-    answer: 'Dépendantes',
-    options: ['Dépendantes', 'Durables', 'Déclarées', 'Domestiques'],
-  },
-  {
-    theme: 'Séries TV',
-    question: 'Dans le manga "Haikyū!!", quel sport est au centre de l’intrigue ?',
-    answer: 'Volleyball',
-    options: ['Volleyball', 'Basketball', 'Baseball', 'Handball'],
-  },
-  {
-    theme: 'Sport',
-    question:
-      'Quelle sportive française, championne du monde sur route en 2014 et championne olympique de VTT en 2024, a remporté le Tour de France féminin en 2025 ?',
-    answer: 'Pauline Ferrand-Prévot',
-    options: ['Pauline Ferrand-Prévot', 'Marion Rousse', 'Jeannie Longo', 'Juliette Labous'],
-  },
-  {
-    theme: 'Jeux Vidéo',
-    question:
-      'Quelle société japonaise, à l’origine du jeu Gradius, a donné son nom au célèbre premier code de triche de l’histoire ?',
-    answer: 'Konami',
-    options: ['Konami', 'Capcom', 'Nintendo', 'Sega'],
-  },
-  {
     theme: 'Cinéma',
-    question:
-      "Quel acteur français s'est éteint dans son domaine de Douchy-Montcorbon, dans le Loiret ?",
-    answer: 'Alain Delon',
-    options: ['Alain Delon', 'Jean-Paul Belmondo', 'Gérard Depardieu', 'Jean Dujardin'],
   },
   {
-    theme: 'Histoire',
     question:
-      'Sous quel nom de famille commun sont connus les frères hors-la-loi impliqués dans le braquage de Coffeyville en 1892 ?',
+      "Quel président des Etats-Unis a présenté, en janvier 1918, son programme des Quatorze Points, présentant ses solutions pour à la fois mettre fin à la Première Guerre mondiale et reconstruire l'Europe ? Les initiales de son prénom et de son nom sont identiques.",
+    answer: 'Woodrow Wilson',
+    options: ['Woodrow Wilson', 'Theodore Roosevelt', 'Franklin D. Roosevelt', 'Warren Harding'],
+    theme: 'Histoire',
+  },
+  {
+    question:
+      'Quel adjectif qualifie la maladie auto-immune, caractérisée par une atrophie villositaire également appelée entéropathie au gluten ? Ce terme est dérivé du mot grec désignant le ventre ou les viscères. On l\'appelle "maladie _______"',
+    answer: 'Coeliaque',
+    options: ['Coeliaque', 'Chronique', 'Virale', 'Héréditaire'],
+    theme: 'Sciences',
+  },
+  {
+    question:
+      "Quelle ville française abrite la Place de Jaude ? Cette place majeure de la ville abrite une statue de Vercingétorix réalisée par Auguste Bartholdi. Cette ville est la préfecture d'un département de la région abrégée en AURA.",
+    answer: 'Clermont-Ferrand',
+    options: ['Clermont-Ferrand', 'Limoges', 'Dijon', 'Poitiers'],
+    theme: 'Géographie',
+  },
+  {
+    question:
+      'À quel groupe de musique italien doit-on notamment les titres "I wanna be your slave", "Baby Said", et "The Loneliest", après leur victoire à l’Eurovision 2021 ? Leur nom signifie "Clair de Lune" en danois.',
+    answer: 'Måneskin',
+    options: ['Måneskin', 'Il Volo', 'Negramaro', 'Subsonica'],
+    theme: 'Musique',
+  },
+  {
+    question:
+      "Avec quelle plante, parfois appelée Herbe du Saint-Esprit, des religieuses originaires de la ville de Niort ont-elle réalisé une confiserie typique de la ville ? La plante et la confiserie partagent d’ailleurs le même nom, elle-même homonyme d'un prénom féminin.",
+    answer: 'Angélique',
+    options: ['Angélique', 'Verveine', 'Réglisse', 'Lavande'],
+    theme: 'Cuisine',
+  },
+  {
+    question:
+      "Dans l’acronyme EHPAD désignant un type d'établissement d'hébergement, quel mot est représenté par la lettre D ?",
+    answer: 'Dépendantes',
+    options: ['Dépendantes', 'Durables', 'Domestiques', 'Déclarées'],
+    theme: 'Culture Générale',
+  },
+  {
+    question:
+      'Dans le manga écrit par Haruichi Furudate intitulé "Haikyū!!", quel sport est au centre de l\'intrigue ?',
+    answer: 'Volleyball',
+    options: ['Volleyball', 'Basketball', 'Handball', 'Baseball'],
+    theme: 'Séries TV',
+  },
+  {
+    question:
+      'Quelle sportive française, championne du monde de la course en ligne cycliste en 2014, championne olympique de VTT en 2024, a remporté le Tour de France féminin en 2025 ?',
+    answer: 'Pauline Ferrand-Prévot',
+    options: ['Pauline Ferrand-Prévot', 'Jeannie Longo', 'Juliette Labous', 'Marion Rousse'],
+    theme: 'Sport',
+  },
+  {
+    question:
+      "Développé dans le jeu vidéo Gradius, quelle société japonaise de développement et d'édition de jeux vidéo a laissé son nom au tout premier code de triche de l'Histoire, réutilisé à de nombreuses reprises dans d'autres jeux ?",
+    answer: 'Konami',
+    options: ['Konami', 'Nintendo', 'Capcom', 'Sega'],
+    theme: 'Jeux Vidéo',
+  },
+  {
+    question:
+      "Quel acteur français s'est éteint dans le domaine de La Brûlerie, situé dans le Loiret, dans la ville de Douchy Montcorbon, où l'acteur a passé la fin de sa vie ?",
+    answer: 'Alain Delon',
+    options: ['Alain Delon', 'Jean-Paul Belmondo', 'Jean-Louis Trintignant', 'Philippe Noiret'],
+    theme: 'Cinéma',
+  },
+  {
+    question:
+      "Sous quel nom de famille commun sont connus les frères hors-la-loi ayant sévi dans l'Ouest étasunien de 1890 à 1892 et impliqués dans un braquage à Coffeyville notamment ? Ces frères étaient connus sous les prénoms de Bob, Grat, Bill et Emmett et ils ont inspiré de célèbres gangsters de fiction.",
     answer: 'Dalton',
     options: ['Dalton', 'James', 'Younger', 'Earp'],
+    theme: 'Histoire',
   },
   {
-    theme: 'Animaux',
-    question: 'De quelle espèce animale Jane Goodall était-elle spécialiste ?',
+    question:
+      "De quelle espèce animale la britannique Jane Goodall était-elle spécialiste ? Cette éthologue décédée en 2025 s'était installée en Tanzanie en 1960 pour mieux étudier cet animal dans son habitat naturel.",
     answer: 'Chimpanzés',
     options: ['Chimpanzés', 'Gorilles', 'Orangs-outans', 'Babouins'],
-  },
-  {
-    theme: 'Géographie',
-    question:
-      'Quel est le nom actuel de la place parisienne anciennement appelée place Louis XV et place de la Révolution ?',
-    answer: 'Place de la Concorde',
-    options: ['Place de la Concorde', 'Place Vendôme', 'Place de la Bastille', 'Place des Vosges'],
-  },
-  {
-    theme: 'Musique',
-    question:
-      'Quelle chanson d’Elvis Crespo, immense succès de 1998, a vu son titre repris par Soolking en 2022 ?',
-    answer: 'Suavemente',
-    options: ['Suavemente', 'Bailando', 'Despacito', 'Vivir Mi Vida'],
-  },
-  {
     theme: 'Animaux',
-    question: 'Quelle couleur est associée au thon albacore ?',
-    answer: 'Jaune',
-    options: ['Jaune', 'Bleu', 'Rouge', 'Argenté'],
   },
   {
-    theme: 'Cinéma',
-    question: "Quelle marque est au centre du film 'Le Fondateur', consacré à Ray Kroc ?",
-    answer: 'McDonald’s',
-    options: ['McDonald’s', 'KFC', 'Burger King', 'Subway'],
-  },
-  {
-    theme: 'Littérature',
-    question: 'Quelle année constitue le titre du célèbre roman dystopique de George Orwell ?',
-    answer: '1984',
-    options: ['1984', 'Fahrenheit 451', 'Le Meilleur des mondes', 'La Ferme des animaux'],
-  },
-  {
-    theme: 'Sport',
     question:
-      'Quel super-héros constitue le surnom d’Alain Robert, célèbre pour ses ascensions d’immeubles à mains nues ?',
-    answer: 'Spider-Man',
-    options: ['Spider-Man', 'Batman', 'Superman', 'Iron Man'],
-  },
-  {
-    theme: 'Jeux Vidéo',
-    question: 'Que signifie le sigle FPS dans le domaine du jeu vidéo ?',
-    answer: 'First-Person Shooter',
-    options: [
-      'First-Person Shooter',
-      'Fast Play System',
-      'Full Power Strategy',
-      'Final Player Score',
-    ],
-  },
-  {
-    theme: 'Cinéma',
-    question:
-      "Quel humoriste français, de son vrai nom Solaro, a réalisé le film 'Un p’tit truc en plus' ?",
-    answer: 'Artus',
-    options: ['Artus', 'Kev Adams', 'Jamel Debbouze', 'Franck Dubosc'],
-  },
-  {
-    theme: 'Politique',
-    question: 'Quel est le seul président de la Ve République ayant également été maire de Paris ?',
-    answer: 'Jacques Chirac',
-    options: [
-      'Jacques Chirac',
-      'Valéry Giscard d’Estaing',
-      'François Mitterrand',
-      'Nicolas Sarkozy',
-    ],
-  },
-  {
-    theme: 'Sciences',
-    question: 'Quel minéral fibreux est responsable de la maladie appelée asbestose ?',
-    answer: 'Amiante',
-    options: ['Amiante', 'Silice', 'Quartz', 'Gypse'],
-  },
-  {
+      "S'étant également appelée place Louis XV, place de la Révolution et place Louis XVI, quel est le nom actuel de la place de Paris qui constitue, avec 7,56 hectares, la plus grande place de la capitale française ? Elle est située dans le 8e arrondissement au bout de l'avenue la plus célèbre du monde.",
+    answer: 'Place de la Concorde',
+    options: ['Place de la Concorde', 'Place Vendôme', 'Place des Vosges', 'Place de la Bastille'],
     theme: 'Géographie',
+  },
+  {
     question:
-      'Quelle montagne, également appelée Qogir Feng, est le deuxième plus haut sommet du monde (8611 m) ?',
+      'Quelle chanson de merengue, dont le titre fut repris par le rappeur Soolking en 2022, est le plus grand succès du chanteur portoricain Elvis Crespo en 1998 ?',
+    answer: 'Suavemente',
+    options: ['Suavemente', 'Bailando', 'La Bomba', 'Vivir Mi Vida'],
+    theme: 'Musique',
+  },
+  {
+    question: "Quelle couleur est associée au thon dans l'autre nom du poisson appelé albacore ?",
+    answer: 'Jaune',
+    options: ['Jaune', 'Rouge', 'Bleu', 'Vert'],
+    theme: 'Animaux',
+  },
+  {
+    question:
+      'Quelle marque, mise en avant dans le film Le Fondateur en 2014, fut rachetée par Ray Kroc en 1961 à deux frères prénommés Richard et Maurice, fit de lui un milliardaire ?',
+    answer: 'McDonald’s',
+    options: ['McDonald’s', 'Burger King', 'KFC', 'Subway'],
+    theme: 'Culture Générale',
+  },
+  {
+    question:
+      "Quelle année constitue le titre d'un roman dystopique écrit par George Orwell dans les années 1940 ? Le titre correspond à celui de l'année de rédaction du livre avec les deux derniers chiffres inversés.",
+    answer: '1984',
+    options: ['1984', '1974', '1994', '2004'],
+    theme: 'Littérature',
+  },
+  {
+    question:
+      "Quel super-héros constitue le surnom d’Alain Robert, grand escaladeur français ? Alain Robert est notamment connu pour ses montées d'immeubles à mains nues.",
+    answer: 'SpiderMan',
+    options: ['SpiderMan', 'Batman', 'Superman', 'Daredevil'],
+    theme: 'Sport',
+  },
+  {
+    question:
+      'Dans le domaine du jeu vidéo, que signifie le sigle FPS, qualifiant un type de jeu comme Doom ou Call of Duty, mettant le joueur en vue subjective ?',
+    answer: 'First-Person Shooter',
+    options: ['First-Person Shooter', 'Free Play System', 'Fast Player Style', 'Full Power Shot'],
+    theme: 'Jeux Vidéo',
+  },
+  {
+    question:
+      'De son vrai nom Solaro, quel humoriste français apparu dans "Le Bureau des Légendes" a réalisé le film "Un p’tit truc en plus" en 2024 ?',
+    answer: 'Artus',
+    options: ['Artus', 'Jarry', 'Kev Adams', 'Gad Elmaleh'],
+    theme: 'Cinéma',
+  },
+  {
+    question:
+      'Qui est le seul président de la République française ayant également été maire de Paris ? Il a été président au cours de la Ve République.',
+    answer: 'Chirac',
+    options: ['Chirac', 'Mitterrand', 'Sarkozy', 'Hollande'],
+    theme: 'Politique',
+  },
+  {
+    question:
+      "Quel minéral à texture fibreuse, souvent présent dans les toitures, est responsable de l'asbestose ?",
+    answer: 'Amiante',
+    options: ['Amiante', 'Silice', 'Quartz', 'Plomb'],
+    theme: 'Sciences',
+  },
+  {
+    question:
+      'Également appelé Qogir Feng en chinois, quelle montagne est le deuxième plus haut sommet du monde, avec ses 8611 mètres ?',
     answer: 'K2',
     options: ['K2', 'Kangchenjunga', 'Lhotse', 'Makalu'],
+    theme: 'Géographie',
   },
   {
-    theme: 'Musique',
-    question:
-      'De quel genre musical portugais Amália Rodrigues est-elle considérée comme la reine ? Ce genre est homophone de deux notes de musique.',
+    question: 'De quel genre musical Amalia Rodrigues est-elle considérée comme la reine ?',
     answer: 'Fado',
-    options: ['Fado', 'Flamenco', 'Tango', 'Rebetiko'],
+    options: ['Fado', 'Flamenco', 'Tango', 'Samba'],
+    theme: 'Musique',
   },
   {
-    theme: 'Animaux',
     question:
       'Quel chien blanc tacheté de noir, mascotte des pompiers aux États-Unis, doit son nom à une région historique de Croatie ?',
     answer: 'Dalmatien',
     options: ['Dalmatien', 'Beagle', 'Setter anglais', 'Border Collie'],
+    theme: 'Animaux',
   },
   {
-    theme: 'Sciences',
     question:
-      'Quel terme anglais désigne à la fois l’habitacle d’un kayak et la cabine de pilotage d’un avion ?',
+      'Quel nom anglais désigne à la fois le trou d’un kayak et la partie avant d’un avion où se trouvent les pilotes ?',
     answer: 'Cockpit',
-    options: ['Cockpit', 'Fuselage', 'Carlingue', 'Empennage'],
+    options: ['Cockpit', 'Cabin', 'Deck', 'Hangar'],
+    theme: 'Culture Générale',
   },
   {
-    theme: 'Histoire',
     question:
-      'Sur quelle île grecque Charles Champoiseau a-t-il découvert en 1863 la célèbre statue envoyée au Louvre en 1867 ?',
+      'Sur quelle île de la Méditerranée Charles Champoiseau a-t-il découvert en 1863 une célèbre statue envoyée au Louvre ?',
     answer: 'Samothrace',
-    options: ['Samothrace', 'Délos', 'Rhodes', 'Lesbos'],
+    options: ['Samothrace', 'Crète', 'Rhodes', 'Chypre'],
+    theme: 'Histoire',
   },
   {
-    theme: 'Sport',
     question:
-      'Dans quelle ville anglaise William Webb Ellis était-il élève lorsqu’il aurait inventé le rugby en 1823 ?',
+      'Dans quelle ville William Webb Ellis était-il scolarisé lorsqu’il aurait inventé le rugby ?',
     answer: 'Rugby',
     options: ['Rugby', 'Oxford', 'Cambridge', 'Manchester'],
+    theme: 'Sport',
   },
   {
-    theme: 'Jeux Vidéo',
     question:
-      'Quel jeu vidéo d’Innersloth met en scène des membres d’équipage devant démasquer des imposteurs à bord d’un vaisseau spatial ?',
+      "Quel jeu vidéo développé et édité par Innersloth dans lequel chaque joueur incarne un membre d'un équipage spatial pouvant être soit imposteur soit coéquipier ? Le nom anglais de ce jeu est constitué de deux mots.",
     answer: 'Among Us',
-    options: ['Among Us', 'Fall Guys', 'Stardew Valley', 'Subnautica'],
+    options: ['Among Us', 'Dead by Daylight', 'Fall Guys', 'The Forest'],
+    theme: 'Jeux Vidéo',
   },
   {
-    theme: 'Séries TV',
     question:
-      'De quelle série franco-belge la série américaine "High Potential" est-elle un remake ?',
+      'De quelle série franco-belge la série "High Potential", avec Kaitlin Olson dans le rôle principal, est-elle un remake ?',
     answer: 'HPI',
-    options: ['HPI', 'Engrenages', 'Profilage', 'Candice Renoir'],
+    options: ['HPI', 'Engrenages', 'Profilage', 'Capitaine Marleau'],
+    theme: 'Séries TV',
   },
   {
-    theme: 'Histoire',
-    question: 'Dans quel village des Vosges Jeanne d’Arc est-elle née vers 1412 ?',
+    question:
+      "Dans quel village de l’actuel département des Vosges considère-t-on que Jeanne d'Arc est née ?",
     answer: 'Domrémy-la-Pucelle',
-    options: ['Domrémy-la-Pucelle', 'Vaucouleurs', 'Chinon', 'Compiègne'],
+    options: ['Domrémy-la-Pucelle', 'Chinon', 'Orléans', 'Reims'],
+    theme: 'Histoire',
   },
   {
-    theme: 'Sciences',
     question:
-      'Sur quelle mer lunaire le module Eagle d’Apollo 11 a-t-il aluni le 20 juillet 1969 ?',
+      'Sur quelle mer le module Eagle de la mission Apollo 11 a-t-il aluni le 20 juillet 1969 ?',
     answer: 'Mer de la Tranquillité',
-    options: ['Mer de la Tranquillité', 'Mer des Pluies', 'Mer de la Sérénité', 'Mer du Nectar'],
+    options: ['Mer de la Tranquillité', 'Mer des Pluies', 'Mer du Nectar', 'Mer des Crises'],
+    theme: 'Sciences',
   },
   {
-    theme: 'Géographie',
-    question: 'Quelle grande ville d’Australie-Occidentale est traversée par la rivière Swan ?',
+    question:
+      "Quelle ville d'Australie-Occidentale, traversée par la rivière Swan, compte plus de deux millions d’habitants ?",
     answer: 'Perth',
-    options: ['Perth', 'Adélaïde', 'Brisbane', 'Darwin'],
+    options: ['Perth', 'Adélaïde', 'Brisbane', 'Canberra'],
+    theme: 'Géographie',
   },
   {
-    theme: 'Musique',
     question:
-      'De quel compositeur Ludwig von Köchel a-t-il établi le catalogue thématique en 1862 ?',
+      'De quel compositeur Ludwig von Köchel a-t-il publié le catalogue complet des œuvres en 1862 ?',
     answer: 'Mozart',
-    options: ['Mozart', 'Haydn', 'Beethoven', 'Schubert'],
+    options: ['Mozart', 'Beethoven', 'Haydn', 'Schubert'],
+    theme: 'Musique',
   },
   {
-    theme: 'Animaux',
     question:
-      'Quelle race de chien sibérienne est connue pour son pelage blanc dense et son "sourire" naturel ?',
+      'Quelle race de chien au pelage blanc dense, originaire de Sibérie, semble arborer un sourire naturel ?',
     answer: 'Samoyède',
-    options: ['Samoyède', 'Husky sibérien', 'Akita inu', 'Chow-chow'],
+    options: ['Samoyède', 'Husky sibérien', 'Spitz japonais', 'Akita inu'],
+    theme: 'Animaux',
   },
   {
-    theme: 'Art',
     question:
-      'Quel artiste français réalise depuis 1996 des mosaïques urbaines inspirées d’un jeu vidéo de 1978 ?',
+      'Quel artiste mosaïste français réalise depuis 1996 des mosaïques inspirées d’un jeu vidéo de 1978 de la société Taito ?',
     answer: 'Invader',
-    options: ['Invader', 'JR', 'Banksy', 'Shepard Fairey'],
+    options: ['Invader', 'JR', 'Banksy', 'Blek le Rat'],
+    theme: 'Art',
   },
   {
-    theme: 'Art',
     question:
-      'Quel sculpteur français, de son vrai nom Baldaccini, a donné son nom à la célèbre cérémonie de récompenses du cinéma créée en 1976 ?',
+      'Quel sculpteur français, de son vrai nom Baldaccini, a donné son nom à une célèbre récompense du cinéma ?',
     answer: 'César',
     options: ['César', 'Rodin', 'Maillol', 'Bourdelle'],
+    theme: 'Cinéma',
   },
-  /*ICI*/
   {
     question:
-      'Dans quelle variante du billard se jouant à deux ou en équipes de deux sur une grande table et 22 billes, le chinois Zhao Xintong est-il devenu en 2025 le premier asiatique ainsi que le premier amateur à remporter le championnat du monde ?',
+      'Dans quelle variante du billard à 22 billes Zhao Xintong est-il devenu champion du monde en 2025 ?',
     answer: 'Snooker',
-    options: ['Snooker', 'Baguette de pain', 'Vitamine D', 'Death Row Records'],
+    options: ['Snooker', 'Billard américain', 'Billard français', 'Blackball'],
+    theme: 'Sport',
   },
   {
     question:
-      'Quelle déesse présente dans une mythologie a laissé son nom à la jument, monture de Link, dans la série de jeux-vidéos The Legend of Zelda ?',
+      'Quelle déesse a donné son nom à la jument de Link dans la série The Legend of Zelda ?',
     answer: 'Epona',
-    options: ['Epona', 'Led Zeppelin', 'Fromage', 'Bad Bunny'],
+    options: ['Epona', 'Athéna', 'Artémis', 'Héra'],
+    theme: 'Jeux Vidéo',
   },
   {
     question:
-      'De quelle série diffusée sur Netflix et créée par Álex Pina la chanson "My Life Is Going On" de la chanteuse Cecilia Krull est-elle la chanson du thème ?',
+      'De quelle série Netflix créée par Álex Pina la chanson "My Life Is Going On" est-elle le thème ?',
     answer: 'La Casa de Papel',
-    options: ['La Casa de Papel', 'Truffe', 'One Direction', 'Invader'],
+    options: ['La Casa de Papel', 'Elite', 'Narcos', 'Lupin'],
+    theme: 'Séries TV',
   },
   {
     question:
-      'Quelle révolutionnaire montalbanaise, née Marie Gouze, réclame l\'émancipation des femmes par sa rédaction de sa "Déclaration des droits de la femme et de la citoyenne ?',
+      'Quelle révolutionnaire, née Marie Gouze, a rédigé la "Déclaration des droits de la femme et de la citoyenne" ?',
     answer: 'Olympe de Gouges',
-    options: ['Olympe de Gouges', 'K2', 'Saint-Dié-des-Vosges', 'Adolescence'],
+    options: ['Olympe de Gouges', 'Madame Roland', 'Théroigne de Méricourt', 'Charlotte Corday'],
+    theme: 'Histoire',
   },
   {
-    question:
-      'Par quelle locution est également désigné le nævus mélanocytaire, souvent présent sur le corps humain ?',
+    question: 'Par quelle locution désigne-t-on également le nævus mélanocytaire ?',
     answer: 'Grain de beauté',
-    options: ['Grain de beauté', 'Pétrole', 'Tibo InShape', 'Auguste'],
+    options: ['Grain de beauté', 'Tache de rousseur', 'Cicatrice', 'Papillome'],
+    theme: 'Sciences',
   },
   {
     question:
-      "Quel pays asiatique est composé de trois zones principales : Mindanao au sud et ses 24 millions d'habitants, l'archipel des Visayas au centre et l'île de Luçon et ses 62 millions d'habitants au nord ?",
+      "Quel pays asiatique est composé notamment de Mindanao, des Visayas et de l'île de Luçon ?",
     answer: 'Philippines',
-    options: ['Philippines', 'Bojack Horseman', 'Johnny Cash', 'Rickshaw'],
+    options: ['Philippines', 'Indonésie', 'Malaisie', 'Vietnam'],
+    theme: 'Géographie',
   },
   {
     question:
-      'À quel compositeur français du XVIIe siècle doit-on le célèbre "Te Deum" qui sert désormais de thème au Concours Eurovision de la chanson ? Son nom est également celui d\'un métier.',
+      'Quel compositeur français du XVIIe siècle a composé le "Te Deum" devenu thème de l’Eurovision ?',
     answer: 'Marc-Antoine Charpentier',
-    options: ['Marc-Antoine Charpentier', 'Figaro', 'Måneskin', 'Mozart'],
+    options: ['Marc-Antoine Charpentier', 'Lully', 'Rameau', 'Couperin'],
+    theme: 'Musique',
   },
   {
-    question:
-      "Quel nom porte la larve des lépidoptères ? Cet ordre animal possède un imago (un stade final d'évolution) bien connu également.",
+    question: 'Quel nom porte la larve des lépidoptères ?',
     answer: 'Chenille',
-    options: ['Chenille', 'Tokyo Drift', 'Konami', 'Doechii'],
+    options: ['Chenille', 'Chrysalide', 'Nymphe', 'Asticot'],
+    theme: 'Animaux',
   },
   {
     question:
-      'Ayant pour exemple célèbre la phrase "Portez ce vieux whisky au juge blond qui fume", quel nom porte une phrase contenant toutes les lettres de l’alphabet ? Son nom est dérivé du grec signifiant littéralement "toutes les lettres".',
+      'Ayant pour exemple célèbre la phrase "Portez ce vieux whisky au juge blond qui fume", quel nom porte une phrase contenant toutes les lettres de l’alphabet ?',
     answer: 'Pangramme',
-    options: ['Pangramme', 'Atèle', 'Nouvelle Ecole', 'Aladdin'],
+    options: ['Pangramme', 'Anagramme', 'Palindrome', 'Acrostiche'],
+    theme: 'Littérature',
   },
   {
     question:
-      'Dans quelle salle les apôtres et Jésus-Christ se sont-ils réunis pour le dernier repas du Messie, la Cène ?',
+      'Dans quelle salle les apôtres et Jésus-Christ se sont-ils réunis pour le dernier repas, la Cène ?',
     answer: 'Cénacle',
-    options: ['Cénacle', 'Phare de Cordouan', 'Taureau', 'ScoobyDoo'],
+    options: ['Cénacle', 'Sacristie', 'Basilique', 'Crypte'],
+    theme: 'Histoire',
   },
   {
     question:
-      "Quel golfeur étasunien né en 1975, vainqueur des Masters en 1997, moins d'un an après être devenu professionnel, possède l'un des plus grands palmarès de l'histoire de son sport ? En 2019, à l'âge de 43 ans, il remporte de nouveau les Masters, onze ans après son dernier titre majeur.",
+      "Quel golfeur américain né en 1975, vainqueur des Masters en 1997 et 2019, possède l'un des plus grands palmarès de l'histoire ?",
     answer: 'Tiger Woods',
-    options: ['Tiger Woods', 'Pauline Ferrand-Prévot', 'Polyphème', 'Bus'],
+    options: ['Tiger Woods', 'Phil Mickelson', 'Rory McIlroy', 'Jordan Spieth'],
+    theme: 'Sport',
   },
   {
-    question:
-      'Quel nom porte la marque de kombucha créée par Squeezie, et ayant contribué à la popularité de la boisson en France ?',
+    question: 'Quel nom porte la marque de kombucha créée par Squeezie ?',
     answer: 'Ciao Kombucha',
-    options: ['Ciao Kombucha', 'Microsoft', 'Jean-Claude Killy', 'Johnny Cash'],
+    options: ['Ciao Kombucha', 'Karma Kombucha', 'Captain Kombucha', 'Jomo Kombucha'],
+    theme: 'Culture Générale',
   },
   {
     question:
-      'Quel animateur de télévision dont le nom de famille est Fam, présente "N’oubliez pas les paroles" depuis 2007 ? Il est connu par son simple prénom.',
+      'Quel animateur, dont le nom de famille est Fam, présente "N’oubliez pas les paroles" depuis 2007 ?',
     answer: 'Nagui',
-    options: ['Nagui', 'Dépendantes', 'Georges Méliès', 'Sarajevo'],
+    options: ['Nagui', 'Cyril Hanouna', 'Michel Drucker', 'Laurent Ruquier'],
+    theme: 'Culture Générale',
   },
   {
     question:
-      'En dehors de Grover Cleveland, quel est le seul président des Etats-Unis élu pour deux mandats non consécutifs ? Grover Cleveland était à la fois le 22e et le 24e président des USA, de 1885 à 1889 puis de 1893 à 1897.',
+      'En dehors de Grover Cleveland, quel est le seul président des États-Unis élu pour deux mandats non consécutifs ?',
     answer: 'Donald Trump',
-    options: ['Donald Trump', 'Gotaga', 'Trottoir', 'Bichon'],
+    options: ['Donald Trump', 'Joe Biden', 'Barack Obama', 'George W. Bush'],
+    theme: 'Politique',
   },
   {
-    question:
-      'Quel minéral ayant pour numéro atomique le 11 est représenté par les lettres Na du fait de son ancienne appellation de natrium ? On retrouve par exemple cet élément dans le sel de table, dont la formule chimique est NaCl.',
+    question: 'Quel élément chimique de numéro atomique 11 est représenté par le symbole Na ?',
     answer: 'Sodium',
-    options: ['Sodium', 'Los Angeles', 'Saké', 'Jaipur'],
+    options: ['Sodium', 'Potassium', 'Magnésium', 'Lithium'],
+    theme: 'Sciences',
   },
   {
-    question:
-      "Quel nom français est également donné à la ville indienne de Varanasi ? Cette ville de l'Uttar Pradesh est la plus sacrée dans l'hindouisme et le jaïnisme et est située sur les bords du fleuve Gange.",
+    question: 'Quel nom français est également donné à la ville indienne de Varanasi ?',
     answer: 'Bénarès',
-    options: ['Bénarès', 'World of Warcraft', 'Blanc', 'Beowulf'],
+    options: ['Bénarès', 'Calcutta', 'Bombay', 'Madras'],
+    theme: 'Géographie',
   },
   {
     question:
-      'Quel rappeur français issu de la Sexion d\'Assaut a notamment sorti l\'album "Les Yeux plus gros que le monde" en 2014 sur lequel figurent les titres "Je ne dirai rien", "Mme Pavoshko" et "Sur ma route" ?',
+      'Quel rappeur français issu de la Sexion d\'Assaut a sorti l\'album "Les Yeux plus gros que le monde" en 2014 ?',
     answer: 'Black M',
-    options: ['Black M', 'Avion', 'Melodica', 'Oesophage'],
+    options: ['Black M', 'Maître Gims', 'Soprano', 'Nekfeu'],
+    theme: 'Musique',
   },
   {
     question:
-      'Quel oiseau a laissé son nom à la politique consistant à ne pas voir la réalité en face du fait de son habitude à mettre sa tête sous terre ?',
+      'Quel oiseau a donné son nom à une politique consistant à refuser de voir la réalité en face ?',
     answer: 'Autruche',
-    options: ['Autruche', 'Beyoncé', 'Ibra', 'Arabie Saoudite'],
+    options: ['Autruche', 'Paon', 'Corbeau', 'Hibou'],
+    theme: 'Animaux',
   },
   {
-    question:
-      "Quel journal fondé en 1826 et fêtant donc son bicentenaire cette année fut créé par le chansonnier Maurice Alhoy et l'homme politique Etienne Arago ? Il tient son nom d'un personnage de Beaumarchais.",
+    question: "Quel journal fondé en 1826 tient son nom d'un personnage de Beaumarchais ?",
     answer: 'Figaro',
-    options: ['Figaro', 'Aladdin', 'Artus', 'Pyrénées-Atlantiques'],
+    options: ['Figaro', 'Le Monde', 'Libération', 'L’Humanité'],
+    theme: 'Littérature',
   },
   {
-    question:
-      'Quels petits personnages bleus créés par Peyo ont pour ennemi le chat Azraël et le sorcier Gargamel ?',
+    question: 'Quels petits personnages bleus créés par Peyo ont pour ennemi Gargamel ?',
     answer: 'Les Schtroumpfs',
-    options: ['Les Schtroumpfs', 'T', 'Kirigami', 'Susan Boyle'],
+    options: ['Les Schtroumpfs', 'Les Minions', 'Les Razmoket', 'Les Barbapapa'],
+    theme: 'Littérature',
   },
   {
-    question:
-      'Quel sport se pratique sur un cercle de bottes de paille de riz de 4,55 mètres de diamètre appelé dohyō ?',
+    question: 'Quel sport se pratique sur un cercle appelé dohyō ?',
     answer: 'Sumo',
-    options: ['Sumo', 'Andy Jassy', 'Kevlar', 'Brésil'],
+    options: ['Sumo', 'Judo', 'Kendo', 'Lutte'],
+    theme: 'Sport',
   },
   {
-    question:
-      'Quelle émission présentée sur Twitch par Domingo mensuellement après avoir existé hebdomadairement entre 2019 et 2024 se présente sous forme de talk-show et évoque par son nom une céréale soufflée ?',
+    question: 'Quelle émission Twitch présentée par Domingo porte le nom d’une céréale soufflée ?',
     answer: 'Popcorn',
-    options: ['Popcorn', 'Carlito', 'Kitty', 'Ibra'],
+    options: ['Popcorn', 'After Foot', 'Clique', 'Quotidien'],
+    theme: 'Jeux Vidéo',
   },
   {
-    question:
-      'À qui doit-on la réalisation du film "Le Voyage dans la Lune" en 1902 ? Ce film muet d\'un réalisateur français est considéré comme étant le tout premier film de science-fiction de l\'Histoire.',
+    question: 'À qui doit-on la réalisation du film "Le Voyage dans la Lune" en 1902 ?',
     answer: 'Georges Méliès',
-    options: ['Georges Méliès', 'Coeliaque', 'Philippines', 'Dog-sitter'],
+    options: ['Georges Méliès', 'Louis Lumière', 'Charlie Chaplin', 'Jean Renoir'],
+    theme: 'Cinéma',
   },
   {
-    question:
-      "Dans quelle ville eut lieu l'assassinat de Sophie Chotek et son époux l'archiduc François-Ferdinand, le 28 juin 1914, et ayant été l'un des éléments déclencheurs de la Première Guerre mondiale ?",
+    question: "Dans quelle ville eut lieu l'assassinat de l'archiduc François-Ferdinand en 1914 ?",
     answer: 'Sarajevo',
-    options: ['Sarajevo', 'Ham', 'Bataille d’Iéna', 'Philippines'],
+    options: ['Sarajevo', 'Vienne', 'Budapest', 'Belgrade'],
+    theme: 'Histoire',
   },
   {
-    question: 'De quelle pierre précieuse la nuance exacte de vert est-elle dite smaragdine ?',
+    question: 'De quelle pierre précieuse la nuance de vert est-elle dite smaragdine ?',
     answer: 'Emeraude',
-    options: ['Emeraude', 'Tiger Woods', 'Dalmatien', 'Woodrow Wilson'],
+    options: ['Emeraude', 'Saphir', 'Topaze', 'Rubis'],
+    theme: 'Sciences',
   },
   {
     question:
-      'Quel état des Etats-Unis est, avec 1,723 million de kilomètres carrés, le plus grand en superficie ?',
+      'Quel État des États-Unis est, avec 1,723 million de kilomètres carrés, le plus grand en superficie ?',
     answer: 'Alaska',
-    options: ['Alaska', 'One Direction', 'Geta', 'Verbatim'],
+    options: ['Alaska', 'Texas', 'Californie', 'Montana'],
+    theme: 'Géographie',
   },
   {
     question:
-      'En 1972, dans quelle ville de Californie se situe la maison bleue que Maxime Le Forestier décrit comme adossée à la colline dans un de ses titres les plus célèbres ?',
+      'En 1972, dans quelle ville de Californie se situe la maison bleue décrite par Maxime Le Forestier ?',
     answer: 'San Francisco',
-    options: ['San Francisco', 'The Shining', 'Atèle', 'Fromage'],
+    options: ['San Francisco', 'Los Angeles', 'San Diego', 'Sacramento'],
+    theme: 'Musique',
   },
   {
     question:
-      'Quelle variété de pêche dont le noyau n’adhère pas à la chair se distingue par cette caractéristique du brugnon ?',
+      'Quelle variété de pêche dont le noyau n’adhère pas à la chair se distingue du brugnon ?',
     answer: 'Nectarine',
-    options: ['Nectarine', 'Nantes', 'Pyrénées-Atlantiques', 'Dalmatien'],
+    options: ['Nectarine', 'Brugnon', 'Abricot', 'Prune'],
+    theme: 'Cuisine',
   },
   {
-    question:
-      'Dans la cuisine indienne, de quelle forme sont les beignets farcis de légumes ou de viande appelés samoussas ou samossas ?',
+    question: 'Dans la cuisine indienne, de quelle forme sont les samoussas ?',
     answer: 'Triangulaire',
-    options: ['Triangulaire', 'Streaker', 'Lassie', 'Chameau'],
+    options: ['Triangulaire', 'Ronde', 'Carrée', 'Ovale'],
+    theme: 'Cuisine',
   },
   {
     question:
-      'Quel écrivain né à Prague et donc de nationalité autrichienne puis tchécoslovaque à la fin de sa vie est dit "sur le rivage" dans un roman d\'Haruki Murakami publié en 2002 ?',
+      'Quel écrivain né à Prague est dit "sur le rivage" dans un roman d’Haruki Murakami publié en 2002 ?',
     answer: 'Kafka',
-    options: ['Kafka', 'TrackMania', 'Marc-Antoine Charpentier', 'Daniel Balavoine'],
+    options: ['Kafka', 'Rilke', 'Kundera', 'Hesse'],
+    theme: 'Littérature',
   },
   {
-    question:
-      'Surnommé "Big Bill", dans QUEL SPORT Bill Tilden détient-il, avec 138 titres en simple, le meilleur palmarès de l\'ère pré-Open, c\'est-à-dire avant 1968 ?',
+    question: 'Dans quel sport Bill Tilden détient-il le meilleur palmarès de l’ère pré-Open ?',
     answer: 'Tennis',
-    options: ['Tennis', 'Globe Trotter', 'Chimpanzés', 'Roberto Heras'],
+    options: ['Tennis', 'Golf', 'Baseball', 'Boxe'],
+    theme: 'Sport',
   },
   {
     question:
-      'Quelle série de jeux vidéo de course développée par Nadeo sur laquelle le canadien Carl Jr. est plusieurs fois champion du monde a pour but de conduire des voitures et se concentre sur les capacités de pilotage du joueur ?',
+      'Quelle série de jeux vidéo de course développée par Nadeo met l’accent sur le pilotage et la précision ?',
     answer: 'TrackMania',
-    options: ['TrackMania', 'Konami', 'Akhénaton', 'Dalton'],
+    options: ['TrackMania', 'Gran Turismo', 'Need for Speed', 'Forza Motorsport'],
+    theme: 'Jeux Vidéo',
   },
   {
-    question:
-      'De quel dessin animé créé par Iwao Takamoto est dérivée la série "Velma", appelée "Véra" en français ? Ce personnage fait partie d\'une bande de cinq, créée par la société de production Hanna-Barbera en 1969. On cherche le nom du personnage principal de la série originelle, qui a laissé son nom à la série.',
+    question: 'De quel dessin animé créé par Hanna-Barbera est dérivée la série "Velma" ?',
     answer: 'ScoobyDoo',
-    options: ['ScoobyDoo', 'Guerre de Sécession', 'Figaro', 'Nectarine'],
+    options: ['ScoobyDoo', 'Tom et Jerry', 'Les Pierrafeu', 'Yogi Bear'],
+    theme: 'Séries TV',
   },
   {
-    question:
-      'Ayant inspiré le nom d\'un groupe avec notamment pour membres Foda C et Lujipeka, dans quel lycée de Littleton eut lieu, le 20 avril 1999, une tuerie par deux élèves, Eric Harris et Dylan Klebold ? Cette tragédie ayant vu la mort de 14 élèves et professeurs a également inspiré le film "Elephant" de Gus Van Sant.',
+    question: 'Dans quel lycée de Littleton eut lieu la tuerie du 20 avril 1999 ?',
     answer: 'Columbine',
-    options: ['Columbine', 'Daniel Balavoine', 'Pompon', 'Omega'],
+    options: ['Columbine', 'Littleton High', 'Jefferson High', 'Lincoln High'],
+    theme: 'Histoire',
   },
   {
-    question:
-      "En anatomie, quel adjectif qualifie les côtes n'étant pas rattachées au sternum ? Ce sont les deux paires de côtes les plus basses et elles doivent leur nom à cette particularité.",
+    question: 'En anatomie, quel adjectif qualifie les côtes non rattachées au sternum ?',
     answer: 'Flottantes',
-    options: ['Flottantes', 'Bâtonnier', 'Cerveau', 'Motus'],
+    options: ['Flottantes', 'Vraies', 'Fausse', 'Thoraciques'],
+    theme: 'Sciences',
   },
   {
-    question:
-      "Quel pays a changé de monnaie en 2026 pour adopter l'euro ? Sous la présidence d'Iliana Iotova, le pays a abandonné le lev, qui était son ancienne monnaie.",
+    question: "Quel pays a adopté l'euro en 2026 en abandonnant le lev ?",
     answer: 'Bulgarie',
-    options: ['Bulgarie', 'Sauce Aurore', 'Hêtre', 'Omega'],
+    options: ['Bulgarie', 'Roumanie', 'Croatie', 'Hongrie'],
+    theme: 'Géographie',
   },
   {
-    question:
-      "Ayant pourtant perdu en finale de Britain's Got Talent en 2009, quelle chanteuse née en Ecosse s'est fait connaître avec sa reprise du titre \"I Dreamed a Dream\", tiré de la comédie musicale Les Misérables ? En quelques jours, sa prestation a été vue plus de 100 millions de fois sur internet, des chiffres qui étaient pour l'époque d'une extrême rareté.",
+    question: 'Quelle chanteuse écossaise s’est fait connaître avec "I Dreamed a Dream" en 2009 ?',
     answer: 'Susan Boyle',
-    options: ['Susan Boyle', 'Claude Monet', 'Nolwenn Leroy', 'Nord'],
+    options: ['Susan Boyle', 'Adele', 'Duffy', 'Leona Lewis'],
+    theme: 'Musique',
   },
   {
-    question:
-      'Quel arbre de la famille des bignoniacées, également dénommé arbre-fougère ou flamboyant bleu, a laissé son nom au titre d’un roman de Gaël Faye ayant obtenu le prix Renaudot en 2024 ? Son nom contient quatre fois la même voyelle.',
+    question: 'Quel arbre a donné son nom au roman "Jacaranda" de Gaël Faye ?',
     answer: 'Jacaranda',
-    options: ['Jacaranda', 'Mozart', 'Lapin', 'Sodium'],
+    options: ['Jacaranda', 'Baobab', 'Cèdre', 'Acacia'],
+    theme: 'Littérature',
   },
   {
-    question:
-      "Sous quel nom de quatre lettres est généralement désigné l'alcool de riz japonais, produit par fermentation et titrant de 11 à 20° ?",
+    question: 'Sous quel nom de quatre lettres désigne-t-on l’alcool de riz japonais ?',
     answer: 'Saké',
-    options: ['Saké', 'Darwin', 'Russe', 'Game of Thrones'],
+    options: ['Saké', 'Umeshu', 'Shochu', 'Soju'],
+    theme: 'Culture Générale',
   },
   {
     question:
-      "Quel sculpteur animalier français, né en 1855 à Saulieu, est célèbre notamment pour sa réalisation d'un \"Ours blanc\", dont l'un des exemplaires est présent au musée d'Orsay ? Son nom est constitué d'une syllabe redoublée.",
+      'Quel sculpteur animalier français, auteur d’un célèbre "Ours blanc", porte un nom redoublé ?',
     answer: 'Pompon',
-    options: ['Pompon', 'V', 'Molosses', 'Led Zeppelin'],
+    options: ['Pompon', 'Barye', 'Frémiet', 'Bugatti'],
+    theme: 'Art',
   },
   {
-    question:
-      'Avec qui est en couple Travis Kelce, sportif étasunien évoluant au poste de tight end en National Football League depuis 2013 ? Ce pratiquant de football américain, évoluant aux Kansas City Chiefs, est né la même année que sa compagne, en 1989.',
+    question: 'Avec quelle chanteuse Travis Kelce est-il en couple ?',
     answer: 'Taylor Swift',
-    options: ['Taylor Swift', 'Bus', 'Ernst Gräfenberg', 'Polyphème'],
+    options: ['Taylor Swift', 'Ariana Grande', 'Selena Gomez', 'Katy Perry'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      "De quel pays est originaire la chaîne YouTube T-Series s'étant fait connaître lorsqu'elle a dépassé le youtubeur PewDiePie en nombre d'abonnés sur YouTube ? T-Series a été la première chaîne YouTube a dépassé les 100 millions d'abonnés et en compte actuellement plus de 309 millions.",
+    question: 'De quel pays est originaire la chaîne YouTube T-Series ?',
     answer: 'Inde',
-    options: ['Inde', 'Catwoman', 'Troie', 'Gardon'],
+    options: ['Inde', 'Pakistan', 'Bangladesh', 'Sri Lanka'],
+    theme: 'Culture Générale',
   },
   {
     question:
-      'Ayant pour juges lors de la saison 5 SDM, Oli et Théodora, quel télé crochet diffusé sur Netflix consiste en un concours entre différents rappeurs, ayant vu la victoire de Fresha la Peufra ou Youssef Swatt\'s notamment est adapté du programme étasunien "Rhythm + Flow". La réponse attendue est constituée de deux mots français.',
+      'Quel télé-crochet Netflix adapté de "Rhythm + Flow" s’intitule en français en deux mots ?',
     answer: 'Nouvelle Ecole',
-    options: ['Nouvelle Ecole', 'Skyrim', 'Sodium', 'Ayrton Senna'],
+    options: ['Nouvelle Ecole', 'La Relève', 'Rappeurs en Scène', 'Flow Urbain'],
+    theme: 'Séries TV',
   },
   {
-    question:
-      "Dans quelle ville le surintendant des finances Nicolas Fouquet a-t-il été arrêté par d'Artagnan en 1661 ? Cette ville est le chef-lieu d'un département de l'Ouest de la France.",
+    question: 'Dans quelle ville Nicolas Fouquet a-t-il été arrêté en 1661 ?',
     answer: 'Nantes',
-    options: ['Nantes', 'Chaebol', 'Température de (Pierre) Curie', 'Figaro'],
+    options: ['Nantes', 'Rennes', 'Angers', 'Tours'],
+    theme: 'Histoire',
   },
   {
-    question:
-      'Quel adjectif tiré des mots latins signifiant "autour" et "jour" qualifie le rythme biologique dont la période est proche de 24 heures ? Ce terme a été inventé par le chronobiologiste roumain Franz Halberg.',
+    question: 'Quel adjectif qualifie un rythme biologique proche de 24 heures ?',
     answer: 'Circadien',
-    options: ['Circadien', 'Sarajevo', 'HPI', 'Canberra'],
+    options: ['Circadien', 'Ultradien', 'Infradien', 'Bihebdomadaire'],
+    theme: 'Sciences',
   },
   {
-    question:
-      "Quel département français, situé en France métropolitaine, est le plus peuplé ? Sa population, toujours en augmentation, est de plus de 2,6 millions d'habitants.",
+    question: 'Quel département français métropolitain est le plus peuplé ?',
     answer: 'Nord',
-    options: ['Nord', 'Le Chanteur de Jazz', 'Magnum', 'Kévin'],
+    options: ['Nord', 'Bouches-du-Rhône', 'Rhône', 'Seine-Saint-Denis'],
+    theme: 'Géographie',
   },
   {
     question:
-      "Quel mythique groupe de rock a eu pour membres le bassiste John Paul Jones, le batteur John Bonham, le guitariste Jimmy Page et le chanteur Robert Plant ? Le groupe a été actif de 1968 à 1980 et la mort de John Bonham et s'est réuni à quelques reprises depuis.",
+      'Quel mythique groupe de rock composé de John Paul Jones, John Bonham, Jimmy Page et Robert Plant a été actif de 1968 à 1980 ?',
     answer: 'Led Zeppelin',
-    options: ['Led Zeppelin', 'Scroller', 'Perth', 'Licteur'],
+    options: ['Led Zeppelin', 'The Who', 'Deep Purple', 'Pink Floyd'],
+    theme: 'Musique',
   },
   {
-    question:
-      'Quel adjectif de nationalité est associé au terme de lévrier dans l’autre nom du chien appelé Barzoï ?',
+    question: 'Quel adjectif de nationalité est associé au lévrier appelé Barzoï ?',
     answer: 'Russe',
-    options: ['Russe', 'Usain Bolt', 'Clash', 'Tuffeau'],
+    options: ['Russe', 'Polonais', 'Hongrois', 'Ukrainien'],
+    theme: 'Animaux',
   },
   {
-    question:
-      "À quel aliment se rapporte l'adjectif caséeux ? Le mot dérive du latin caseus qui désigne cet aliment.",
+    question: "À quel aliment se rapporte l'adjectif caséeux ?",
     answer: 'Fromage',
-    options: ['Fromage', 'Mont Fujiyama', 'One Direction', 'Game of Thrones'],
+    options: ['Fromage', 'Lait', 'Pain', 'Beurre'],
+    theme: 'Cuisine',
   },
   {
-    question:
-      'Quel dramaturge d’origine roumaine a écrit Les Chaises en 1952 ? On lui doit également La Cantatrice chauve ainsi que Rhinocéros, deux de ses pièces les plus connues.',
+    question: 'Quel dramaturge d’origine roumaine a écrit Les Chaises en 1952 ?',
     answer: 'Ionesco',
-    options: ['Ionesco', 'Forficule', 'Sulky', 'Patrick Battiston'],
+    options: ['Ionesco', 'Beckett', 'Camus', 'Anouilh'],
+    theme: 'Littérature',
   },
   {
-    question:
-      'Quel discipline du sport est associée à Jérémy Florès ainsi qu’au très célèbre Kelly Slater ?',
+    question: 'À quel sport sont associés Jérémy Florès et Kelly Slater ?',
     answer: 'Surf',
-    options: ['Surf', 'Judo', 'Baleine', 'Magnum'],
+    options: ['Surf', 'Voile', 'Natation', 'Plongée'],
+    theme: 'Sport',
   },
   {
-    question:
-      "Quel vidéaste possède, depuis le 26 mai 2024, le plus d'abonnés sur YouTube en France ? Il a dépassé le nombre d'abonnés de Squeezie et compte actuellement plus de 26 millions de personnes le suivant sur sa chaîne YouTube.",
+    question: "Quel vidéaste détient depuis mai 2024 le record d'abonnés YouTube en France ?",
     answer: 'Tibo InShape',
-    options: ['Tibo InShape', 'Akira Kurosawa', 'Paul Verlaine', 'Fromage'],
+    options: ['Tibo InShape', 'Squeezie', 'Cyprien', 'Michou'],
+    theme: 'Internet',
   },
   {
     question:
-      'Quel groupe ayant interprété le générique de la série télévisée "Friends" fait référence par son nom à un grand peintre hollandais du XVIIe siècle ?',
+      'Quel groupe interprète le générique de la série "Friends" et fait référence à un peintre hollandais ?',
     answer: 'Rembrandt',
-    options: ['Rembrandt', 'Staccato', 'Truffe', 'Cônes'],
+    options: ['Rembrandt', 'The Corrs', 'The Cranberries', 'Counting Crows'],
+    theme: 'Musique',
   },
   {
     question:
-      "Quel roi de France a le deuxième règne le plus long de l'Histoire ? Louis XIV possède le record avec 72 ans et celui-ci a un règne de près de 59 ans. (La réponse est attendue doit être au format Prénom + Numéro)",
+      "Quel roi de France a eu le deuxième plus long règne de l'Histoire ? (Format : Prénom + Numéro)",
     answer: 'Louis XV',
-    options: ['Louis XV', 'Ombrelle', 'Tachkent', 'Dormeur'],
+    options: ['Louis XV', 'Louis XIII', 'Louis XVI', 'Henri IV'],
+    theme: 'Histoire',
   },
   {
-    question:
-      "Chez l'homme, quel doigt de la main tire son nom de son utilisation à montrer ou désigner des choses ?",
+    question: 'Quel doigt tire son nom de son usage pour désigner ?',
     answer: 'Index',
-    options: ['Index', 'Pastèque', 'Saint-Dié-des-Vosges', 'Staccato'],
+    options: ['Index', 'Majeur', 'Annulaire', 'Auriculaire'],
+    theme: 'Sciences',
   },
   {
-    question:
-      'Dans quel pays se situe le parc floral de Keukenhof ? Il est célèbre pour la production d’une fleur qui fait la renommée du pays tout entier.',
+    question: 'Dans quel pays se situe le parc floral de Keukenhof ?',
     answer: 'Pays-Bas',
-    options: ['Pays-Bas', 'Usain Bolt', 'X', 'Lump'],
+    options: ['Pays-Bas', 'Belgique', 'Danemark', 'Allemagne'],
+    theme: 'Géographie',
   },
   {
-    question:
-      'Quel chanteur mort en mars 1978 était le propriétaire du moulin de Dannemois, il a été retrouvé mort alors qu’il était censé se rendre à une émission de Michel Drucker ? Ce chanteur était également connu pour sa vie tourmentée et ses goûts très problématiques pour les très jeunes filles.',
+    question: 'Quel chanteur mort en 1978 était propriétaire du moulin de Dannemois ?',
     answer: 'Claude François',
-    options: ['Claude François', 'Cap Nord', 'Tokyo Drift', 'Doechii'],
+    options: ['Claude François', 'Joe Dassin', 'Daniel Balavoine', 'Serge Lama'],
+    theme: 'Musique',
   },
   {
-    question:
-      'Par quel nom plus commun étant également un couvert de table est aussi désigné le coquillage du genre solen ?',
+    question: 'Quel nom commun désigne aussi le coquillage du genre solen ?',
     answer: 'Couteau',
-    options: ['Couteau', 'Venus', 'Gmail', 'Led Zeppelin'],
+    options: ['Couteau', 'Huître', 'Palourde', 'Moule'],
+    theme: 'Animaux',
   },
   {
-    question:
-      'Quel nom argotique désignant les croûtes de pizza est aussi le côté de la route où circulent les piétons ?',
+    question: 'Quel nom argotique désigne à la fois les croûtes de pizza et le bord de la route ?',
     answer: 'Trottoir',
-    options: ['Trottoir', 'Chirac', 'Kevlar', 'Epona'],
+    options: ['Trottoir', 'Quignon', 'Croûton', 'Talus'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      'Dans la mythologie grecque, quelle amante de Narcisse a été condamnée à répéter les derniers mots ? Elle a laissé son nom à un effet acoustique.',
+    question: 'Quelle amante de Narcisse a été condamnée à répéter les derniers mots ?',
     answer: 'Echo',
-    options: ['Echo', 'Figaro', 'Mickey Mouse', 'Ponte'],
+    options: ['Echo', 'Daphné', 'Héra', 'Perséphone'],
+    theme: 'Littérature',
   },
   {
-    question:
-      "Dans quel sport collectif l'équipe de France a-t-elle été successivement surnommée les Bronzés, les Barjots, les Costauds et les Experts ?",
+    question: "Dans quel sport l'équipe de France fut surnommée les Barjots et les Experts ?",
     answer: 'Handball',
-    options: ['Handball', 'Baguette de pain', 'Cristiano Ronaldo', 'Dog-sitter'],
+    options: ['Handball', 'Basketball', 'Football', 'Rugby'],
+    theme: 'Sport',
   },
   {
     question:
-      'Quel terme emprunté au domaine de la peinture et des arts plastiques désigne le jeu vidéo développé par Sandfall Interactive sous-titré "Expedition 33" et ayant obtenu le titre de Game of the Year 2025 ?',
+      'Quel jeu vidéo sous-titré "Expedition 33" porte un terme emprunté aux arts plastiques ?',
     answer: 'Clair Obscur',
-    options: ['Clair Obscur', 'Roberto Heras', 'Tuffeau', 'Taureau'],
+    options: ['Clair Obscur', 'Pointillisme', 'Fresque', 'Estampe'],
+    theme: 'Jeux Vidéo',
   },
   {
-    question:
-      "Quel prénom porte l'ange gardien incarné par Mimie Mathy dans une série télévisée depuis 1997 ?",
+    question: "Quel prénom porte l'ange gardien incarné par Mimie Mathy ?",
     answer: 'Joséphine',
-    options: ['Joséphine', 'Fado', 'Martin Fourcade', 'Seahawks'],
+    options: ['Joséphine', 'Marie', 'Clara', 'Angélique'],
+    theme: 'Séries TV',
   },
   {
-    question:
-      "Quel chef d'état surnommé le \"Duce\" a dirigé l'Italie de 1922 jusqu'à la Seconde Guerre mondiale ? Il est à l'origine de la création du fascisme.",
+    question: 'Quel chef d’État surnommé le "Duce" a dirigé l’Italie ?',
     answer: 'Benito Mussolini',
-    options: ['Benito Mussolini', 'Tennis', '1984', 'Amber Heard'],
+    options: ['Benito Mussolini', 'Francisco Franco', 'Hitler', 'Victor-Emmanuel III'],
+    theme: 'Histoire',
   },
   {
-    question: 'Quelle partie du corps humain souffre en cas de céphalée ?',
+    question: 'Quelle partie du corps souffre en cas de céphalée ?',
     answer: 'Cerveau',
-    options: ['Cerveau', 'Taylor Swift', 'Température de (Pierre) Curie', 'Carlito'],
+    options: ['Cerveau', 'Estomac', 'Foie', 'Cœur'],
+    theme: 'Sciences',
   },
   {
     question:
-      "Quel doyen des phares français, mis en service en 1611, situé au large de l'estuaire de la Gironde est, avec ses 67 mètres de haut, parfois surnommé le roi des phares ?",
+      "Quel phare surnommé le roi des phares est situé au large de l'estuaire de la Gironde ?",
     answer: 'Phare de Cordouan',
-    options: ['Phare de Cordouan', 'Death Row Records', 'Claude Monet', 'Marathon'],
+    options: ['Phare de Cordouan', 'Phare d’Eckmühl', 'Phare de la Jument', 'Phare d’Ar-Men'],
+    theme: 'Géographie',
   },
   {
     question:
-      'Quel duo français de musique, actif entre 1993 et 2021 était composé de Thomas Bangalter et Guy-Manuel de Homem-Christo ?',
+      'Quel duo composé de Thomas Bangalter et Guy-Manuel de Homem-Christo a été actif jusqu’en 2021 ?',
     answer: 'Daft Punk',
-    options: ['Daft Punk', 'Lee Miller', '28', 'Les Voyages de Gulliver'],
+    options: ['Daft Punk', 'Justice', 'Air', 'Cassius'],
+    theme: 'Musique',
   },
   {
-    question:
-      'À quel poisson de nom scientifique "rutilus rutilus" associe-t-on quelqu’un de frais dans une expression ?',
+    question: 'À quel poisson associe-t-on quelqu’un de frais dans une expression ?',
     answer: 'Gardon',
-    options: ['Gardon', 'Woodrow Wilson', 'Etrier', 'Ibra'],
+    options: ['Gardon', 'Merlan', 'Hareng', 'Maquereau'],
+    theme: 'Animaux',
   },
   {
-    question:
-      'Quel nom désigne un mot comme "KAYAK" ou la phrase "ENGAGE LE JEU QUE JE LE GAGNE", qui peut se lire dans les deux sens ? Le nom est issu du grec signifiant "qui court en arrière".',
+    question: 'Quel mot peut se lire dans les deux sens comme "KAYAK" ?',
     answer: 'Palindrome',
-    options: ['Palindrome', 'Europe', 'Licteur', 'Russe'],
+    options: ['Palindrome', 'Anagramme', 'Lipogramme', 'Calligramme'],
+    theme: 'Littérature',
   },
   {
     question:
-      'Quel grand écrivain français est mort en 1885 dans une avenue qui portait son nom depuis 1881 ? Près de trois millions de personnes ont assisté à ses funérailles.',
+      'Quel écrivain français est mort en 1885 devant près de trois millions de personnes ?',
     answer: 'Victor Hugo',
-    options: ['Victor Hugo', 'Nagui', 'The Voice', 'The Witcher'],
+    options: ['Victor Hugo', 'Émile Zola', 'Balzac', 'Dumas'],
+    theme: 'Littérature',
   },
   {
     question:
-      "Quel nom est donné à l'épreuve sportive constituée d'un triathlon sur très longues distances ? Il se compose de 3,8 km de natation, 180 km de vélo avant de conclure par un marathon. Son nom est le même qu'un personnage créé par Stan Lee.",
+      'Quel nom désigne un triathlon longue distance de 3,8 km natation, 180 km vélo et marathon ?',
     answer: 'Iron Man',
-    options: ['Iron Man', 'Linkin Park', 'Clash', 'Bayern'],
+    options: ['Iron Man', 'Décathlon', 'UltraTrail', 'Spartan Race'],
+    theme: 'Sport',
   },
   {
-    question:
-      "Quel nom, homonyme d'un moyen de transport, est désigné par la lettre B dans le sigle USB dans clé USB ? Il s'agit d'un mot anglais précédé des termes \"Universal Serial\".",
+    question: "Quel mot anglais précédé de 'Universal Serial' correspond au B de USB ?",
     answer: 'Bus',
-    options: ['Bus', 'Anophèle', 'Polyphème', 'Autruche'],
+    options: ['Bus', 'Base', 'Binary', 'Bridge'],
+    theme: 'Culture Générale',
   },
   {
     question:
-      "Quelle période de la vie constitue le titre d'une série Netflix avec Owen Cooper et Stephen Graham ? Elle est composée de quatre épisodes tous tournés en un seul et unique plan-séquence et raconte l'histoire d'un jeune de 13 ans accusé du meurtre d'une de ses camarades de classe.",
+      "Quelle série Netflix en plan-séquence raconte l'histoire d'un jeune accusé de meurtre ?",
     answer: 'Adolescence',
-    options: ['Adolescence', 'Groom', 'En souris', 'Dormeur'],
+    options: ['Adolescence', 'Skins', 'Euphoria', 'Elite'],
+    theme: 'Séries TV',
   },
   {
-    question:
-      "Quelle tribu de l'Épire antique, un ancien état du nord de la Grèce, qui était dirigée par la dynastie des Eacides, avait la réputation d’utiliser des chiens de combat pour garder leurs troupeaux ?",
+    question: "Quelle tribu antique d'Épire était réputée pour ses chiens de combat ?",
     answer: 'Molosses',
-    options: ['Molosses', 'Donald Trump', '1984', 'Jaipur'],
+    options: ['Molosses', 'Spartiates', 'Illyriens', 'Thessaliens'],
+    theme: 'Histoire',
   },
   {
     question:
-      "Quel nom de scientifique est donné à la température à laquelle un matériau ferromagnétique perd son aimantation et devient alors paramagnétique ? Par exemple, à partir de 769 degrés celsius, le fer perd son aimantation et atteint ce point. Le scientifique en question fait partie d'une célèbre famille de scientifiques dont quatre membres ont reçu un Prix Nobel.",
+      'Quel scientifique a donné son nom à la température où un matériau perd son aimantation ?',
     answer: 'Température de (Pierre) Curie',
-    options: ['Température de (Pierre) Curie', 'Nagui', 'Alain Delon', 'Spare'],
+    options: [
+      'Température de (Pierre) Curie',
+      'Température de Newton',
+      'Température de Joule',
+      'Température de Faraday',
+    ],
+    theme: 'Sciences',
   },
   {
     question: 'Quel pays constitue la majeure partie de la péninsule arabique ?',
     answer: 'Arabie Saoudite',
-    options: ['Arabie Saoudite', 'Colonel Parker', 'Vivaldi', 'Valençay'],
+    options: ['Arabie Saoudite', 'Oman', 'Yémen', 'Émirats arabes unis'],
+    theme: 'Géographie',
   },
   {
-    question:
-      'Quelle danse originaire de l\'Angola dont le nom signifie littéralement "fesses dures" a laissé son nom à un titre de 2010 réunissant Lucenzo et Don Omar ? Ce titre a également été la bande originale du film Fast and Furious 5.',
+    question: 'Quelle danse angolaise a donné son nom à un tube de 2010 de Lucenzo et Don Omar ?',
     answer: 'Kuduro',
-    options: ['Kuduro', 'Botswana', 'Shogun', 'Chine'],
+    options: ['Kuduro', 'Samba', 'Forró', 'Lambada'],
+    theme: 'Musique',
   },
   {
-    question:
-      "Quel nom français donné à l'un des Sept Nains accompagnant Blanche-Neige est également l’autre nom sous lequel est connu le crabe tourteau ?",
+    question: "Quel nom d'un des Sept Nains est aussi celui du crabe tourteau ?",
     answer: 'Dormeur',
-    options: ['Dormeur', 'Catwoman', 'Tartan', 'Gaule'],
+    options: ['Dormeur', 'Timide', 'Atchoum', 'Simplet'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      "En quelle langue le mot satori signifie-t-il conscience ? Il désigne des monstres surnaturels capables de lire dans l'esprit des gens.",
+    question: 'En quelle langue le mot satori signifie-t-il conscience ?',
     answer: 'Japonais',
-    options: ['Japonais', 'Mercredi', 'Corolle', 'Pique'],
+    options: ['Japonais', 'Chinois', 'Coréen', 'Vietnamien'],
+    theme: 'Culture Générale',
   },
   {
     question:
-      'Quel sculpteur français né en 1840, maître de Camille Claudel, est le créateur de "La Porte de l\'Enfer" dont l\'élément le plus célèbre est "Le Penseur", sculpture représentant Dante Alighieri.',
+      'Quel sculpteur français, maître de Camille Claudel, est l’auteur de "La Porte de l’Enfer" ?',
     answer: 'Rodin',
-    options: ['Rodin', 'Adolescence', 'Paul Verlaine', 'Led Zeppelin'],
+    options: ['Rodin', 'Bourdelle', 'Carpeaux', 'Maillol'],
+    theme: 'Art',
   },
   {
-    question:
-      "Quel perchiste représentant la Suède est l'actuel recordman du monde de sa discipline avec 6,30 mètres franchis ?",
+    question: 'Quel perchiste suédois détient le record du monde avec 6,30 m ?',
     answer: 'Armand Duplantis',
-    options: ['Armand Duplantis', 'Invader', 'Daniel Balavoine', 'Ernst Gräfenberg'],
+    options: ['Armand Duplantis', 'Renaud Lavillenie', 'Thiago Braz', 'Sam Kendricks'],
+    theme: 'Sport',
   },
   {
-    question:
-      'Quelle lettre est désormais le nouveau nom du réseau social Twitter après son rachat par Elon Musk ?',
+    question: 'Quelle lettre est devenue le nouveau nom de Twitter ?',
     answer: 'X',
-    options: ['X', 'Surf', 'Jazz', 'SIM'],
+    options: ['X', 'Z', 'T', 'Q'],
+    theme: 'Internet',
   },
   {
-    question:
-      'Dans quelle émission télévisée Salvatore, Sébastien et Levon ont-ils formé le groupe Il Cello pour remporter la saison en 2025 ?',
+    question: 'Dans quelle émission le groupe Il Cello a-t-il remporté la saison 2025 ?',
     answer: 'The Voice',
-    options: ['The Voice', 'Ange', 'Gmail', 'Bus'],
+    options: ['The Voice', 'Nouvelle Ecole', 'Star Academy', 'La France a un Incroyable Talent'],
+    theme: 'Séries TV',
   },
   {
-    question:
-      'Quel président français mort au Royaume-Uni fut le seul président de la deuxième République française ?',
+    question: 'Quel président fut le seul de la Deuxième République française ?',
     answer: 'Louis-Napoléon Bonaparte',
-    options: ['Louis-Napoléon Bonaparte', 'Guerre de Sécession', 'Mérule', 'Bâtonnier'],
+    options: ['Louis-Napoléon Bonaparte', 'Adolphe Thiers', 'Mac Mahon', 'Jules Grévy'],
+    theme: 'Histoire',
   },
   {
-    question:
-      'Différents des bâtonnets, quels photorécepteurs situés dans la rétine transforment le signal électromagnétique de la lumière en signal nerveux permettant la vision photopique diurne ?',
+    question: 'Quels photorécepteurs permettent la vision diurne ?',
     answer: 'Cônes',
-    options: ['Cônes', 'Olympe de Gouges', 'Sarajevo', 'Atèle'],
+    options: ['Cônes', 'Bâtonnets', 'Cornée', 'Cristallin'],
+    theme: 'Sciences',
   },
   {
-    question:
-      'Quelle montagne sur laquelle Naps veut se faire un petit pétou est le point culminant de l’île de Honshu ?',
+    question: 'Quelle montagne est le point culminant de l’île de Honshu ?',
     answer: 'Mont Fujiyama',
-    options: ['Mont Fujiyama', 'Hastings', 'Finistère', 'Lump'],
+    options: ['Mont Fujiyama', 'Mont Haku', 'Mont Tate', 'Mont Asama'],
+    theme: 'Géographie',
   },
   {
     question:
-      "Quel chanteur français est décédé dans un accident d'hélicoptère au Mali sur le rallye Paris-Dakar le 14 janvier 1986 ? Le créateur du Dakar Thierry Sabine est décédé ainsi que les trois autres personnes présentes dans l'appareil.",
+      "Quel chanteur français est décédé dans un accident d'hélicoptère au Mali sur le rallye Paris-Dakar le 14 janvier 1986 ?",
     answer: 'Daniel Balavoine',
-    options: ['Daniel Balavoine', 'The Voice', 'Chrome', 'One Direction'],
+    options: ['Daniel Balavoine', 'Michel Berger', 'Jean-Jacques Goldman', 'Serge Gainsbourg'],
+    theme: 'Musique',
   },
   {
     question:
       'Quelle couleur est également le nom donné à un fruit de la famille des rutacées ayant pour nom scientifique "Citrus sinensis" ?',
     answer: 'Orange',
-    options: ['Orange', 'La Casa de Papel', 'Hastings', 'Olympe de Gouges'],
+    options: ['Orange', 'Citron', 'Mandarine', 'Pamplemousse'],
+    theme: 'Cuisine',
   },
   {
-    question:
-      "Combien de côtés compte le panneau STOP en France ? C'est le seul panneau à compter ce nombre de côtés.",
+    question: 'Combien de côtés compte le panneau STOP en France ?',
     answer: '8',
-    options: ['8', 'Spare', 'The Turtles', 'Finistère'],
+    options: ['6', '7', '8', '10'],
+    theme: 'Culture Générale',
   },
   {
     question:
-      "Quel écrivain franco-algérien avait été incarcéré près d'une année dans son pays d'origine avant d'être gracié par le président Tebboune en novembre 2025 ? Il a été élu à l'Académie française le 29 janvier 2026.",
+      'Quel écrivain franco-algérien a été gracié par le président Tebboune en novembre 2025 et élu à l’Académie française en janvier 2026 ?',
     answer: 'Boualem Sansal',
-    options: ['Boualem Sansal', 'San Francisco', 'Epona', 'Cristiano Ronaldo'],
+    options: ['Boualem Sansal', 'Kamel Daoud', 'Yasmina Khadra', 'Tahar Ben Jelloun'],
+    theme: 'Littérature',
   },
   {
     question:
-      "Quel skieur alpin français a gagné trois titres olympiques lors des Jeux Olympiques de Grenoble en 1968 ? Il a gagné en descente, slalom et slalom géant, lui permettant d'acquérir une très grande notoriété.",
+      'Quel skieur alpin français a remporté trois titres olympiques aux JO de Grenoble en 1968 ?',
     answer: 'Jean-Claude Killy',
-    options: ['Jean-Claude Killy', 'Le Chanteur de Jazz', 'Lunule', 'Pascal Légitimus'],
+    options: ['Jean-Claude Killy', 'Luc Alphand', 'Alexis Pinturault', 'Alberto Tomba'],
+    theme: 'Sport',
   },
   {
-    question:
-      'De quelle série de jeux vidéo le héros principal est-il Geralt de Riv ? Le premier opus sorti en 2007 est suivi de ceux sous-titrés "Assassins of Kings" et "Wild Hunt".',
+    question: 'De quelle série de jeux vidéo le héros principal est-il Geralt de Riv ?',
     answer: 'The Witcher',
-    options: ['The Witcher', 'Le Chanteur de Jazz', 'Koh Lanta', 'Bus'],
+    options: ['The Witcher', 'Skyrim', 'Dragon Age', 'Dark Souls'],
+    theme: 'Jeux Vidéo',
   },
   {
     question:
-      'Quelle année durant laquelle la Palme d\'Or fut remise à Abbas Kiarostami pour "Le Goût de la Cerise" ainsi qu\'à Shōhei Imamura pour son film "L\'Anguille" est également l\'année de sortie du film "Titanic" de James Cameron ?',
+      "Quelle année est à la fois celle de la sortie du film Titanic et d'une double Palme d’Or à Cannes ?",
     answer: '1997',
-    options: ['1997', 'Rugby', 'Diogène', 'Roberto Heras'],
+    options: ['1994', '1997', '1999', '2001'],
+    theme: 'Cinéma',
   },
   {
     question:
-      'Quel était le premier prénom du premier président du Malawi nommé Banda, devenu président en 1966, 900 ans après une bataille portant son prénom ?',
+      'Quel était le premier prénom du président du Malawi Banda, devenu président en 1966 ?',
     answer: 'Hastings',
-    options: ['Hastings', 'The Shining', 'Johnny Cash', 'Rhombe'],
+    options: ['Hastings', 'Nelson', 'Robert', 'Kenneth'],
+    theme: 'Histoire',
   },
   {
     question:
-      "Quel nom dérivé du latin désignant une pierre spongieuse et friable désigne la variété de calcaire à l'aspect crayeux qui fut abondamment utilisé dans la vallée de la Loire, en Touraine et en Anjou pour la construction de châteaux durant la Renaissance ? En plus des châteaux, des bâtiments religieux comme la cathédrale de Nantes ont également utilisé cette roche.",
+      'Quelle pierre calcaire claire fut largement utilisée pour les châteaux de la Loire à la Renaissance ?',
     answer: 'Tuffeau',
-    options: ['Tuffeau', 'Gotlib', 'Cristiano Ronaldo', 'Ponte'],
+    options: ['Tuffeau', 'Granit', 'Basalte', 'Ardoise'],
+    theme: 'Art',
   },
   {
-    question:
-      'Quelle ville française du département numéro 88 abrite le Festival international de Géographie ? Cette vocation vient du fait que l’Amérique a été baptisée de ce nom du fait du planisphère de Waldseemüller, établi dans cette ville en 1507 ?',
+    question: 'Quelle ville des Vosges abrite le Festival international de Géographie ?',
     answer: 'Saint-Dié-des-Vosges',
-    options: ['Saint-Dié-des-Vosges', 'Sarajevo', 'Chimpanzés', 'Louis IX'],
+    options: ['Saint-Dié-des-Vosges', 'Épinal', 'Nancy', 'Metz'],
+    theme: 'Géographie',
   },
   {
-    question:
-      'Quelle chanteuse a réutilisé l’instrumentale d’une chanson de Kimbra sortie en 2011 avec le chanteur belgo-australien Gotye pour son titre Anxiety en 2025 ?',
+    question: "Quelle rappeuse américaine a sorti le titre 'Anxiety' en 2025 ?",
     answer: 'Doechii',
-    options: ['Doechii', 'Tennis', 'Frégate', 'Ange'],
+    options: ['Doechii', 'Cardi B', 'Nicki Minaj', 'Doja Cat'],
+    theme: 'Musique',
   },
   {
-    question:
-      'Pouvant être dit pleureur, pleureuse ou des maisons, quel champignon du genre serpula dissout les constituants du bois dans les habitations ?',
+    question: 'Quel champignon lignivore détruit les charpentes en bois dans les habitations ?',
     answer: 'Mérule',
-    options: ['Mérule', 'Place de la Concorde', 'Dharamsala', 'Pangramme'],
+    options: ['Mérule', 'Cèpe', 'Girolle', 'Morille'],
+    theme: 'Sciences',
   },
   {
-    question:
-      "Quelles sont les deux marques d'équipementiers sportifs fondées par les frères Dassler ? Adolf, surnommé Adi a fondé l'une et son frère Rudolf a fondé l'autre. Ce sont les deuxièmes et troisièmes équipementiers sportifs dans le monde. La réponse attend les DEUX MARQUES.",
+    question: 'Quelles marques ont été fondées par les frères Dassler ?',
     answer: 'Adidas et Puma',
-    options: ['Adidas et Puma', 'One Direction', 'Claude Monet', 'Bayern'],
+    options: ['Adidas et Puma', 'Nike et Reebok', 'Asics et Mizuno', 'Fila et Lotto'],
+    theme: 'Sport',
   },
   {
-    question:
-      "Dans le manga Dragon Ball, combien de boules de cristal sont présentes sur Terre ? Elles possèdent le pouvoir d'exaucer les vœux lorsqu'elles sont réunies, étant donc au centre des convoitises.",
+    question: 'Combien de boules de cristal sont présentes sur Terre dans Dragon Ball ?',
     answer: '7',
-    options: ['7', 'Rickshaw', 'Nolwenn Leroy', 'Guerre de Sécession'],
+    options: ['5', '6', '7', '9'],
+    theme: 'Séries TV',
   },
   {
-    question:
-      "Quel pilote de Formule 1 est mort le lendemain de la mort de Roland Ratzenberger, soit le 1er mai 1994 ? Il est décédé lors du Grand Prix de Saint-Marin alors que Ratzenberger était mort pendant les qualifications, sa notoriété beaucoup plus importante a presque étouffé l'accident ayant eu lieu la veille.",
+    question: 'Quel pilote de F1 est décédé le 1er mai 1994 lors du Grand Prix de Saint-Marin ?',
     answer: 'Ayrton Senna',
-    options: ['Ayrton Senna', 'Banane', 'Montréal', 'Arlequin'],
+    options: ['Ayrton Senna', 'Alain Prost', 'Michael Schumacher', 'Nigel Mansell'],
+    theme: 'Sport',
   },
   {
     question:
-      'Quel terme anglais signifiant "choc" et souvent utilisé pour désigner un affrontement est associé à "Royale" ou à "Of Clans" dans le nom de jeux vidéos développé et édité par Supercell ?',
+      "Quel mot anglais est associé aux jeux 'Royale' et 'Of Clans' développés par Supercell ?",
     answer: 'Clash',
-    options: ['Clash', 'Le Chanteur de Jazz', 'Domrémy-la-Pucelle', 'Sumo'],
+    options: ['Clash', 'Battle', 'Strike', 'War'],
+    theme: 'Jeux Vidéo',
   },
   {
-    question:
-      'Quel animal de fiction est Fievel, petit animal embarquant pour le nouveau monde parce qu’il fuit les chats ?',
+    question: "Quel animal est Fievel dans le film d’animation 'Fievel et le Nouveau Monde' ?",
     answer: 'Souris',
-    options: ['Souris', 'Pauline Ferrand-Prévot', 'Nantes', 'Lump'],
+    options: ['Souris', 'Lapin', 'Chat', 'Écureuil'],
+    theme: 'Cinéma',
   },
   {
-    question:
-      "Quelle bataille souvent appelée Victoire de la Belle-Alliance dans les pays germaniques voit la défaite de Napoléon Ier le 18 juin 1815 ? Il s'agit de la dernière grande défaite de Napoléon Ier, au cours des Cent Jours.",
+    question: 'Quelle bataille marque la défaite finale de Napoléon Ier en 1815 ?',
     answer: 'Waterloo',
-    options: ['Waterloo', 'Palindrome', 'Ibra', 'Mazarin'],
+    options: ['Waterloo', 'Austerlitz', 'Iéna', 'Wagram'],
+    theme: 'Histoire',
   },
   {
-    question: 'Quelle lettre désigne également la vitamine appelée acide ascorbique ?',
+    question: 'Quelle lettre désigne la vitamine appelée acide ascorbique ?',
     answer: 'C',
-    options: ['C', 'Sophie Adenot', 'ScoobyDoo', 'Carlito'],
+    options: ['A', 'B', 'C', 'D'],
+    theme: 'Sciences',
   },
   {
-    question:
-      'Quel pays culminant au mont Titan, ou Monte Titano en italien, est enclavé dans l’Italie ?',
+    question: 'Quel pays enclavé dans l’Italie culmine au mont Titano ?',
     answer: 'Saint-Marin',
-    options: ['Saint-Marin', 'Blockchain', 'K2', 'Marc-Antoine Charpentier'],
+    options: ['Saint-Marin', 'Andorre', 'Liechtenstein', 'Monaco'],
+    theme: 'Géographie',
   },
   {
     question:
-      'Quel groupe de musique a connu le succès notamment avec les titres "Don’t look back in anger" ainsi que "Wonderwall" ? Originaire de Manchester, le groupe est notamment composé des frères Liam et Noah Gallagher, séparés en 2009, ils ont annoncé se reformer en 2024.',
+      "Quel groupe de Manchester est connu pour 'Wonderwall' et 'Don’t Look Back in Anger' ?",
     answer: 'Oasis',
-    options: ['Oasis', 'Gmail', 'Echo', 'Bénarès'],
+    options: ['Oasis', 'Blur', 'Radiohead', 'The Verve'],
+    theme: 'Musique',
   },
   {
-    question:
-      'Quelle espèce animale au centre du film "Deux Frères" de Jean-Jacques Annaud sont les plus grands félins du monde lorsqu’ils sont dits blancs mais peuvent aussi être du Bengale ?',
+    question: "Quelle espèce animale est au centre du film 'Deux Frères' ?",
     answer: 'Tigre',
-    options: ['Tigre', 'Chameau', 'Kevlar', 'Bus'],
+    options: ['Tigre', 'Lion', 'Panthère', 'Guépard'],
+    theme: 'Animaux',
   },
   {
     question:
-      'Quel jeu est constitué de deux hémisphères aplatis, réunis par un axe autour duquel s’enroule une ficelle dont l’une des extrémités s’attache au doigt ou est retenue par la main, le but étant de le lancer et de le faire revenir dans un va-et-vient continu ?',
+      'Quel jeu consiste à lancer un objet relié par une ficelle pour le faire revenir dans la main ?',
     answer: 'Yo-yo',
-    options: ['Yo-yo', 'Sergio Parisse', 'Skyr', 'Jacaranda'],
+    options: ['Yo-yo', 'Diabolo', 'Toupie', 'Cerf-volant'],
+    theme: 'Autres',
   },
   {
-    question:
-      'Au cours du Hajj et de la Omra, autour de quel édifice recouvert par la kiswa se pratique le tawaf ?',
+    question: 'Autour de quel édifice se pratique le tawaf lors du Hajj ?',
     answer: 'Kaaba',
-    options: ['Kaaba', 'Jason', 'Popcorn', 'Jazz'],
+    options: ['Kaaba', 'Mosquée Al-Aqsa', 'Mosquée du Prophète', 'Dôme du Rocher'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      "Quel numéro est associé au pilote de moto Valentino Rossi ? Il l'a choisi comme numéro définitif au début de sa carrière et a même fondé une écurie actuellement en MotoGP dont le nom est constitué de ses initiales (VR) suivies de ce numéro.",
+    question: 'Quel numéro est associé au pilote de moto Valentino Rossi ?',
     answer: '46',
-    options: ['46', 'Mer de la Tranquillité', 'Pyrénées-Atlantiques', 'Boualem Sansal'],
+    options: ['46', '93', '99', '27'],
+    theme: 'Sport',
   },
   {
     question:
-      'Créée par Hiroji Kiyotake, quel personnage féminin pouvant être avec ou sans armure apparaît dans la saga de jeux vidéos Metroid ? Cette chasseuse de primes peut également prendre la forme d\'une boule, la "morphing ball".',
+      "Quel personnage féminin apparaît dans la saga Metroid et peut se transformer en 'morphing ball' ?",
     answer: 'Samus',
-    options: ['Samus', 'Bar', 'Russe', 'Iron Man'],
+    options: ['Samus', 'Lara Croft', 'Bayonetta', 'Zelda'],
+    theme: 'Jeux Vidéo',
   },
   {
-    question:
-      'Quel personnage fut créé pour remplacer Oswald, le lapin chanceux ? Ledit personnage est apparu pour la première fois dans le court-métrage "Plane Crazy" en 1928.',
+    question: 'Quel personnage a été créé pour remplacer Oswald le lapin chanceux en 1928 ?',
     answer: 'Mickey Mouse',
-    options: ['Mickey Mouse', 'Geta', 'Pompon', 'Hannah Montana'],
+    options: ['Mickey Mouse', 'Donald Duck', 'Dingo', 'Bugs Bunny'],
+    theme: 'Cinéma',
   },
   {
-    question:
-      "S'étant illustré durant la Guerre d'Hiver et surnommé \"La Mort Blanche\", de QUELLE NATIONALITÉ était Simo Häyhä, considéré comme le meilleur tireur d'élite de tous les temps ? On lui attribue entre 500 et 700 victimes dans les rangs de l'Armée soviétique.",
+    question: "De quelle nationalité était le sniper Simo Häyhä, surnommé 'La Mort Blanche' ?",
     answer: 'Finlandaise',
-    options: ['Finlandaise', 'Andy Jassy', 'Linkin Park', 'Canberra'],
+    options: ['Finlandaise', 'Suédoise', 'Russe', 'Norvégienne'],
+    theme: 'Histoire',
   },
   {
-    question:
-      'Sous quel nom la firme Pfizer commercialise-t-elle le citrate de sildénafil ? Ce produit découvert en 1979 a été nommé en contractant le mot latin signifiant "énergie" et le nom de célèbres chutes d\'eau.',
+    question: 'Sous quel nom Pfizer commercialise-t-il le citrate de sildénafil ?',
     answer: 'Viagra',
-    options: ['Viagra', 'Inde', 'Ange', 'World of Warcraft'],
+    options: ['Viagra', 'Cialis', 'Levitra', 'Prozac'],
+    theme: 'Sciences',
   },
   {
-    question:
-      'Quelle capitale porte un nom signifiant "lieu de rassemblement" en ngunnawal, la langue locale ? La ville a été créée par le couple d\'architectes Walter Burley Griffin et Marion Mahony Griffin.',
+    question: "Quelle capitale australienne signifie 'lieu de rassemblement' en langue ngunnawal ?",
     answer: 'Canberra',
-    options: ['Canberra', 'Fado', 'Place de la Concorde', 'En souris'],
+    options: ['Canberra', 'Sydney', 'Melbourne', 'Perth'],
+    theme: 'Géographie',
   },
   {
-    question:
-      "Quel nom porte l’instrument dont l’ancêtre serait le symplephoxon, ressemblant à un harmonica auquel on a ajouté un clavier ? L'instrument, popularisé entre autres par le musicien de reggae Augustus Pablo, est généralement désigné par antonomase d'une marque déposée par Hohner.",
+    question: 'Quel instrument à clavier proche de l’harmonica est popularisé par Augustus Pablo ?',
     answer: 'Melodica',
-    options: ['Melodica', 'Tuffeau', 'Boualem Sansal', 'Hannah Montana'],
+    options: ['Melodica', 'Accordéon', 'Clavinet', 'Harmonium'],
+    theme: 'Musique',
   },
   {
-    question:
-      "Également appelée Merveille-du-Pérou, quelle plante de la famille des nyctaginacées tire son nom du fait que ses fleurs ne s’épanouissent que le soir venu ? Le 16 vendémiaire du calendrier républicain était nommé en l'honneur de cette plante.",
+    question: "Quelle plante appelée aussi 'Merveille-du-Pérou' fleurit uniquement le soir ?",
     answer: 'Belle-de-nuit',
-    options: ['Belle-de-nuit', 'Gorfou', 'Talweg', 'Fromage'],
+    options: ['Belle-de-nuit', 'Primevère', 'Camélia', 'Lys'],
+    theme: 'Animaux',
   },
   {
     question:
-      'Quel terme venant du japonais signifiant "véhicule à propulsion humaine" désigne le véhicule bangladais à trois roues utilisé pour le transport de personnes ? Lorsque ces véhicules ont des moteurs, ils sont souvent désignés par le terme de tuk-tuk.',
+      'Quel véhicule à trois roues d’origine asiatique est aussi appelé tuk-tuk lorsqu’il est motorisé ?',
     answer: 'Rickshaw',
-    options: ['Rickshaw', 'Charlie Hebdo', 'Jaune', 'Shogun'],
+    options: ['Rickshaw', 'Pousse-pousse', 'Calèche', 'Gondole'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      'Quelle couleur est associée au Brésil dans le titre d’un roman de Jean-Christophe Rufin et au Noir dans un roman de Stendhal ?',
+    question: 'Quelle couleur est associée au Brésil chez Rufin et au Noir chez Stendhal ?',
     answer: 'Rouge',
-    options: ['Rouge', 'Staccato', 'Chine', 'Chimpanzés'],
+    options: ['Rouge', 'Vert', 'Jaune', 'Bleu'],
+    theme: 'Littérature',
   },
   {
-    question:
-      "Quelle épreuve olympique créée en 1896 s'inspire du nom de la bataille datant de 490 avant notre ère pour laquelle l'hémérodrome Philippidès aurait prévenu la ville d'Athènes de la victoire des troupes de Miltiade ?",
+    question: 'Quelle épreuve olympique s’inspire de la bataille de 490 av. J.-C. ?',
     answer: 'Marathon',
-    options: ['Marathon', 'Magnum', 'Måneskin', 'Pastèque'],
+    options: ['Marathon', 'Décathlon', 'Triathlon', 'Pentathlon'],
+    theme: 'Sport',
   },
   {
     question:
-      'Quel concept clé du bouddhisme que l’on traduit par amélioration continue a laissé son nom au documentaire d’Inoxtag retraçant sa montée de l’Everest ?',
+      'Quel concept japonais signifiant amélioration continue a donné son nom au documentaire d’Inoxtag ?',
     answer: 'Kaizen',
-    options: ['Kaizen', 'Newton', 'Charlie Hebdo', 'Pique'],
+    options: ['Kaizen', 'Zen', 'Bushido', 'Satori'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      'Quel bâtiment associé à Hilltop dans le titre d’un dessin animé s’appelle Princeton-Plainsboro dans la série Docteur House ?',
+    question: "Quel bâtiment s'appelle Princeton-Plainsboro dans la série Docteur House ?",
     answer: 'Hôpital',
-    options: ['Hôpital', 'Daniel Balavoine', 'Fromage', 'Palindrome'],
+    options: ['Hôpital', 'Université', 'Tribunal', 'Laboratoire'],
+    theme: 'Séries TV',
   },
   {
-    question:
-      'Quel nom le pharaon Aménophis IV a-t-il choisi comme nom de règne aux côtés de son épouse Néfertiti ? Ce 10e pharaon de la XVIIIe dynastie a régné entre 1355/53 et 1338/37 avant notre ère.',
+    question: 'Quel nom de règne choisit le pharaon Aménophis IV ?',
     answer: 'Akhénaton',
-    options: ['Akhénaton', 'Tom Nook', '46', 'Iran'],
+    options: ['Akhénaton', 'Ramsès II', 'Toutânkhamon', 'Khéops'],
+    theme: 'Histoire',
   },
   {
-    question:
-      'Quel scientifique ayant laissé son nom au prix récompensant les morts les plus bêtes a publié en 1859, "De l’origine des espèces" ? Il a développé par ses travaux une nouvelle théorie de l\'évolution.',
+    question: "Quel scientifique a publié 'De l’origine des espèces' en 1859 ?",
     answer: 'Darwin',
-    options: ['Darwin', 'Haul', 'Geta', 'Scroller'],
+    options: ['Darwin', 'Mendel', 'Pasteur', 'Lamarck'],
+    theme: 'Sciences',
   },
   {
-    question:
-      "Originellement connue sous le nom de Bytown, quel est le nom actuel de la capitale du Canada ? Cette ville de plus d'1 million d'habitants n'est que la quatrième plus grande ville de son pays.",
+    question: 'Quel est le nom actuel de la capitale du Canada, anciennement appelée Bytown ?',
     answer: 'Ottawa',
-    options: ['Ottawa', 'Tom Nook', 'Botswana', '1984'],
+    options: ['Ottawa', 'Toronto', 'Montréal', 'Vancouver'],
+    theme: 'Géographie',
   },
   {
-    question:
-      'Parfois accompagnée des Black Devotion, quelle chanteuse française est l’interprète des chansons "Hôtel de la plage", "Spacer" et "L’école est finie" ? Née en 1945, elle a pour véritable identité Anny Chancel.',
+    question: 'Quelle chanteuse française née Anny Chancel est connue sous le nom de Sheila ?',
     answer: 'Sheila',
-    options: ['Sheila', '7', 'Korrigan', 'Acide acétique'],
+    options: ['Sheila', 'Sylvie Vartan', 'France Gall', 'Françoise Hardy'],
+    theme: 'Musique',
   },
   {
-    question:
-      'Quel petit chien peut-être dit frisé, havanais, bolonais ou maltais ? Ces petits chiens de compagnie sont blancs et ont un pelage soyeux.',
+    question: 'Quel petit chien peut être frisé, havanais, bolonais ou maltais ?',
     answer: 'Bichon',
-    options: ['Bichon', 'Handball', 'Microsoft', 'Nakamura'],
+    options: ['Bichon', 'Caniche', 'Shih Tzu', 'Coton de Tuléar'],
+    theme: 'Animaux',
   },
   {
-    question:
-      'Quel type de brioche vendéenne possède une Indication géographique protégée depuis 2013 ? Elle est de forme ovale, semblable à une brioche dont la mie est plus serrée.',
+    question: 'Quelle brioche vendéenne bénéficie d’une IGP depuis 2013 ?',
     answer: 'Gâche',
-    options: ['Gâche', 'A7', 'Tokyo Drift', 'Led Zeppelin'],
+    options: ['Gâche', 'Brioche tressée', 'Fougasse', 'Panettone'],
+    theme: 'Cuisine',
   },
   {
-    question:
-      'Quel surnom Anne Frank donne-t-elle à son amie imaginaire, à qui elle s’adresse dans son journal ?',
+    question: 'Quel surnom Anne Frank donne-t-elle à son amie imaginaire dans son journal ?',
     answer: 'Kitty',
-    options: ['Kitty', 'Nakamura', 'Olympe de Gouges', 'Bar'],
+    options: ['Kitty', 'Anna', 'Lies', 'Margot'],
+    theme: 'Littérature',
   },
   {
-    question:
-      'En 1851, quel était le nom du tout premier voilier à avoir remporté l’America’s Cup ?',
+    question: 'Quel voilier a remporté la première America’s Cup en 1851 ?',
     answer: 'L’America',
-    options: ['L’America', 'Fun', 'Bichon', 'Koh Lanta'],
+    options: ['L’America', 'Endeavour', 'Shamrock', 'Britannia'],
+    theme: 'Sport',
   },
   {
-    question:
-      'Désignés par les lettres I, O, T, L, J, Z et S, quel nom générique portent les pièces du jeu Tetris ?',
+    question: 'Comment appelle-t-on les pièces du jeu Tetris (I, O, T, L, J, Z, S) ?',
     answer: 'Tétrimino',
-    options: ['Tétrimino', 'Massive Attack', 'Samothrace', 'Beowulf'],
+    options: ['Tétrimino', 'Bloc', 'Pixel', 'Polymino'],
+    theme: 'Jeux Vidéo',
   },
   {
-    question:
-      'Quelle série a pour préquel "House of the Dragon", racontant l’histoire de la maison Targaryen 200 ans avant les événements racontés dans la série originale ?',
+    question: 'Quelle série est le préquel de House of the Dragon ?',
     answer: 'Game of Thrones',
-    options: ['Game of Thrones', 'X', 'Waterloo', 'L’America'],
+    options: ['Game of Thrones', 'The Witcher', 'Vikings', 'Rome'],
+    theme: 'Séries TV',
   },
   {
     question:
-      'Quel empereur romain, ayant régné en 211, fils de Septime Sévère et ayant partagé le trône avec son frère Caracalla avant d’être tué porte le même nom que des chaussures traditionnelles japonaises ?',
+      'Quel empereur romain porte le même nom que des sandales japonaises traditionnelles ?',
     answer: 'Geta',
-    options: ['Geta', 'Lusitanie', 'Cockpit', 'Skyrim'],
+    options: ['Geta', 'Néron', 'Commode', 'Hadrien'],
+    theme: 'Histoire',
   },
   {
     question:
-      "Quelle fibre nommée poly-paraphénylène téréphtalamide et utilisée pour la protection fut inventée par Stéphanie Kwolek ? Ce polymère fut découvert en 1964 lorsqu'elle travaillait pour DuPont de Nemours.",
+      'Quelle fibre synthétique inventée par Stéphanie Kwolek est utilisée dans les gilets pare-balles ?',
     answer: 'Kevlar',
-    options: ['Kevlar', 'Flottantes', 'Carrefour', 'Gardon'],
+    options: ['Kevlar', 'Nylon', 'Polyester', 'Téflon'],
+    theme: 'Sciences',
   },
   {
-    question: 'Quel est le nom du cap le plus septentrional d’Europe ?',
+    question: 'Quel est le cap le plus septentrional d’Europe ?',
     answer: 'Cap Nord',
-    options: ['Cap Nord', 'Jaune', 'Colombe', 'Jean-Claude Killy'],
+    options: ['Cap Nord', 'Cap Finisterre', 'Cap Matapan', 'Cap Roca'],
+    theme: 'Géographie',
   },
   {
-    question:
-      'Quel chef d’orchestre hongrois est, après Beyoncé, le deuxième a avoir reçu le plus de Grammy Awards ? Il en a reçu 32 sur ses 74 nominations.',
+    question: 'Quel chef d’orchestre hongrois détient 32 Grammy Awards ?',
     answer: 'Georg Solti',
-    options: ['Georg Solti', 'HPI', 'Shar Pei', 'Nectarine'],
+    options: ['Georg Solti', 'Herbert von Karajan', 'Leonard Bernstein', 'Claudio Abbado'],
+    theme: 'Musique',
   },
   {
     question:
-      'Quel substantif féminin désigne la partie en forme de coupe formant la partie principale du corps des méduses ?',
+      'Quel substantif féminin désigne la partie en forme de coupe constituant le corps principal des méduses ?',
     answer: 'Ombrelle',
-    options: ['Ombrelle', 'Souris', 'Willie Wonka', 'Avion'],
+    options: ['Ombrelle', 'Tentacule', 'Polype', 'Cloche'],
+    theme: 'Sciences',
   },
   {
-    question:
-      "Quel nom porte en France, le coordinateur des avocats inscrits au barreau ? C'est aussi le représentant des avocats à l'égard des autorités civiles ou judiciaires.",
+    question: 'Comment appelle-t-on en France le coordinateur des avocats inscrits au barreau ?',
     answer: 'Bâtonnier',
-    options: ['Bâtonnier', 'Colombe', 'Skyr', 'Fromage'],
+    options: ['Bâtonnier', 'Procureur', 'Greffier', 'Avoué'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      'Ayant rédigé un "Discours sur le colonialisme" en 1950, quel théoricien et homme politique martiniquais fut une figure de proue de la négritude ? Il fut également maire de Fort-de-France de 1945 à 2001.',
+    question: "Quel auteur martiniquais a rédigé 'Discours sur le colonialisme' en 1950 ?",
     answer: 'Aimé Césaire',
-    options: ['Aimé Césaire', 'Johnny Cash', 'Dormeur', 'Top Gun'],
+    options: ['Aimé Césaire', 'Frantz Fanon', 'Léopold Sédar Senghor', 'Édouard Glissant'],
+    theme: 'Littérature',
   },
   {
-    question:
-      'Quel sprinter jamaïcain est le recordman du monde du 100m en 9"58 et du 200m en 19"19 ? Il détient ces records depuis les mondiaux d\'athlétisme de Berlin en 2009.',
+    question: 'Quel sprinter jamaïcain détient le record du monde du 100 m en 9"58 ?',
     answer: 'Usain Bolt',
-    options: ['Usain Bolt', 'Ibra', 'Inde', 'Cénacle'],
+    options: ['Usain Bolt', 'Yohan Blake', 'Justin Gatlin', 'Tyson Gay'],
+    theme: 'Sport',
   },
   {
-    question:
-      'Prenant place dans le monde imaginaire d’Azeroth, quel MMORPG sorti le 23 novembre 2004 est abrégé par les lettres WoW ?',
+    question: 'Quel MMORPG sorti en 2004 est abrégé par les lettres WoW ?',
     answer: 'World of Warcraft',
-    options: ['World of Warcraft', 'Gâche', 'Hallux', 'SIM'],
+    options: ['World of Warcraft', 'Guild Wars', 'Elder Scrolls Online', 'Final Fantasy XIV'],
+    theme: 'Jeux Vidéo',
   },
   {
     question:
-      'Quel jeu télévisé de lettres sur le principe du Mastermind fut présenté par Thierry Beccaro pendant près de trois décennies ?',
+      'Quel jeu télévisé de lettres présenté par Thierry Beccaro reposait sur un principe proche du Mastermind ?',
     answer: 'Motus',
-    options: ['Motus', 'Blanc', 'Pascal Légitimus', 'Bulgarie'],
+    options: ['Motus', 'Des chiffres et des lettres', 'Slam', 'Questions pour un champion'],
+    theme: 'Culture Générale',
   },
   {
     question:
-      'Associé à Chilly, dans le nom d’une ville de l’Essonne, quel cardinal a exercé le pouvoir après la mort de Louis XIII aux côtés d’Anne d’Autriche ?',
+      'Quel cardinal a exercé le pouvoir aux côtés d’Anne d’Autriche après la mort de Louis XIII ?',
     answer: 'Mazarin',
-    options: ['Mazarin', '46', 'Georges Méliès', 'Kirigami'],
+    options: ['Mazarin', 'Richelieu', 'Colbert', 'Sully'],
+    theme: 'Histoire',
   },
   {
-    question:
-      "Quel nom, anciennement dénommé airain, est donné à l'alliage de cuivre et d'étain ? On utilise très souvent ce matériau dans la sculpture.",
+    question: 'Quel nom porte l’alliage de cuivre et d’étain autrefois appelé airain ?',
     answer: 'Bronze',
-    options: ['Bronze', 'Nuremberg', 'Souris', 'Phare de Cordouan'],
+    options: ['Bronze', 'Laiton', 'Acier', 'Étain'],
+    theme: 'Sciences',
   },
   {
     question:
-      'De quel département français les villes de Châteaulin, Morlaix et Brest sont-elles les sous-préfectures ?',
+      'Dans quel département se situent les sous-préfectures de Châteaulin, Morlaix et Brest ?',
     answer: 'Finistère',
-    options: ['Finistère', 'The Witcher', 'Popcorn', 'Claude François'],
+    options: ['Finistère', 'Côtes-d’Armor', 'Morbihan', 'Ille-et-Vilaine'],
+    theme: 'Géographie',
   },
   {
-    question:
-      'Quel boys-band ayant interprété le titre "What makes you beautiful" à la cérémonie de clôture des Jeux Olympiques de 2012 comprenait Liam Payne, Zayn Malik, Harry Styles, Niall Horan et Louis Tomlinson ?',
+    question: "Quel boys-band interprète 'What Makes You Beautiful' ?",
     answer: 'One Direction',
-    options: ['One Direction', 'Ciao Kombucha', 'Bunker', 'Palindrome'],
+    options: ['One Direction', 'Backstreet Boys', 'NSYNC', 'Take That'],
+    theme: 'Musique',
   },
   {
     question:
-      'Quelle fleur portant un nom d\'origine turque signifiant "turban" est l\'un des symboles des Pays-Bas, où elle est majoritairement cultivée ?',
+      "Quelle fleur symbole des Pays-Bas porte un nom d’origine turque signifiant 'turban' ?",
     answer: 'Tulipe',
-    options: ['Tulipe', 'Columbine', 'Diogène', 'Carlito'],
+    options: ['Tulipe', 'Jacinthe', 'Narcisse', 'Pivoine'],
+    theme: 'Géographie',
   },
   {
-    question:
-      'Quelle spécialité culinaire constituée d’alvéoles juxtaposées peut être de Liège ou de Bruxelles ?',
+    question: 'Quelle spécialité belge peut être de Liège ou de Bruxelles ?',
     answer: 'Gaufre',
-    options: ['Gaufre', 'Koh Lanta', 'Dormeur', 'Etrier'],
+    options: ['Gaufre', 'Crêpe', 'Blinis', 'Pancake'],
+    theme: 'Cuisine',
   },
   {
-    question:
-      "Quel poème épique rédigé en vieil anglais met en scène le monstre Grendel terrorisant les danois chaque nuit ? L'auteur de cette œuvre, le plus long texte poétique germanique du haut Moyen Âge connu, reste anonyme.",
+    question: 'Quel poème épique en vieil anglais met en scène le monstre Grendel ?',
     answer: 'Beowulf',
-    options: ['Beowulf', 'Géorgie', 'Corolle', 'Patrick Battiston'],
+    options: ['Beowulf', 'L’Edda', 'La Chanson de Roland', 'Nibelungenlied'],
+    theme: 'Littérature',
   },
   {
-    question:
-      'Quel rugbyman né en 1983 est le plus capé de la sélection italienne avec 142 sélections, en parallèle de ses 14 ans passés au Stade Français ? Ce troisième-ligne est également le joueur avec le plus de matchs du Tournoi des Six Nations joués (69).',
+    question: 'Quel rugbyman italien est le plus capé de la sélection avec 142 sélections ?',
     answer: 'Sergio Parisse',
-    options: ['Sergio Parisse', 'Chine', 'PSP', 'Chirac'],
+    options: ['Sergio Parisse', 'Martin Castrogiovanni', 'Jonny Wilkinson', 'Antoine Dupont'],
+    theme: 'Sport',
   },
   {
-    question:
-      "Quel navigateur internet développé en 2015 par Jon Stephenson von Tetzchner porte le nom d'un célèbre musicien surnommé le Prêtre roux ?",
+    question: "Quel navigateur internet porte le nom du compositeur surnommé le 'Prêtre roux' ?",
     answer: 'Vivaldi',
-    options: ['Vivaldi', 'Inde', 'Tigre', 'Ayrton Senna'],
+    options: ['Vivaldi', 'Opera', 'Brave', 'Edge'],
+    theme: 'Internet',
   },
   {
-    question:
-      "Quel film ayant pour acteurs principaux May McAvoy et Al Jolson a été réalisé par Alan Crosland en 1927 ? Il est considéré comme étant le premier film parlant de l'Histoire.",
+    question: 'Quel film de 1927 est considéré comme le premier film parlant de l’histoire ?',
     answer: 'Le Chanteur de Jazz',
-    options: ['Le Chanteur de Jazz', 'Bar', 'Paul Verlaine', 'Gotaga'],
+    options: ['Le Chanteur de Jazz', 'Metropolis', 'Nosferatu', 'Citizen Kane'],
+    theme: 'Cinéma',
   },
   {
-    question:
-      "Quelle plante de la famille des oléacées, pouvant être blanc ou rose notamment est associée au surnom de la révolution de 2010/2011 en Tunisie ? Au bout de ces quatre semaines de manifestations, le président depuis Zine el-Abidine Ben Ali a quitté le pouvoir qu'il tenait depuis 1987.",
-    answer: 'La Révolution du jasmin',
-    options: ['La Révolution du jasmin', '1997', 'Cristiano Ronaldo', 'Clair Obscur'],
+    question: 'Quelle plante a donné son nom à la révolution tunisienne de 2010-2011 ?',
+    answer: 'Jasmin',
+    options: ['Jasmin', 'Olivier', 'Palmier', 'Laurier'],
+    theme: 'Histoire',
   },
   {
-    question: 'Quel chercheur allemand ayant inventé le stérilet a laissé son nom au point G ?',
+    question: 'Quel chercheur allemand a donné son nom au point G ?',
     answer: 'Ernst Gräfenberg',
-    options: ['Ernst Gräfenberg', 'Akira Kurosawa', 'Triangulaire', '11'],
+    options: ['Ernst Gräfenberg', 'Sigmund Freud', 'Alfred Kinsey', 'Wilhelm Reich'],
+    theme: 'Sciences',
   },
   {
-    question:
-      'Quel pays possède un drapeau appelé le Tiranga, nom signifiant le tricolore, avec au centre une roue appelée chakra d’Ashoka ?',
+    question: 'Quel pays possède un drapeau appelé Tiranga ?',
     answer: 'Inde',
-    options: ['Inde', 'Linkin Park', 'SpiderMan', 'Ayrton Senna'],
+    options: ['Inde', 'Népal', 'Sri Lanka', 'Bangladesh'],
+    theme: 'Géographie',
   },
   {
-    question:
-      'Quel groupe dont la chanteuse actuelle est Emily Armstrong fut mené jusqu’à son suicide par Chester Bennington ? Ils ont sorti l\'album "From Zero" en novembre 2024, le premier depuis la mort de l\'ancien chanteur.',
+    question: 'Quel groupe fut mené par Chester Bennington jusqu’en 2017 ?',
     answer: 'Linkin Park',
-    options: ['Linkin Park', 'Flottantes', 'Boccia', 'Stéphane'],
+    options: ['Linkin Park', 'Green Day', 'Sum 41', 'Muse'],
+    theme: 'Musique',
   },
   {
-    question:
-      "Quelle race de chat originaire de Thaïlande et caractérisée par des yeux d'un bleu profond, porte un nom évoquant l'ancien nom de son pays d'origine ?",
+    question: 'Quelle race de chat originaire de Thaïlande possède des yeux bleu profond ?',
     answer: 'Siamois',
-    options: ['Siamois', 'Gotlib', 'rue Morgue', 'Steam'],
+    options: ['Siamois', 'Persan', 'Maine Coon', 'Bengal'],
+    theme: 'Animaux',
   },
   {
-    question:
-      'Quel nom de cinq lettres désigne à la fois un ferme-porte automatique et le métier de Spirou dans la bande dessinée ?',
+    question: 'Quel mot de cinq lettres désigne à la fois un ferme-porte et le métier de Spirou ?',
     answer: 'Groom',
-    options: ['Groom', 'Nagui', 'Watt', 'Sophie Adenot'],
+    options: ['Groom', 'Page', 'Huissier', 'Portier'],
+    theme: 'Culture Générale',
   },
   {
     question:
-      'Quel personnage féminin créé par Bill Finger et Bob Kane ayant pour véritable identité celle de Selina Kyle est le principal personnage féminin de l’univers de Batman ?',
+      'Quel personnage féminin de l’univers de Batman a pour véritable identité Selina Kyle ?',
     answer: 'Catwoman',
-    options: ['Catwoman', 'Couleuvrine', 'Barbie', 'Amiante'],
+    options: ['Catwoman', 'Batgirl', 'Harley Quinn', 'Poison Ivy'],
+    theme: 'Séries TV',
   },
   {
-    question:
-      'Quel adjectif de nationalité qualifie les assiettes dans l’art du cirque également appelé assiette tournante ?',
-    answer: 'Assiettes chinoises',
-    options: ['Assiettes chinoises', 'Globe Trotter', 'San Francisco', 'Led Zeppelin'],
+    question: 'Quel adjectif qualifie les assiettes tournantes dans l’art du cirque ?',
+    answer: 'Chinoises',
+    options: ['Chinoises', 'Italiennes', 'Japonaises', 'Mexicaines'],
+    theme: 'Autres',
   },
   {
-    question:
-      'Quelle sigle de trois lettres désigne communément la console de jeu sortie en Europe en septembre 2005 et développée par Sony dont le nom est PlayStation Portable ?',
+    question: 'Quel sigle désigne la console PlayStation Portable ?',
     answer: 'PSP',
-    options: ['PSP', 'World of Warcraft', 'Daft Punk', 'C'],
+    options: ['PSP', 'PSV', 'NDS', 'GBA'],
+    theme: 'Jeux Vidéo',
   },
   {
-    question:
-      "Quel est le seul membre des Inconnus n'ayant pas coréalisé le film \"Les Trois Frères\" en 1995 ? Les deux autres membres du trio étaient coréalisateurs mais lui n'a qu'un rôle d'acteur dans le film.",
+    question: "Quel membre des Inconnus n’a pas coréalisé 'Les Trois Frères' ?",
     answer: 'Pascal Légitimus',
-    options: ['Pascal Légitimus', 'Tachkent', 'Arabie Saoudite', 'Ionesco'],
+    options: ['Pascal Légitimus', 'Didier Bourdon', 'Bernard Campan', 'Élie Semoun'],
+    theme: 'Cinéma',
   },
   {
     question:
-      'Quelle statue thérianthrope de 73 mètres de long fut construite vers 2500 avant notre ère en Égypte ?',
+      'Quelle statue thérianthrope de 73 mètres de long fut construite vers 2500 av. J.-C. en Égypte ?',
     answer: 'Sphinx',
-    options: ['Sphinx', 'Chine', 'Bayern', 'Fromage'],
+    options: ['Sphinx', 'Colosse de Memnon', 'Statue de Ramsès II', 'Obélisque de Louxor'],
+    theme: 'Histoire',
   },
   {
-    question:
-      "Quel nom tiré du latin désigne également le gros orteil ? Il peut être dit varus ou valgus s'il subit une déviation.",
+    question: 'Quel nom tiré du latin désigne le gros orteil ?',
     answer: 'Hallux',
-    options: ['Hallux', 'Tom Nook', 'Assiettes chinoises', '46'],
+    options: ['Hallux', 'Phalange', 'Tibia', 'Rotule'],
+    theme: 'Sciences',
   },
   {
     question: 'Quelle couleur est commune aux drapeaux du Bénin, du Brésil et de la Belgique ?',
     answer: 'Jaune',
-    options: ['Jaune', 'Jean-Claude Killy', 'Bar', 'Liberté'],
+    options: ['Jaune', 'Vert', 'Rouge', 'Noir'],
+    theme: 'Géographie',
   },
   {
-    question:
-      'Quel modèle associé à 92i dans un titre de Booba est commercialisé par la marque de voitures Bugatti ?',
+    question: 'Quel modèle de Bugatti est associé à 92i dans un titre de Booba ?',
     answer: 'Veyron',
-    options: ['Veyron', 'Led Zeppelin', 'Shogun', 'Blind Test'],
+    options: ['Veyron', 'Chiron', 'Divo', 'Mistral'],
+    theme: 'Musique',
   },
   {
-    question:
-      'Quel animal, symbole de la ville de Béziers, est un représentant de la famille des camélidés reconnaissable à ses deux bosses ?',
+    question: 'Quel animal à deux bosses est symbole de la ville de Béziers ?',
     answer: 'Chameau',
-    options: ['Chameau', 'Cockpit', 'Baguette de pain', 'Autruche'],
+    options: ['Chameau', 'Dromadaire', 'Lama', 'Alpaga'],
+    theme: 'Animaux',
   },
   {
-    question:
-      'Quelle lettre grecque ayant laissé son nom à une marque de montre est la dernière de l’alphabet grec, par opposition à l’alpha ?',
+    question: 'Quelle dernière lettre de l’alphabet grec a donné son nom à une marque horlogère ?',
     answer: 'Omega',
-    options: ['Omega', 'Pétrichor', 'Mozart', 'Newton'],
+    options: ['Omega', 'Sigma', 'Delta', 'Theta'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      'Dans quelle rue y a-t-il eu un double assassinat selon le titre d’une nouvelle d’Edgar Allan Poe ?',
+    question: 'Dans quelle rue Poe situe-t-il un double assassinat ?',
     answer: 'rue Morgue',
-    options: ['rue Morgue', '7', 'Benito Mussolini', 'Sacramento'],
+    options: ['rue Morgue', 'Baker Street', 'Fleet Street', 'rue Broca'],
+    theme: 'Littérature',
   },
   {
-    question:
-      "Quel sportif français possède, avec 6 titres olympiques, le record de médailles d'or aux Jeux Olympiques pour un français, toutes disciplines confondues ?",
+    question: 'Quel sportif français détient 6 titres olympiques en biathlon ?',
     answer: 'Martin Fourcade',
-    options: ['Martin Fourcade', 'Viagra', 'Finlandaise', 'Sodium'],
+    options: ['Martin Fourcade', 'Teddy Riner', 'Tony Estanguet', 'Alain Bernard'],
+    theme: 'Sport',
   },
   {
-    question:
-      'Quelle technologie désignée par un nom anglais désigne la méthode de stockage et de transmission d’informations sans autorité centrale, souvent utilisée dans le domaine des cryptomonnaies ?',
+    question: 'Quelle technologie décentralisée est utilisée pour les cryptomonnaies ?',
     answer: 'Blockchain',
-    options: ['Blockchain', 'La Casa de Papel', 'Chine', 'SIM'],
+    options: ['Blockchain', 'Cloud', 'VPN', 'Intranet'],
+    theme: 'Internet',
   },
   {
-    question:
-      'Quel chanteur est le sujet du biopic "Walk the Line" réalisé en 2005 par James Mangold ? L\'actrice Reese Witherspoon obtient l\'Oscar de la meilleure actrice pour son interprétation de June Carter.',
+    question: "Quel chanteur est au centre du film 'Walk the Line' ?",
     answer: 'Johnny Cash',
-    options: ['Johnny Cash', 'Daniel Balavoine', 'Sergio Parisse', 'Nuremberg'],
+    options: ['Johnny Cash', 'Elvis Presley', 'Bob Dylan', 'Roy Orbison'],
+    theme: 'Musique',
   },
   {
     question:
-      'Quel nom de trois lettres partagent le premier chimpanzé envoyé dans l’espace et une ville de la Somme où fut emprisonné Louis-Napoléon Bonaparte ?',
+      'Quel nom de trois lettres désigne un chimpanzé envoyé dans l’espace et une ville de la Somme ?',
     answer: 'Ham',
-    options: ['Ham', 'World of Warcraft', 'Benito Mussolini', 'Suavemente'],
+    options: ['Ham', 'Ami', 'Eu', 'Aix'],
+    theme: 'Histoire',
   },
   {
-    question:
-      "Avec une altitude de 10 700 mètres, quelle planète du système solaire culmine au mont Skadi ? Ce mont a été nommé en référence à la déesse nordique des montagnes, de la chasse à l'arc et de l'hiver.",
+    question: 'Sur quelle planète se situe le mont Skadi ?',
     answer: 'Venus',
-    options: ['Venus', 'Popcorn', 'Carlito', 'Antigone'],
+    options: ['Venus', 'Mars', 'Mercure', 'Jupiter'],
+    theme: 'Sciences',
   },
   {
     question: 'Quel est le pays lusophone le plus peuplé du monde ?',
     answer: 'Brésil',
-    options: ['Brésil', 'Le Seigneur des Anneaux', 'Pétrole', 'Groom'],
+    options: ['Brésil', 'Portugal', 'Angola', 'Mozambique'],
+    theme: 'Géographie',
   },
   {
-    question:
-      'Quel groupe interprète de "Happy Together" porte un nom anglais évoquant des chéloniens ? Ce groupe de rock originaire de Los Angeles a délogé en 1967 les Beatles de la première place des ventes aux USA.',
+    question: "Quel groupe interprète 'Happy Together' ?",
     answer: 'The Turtles',
-    options: ['The Turtles', 'Molosses', 'Faucheurs', 'Veyron'],
+    options: ['The Turtles', 'The Monkees', 'The Byrds', 'The Beach Boys'],
+    theme: 'Musique',
   },
   {
-    question:
-      "Quel nom féminin désigne la partie de la fleur formée par l'ensemble de ses pétales ? Elle se distingue du calice qui lui est constitué de l'ensemble des sépales.",
+    question: 'Comment appelle-t-on l’ensemble des pétales d’une fleur ?',
     answer: 'Corolle',
-    options: ['Corolle', 'Yo-yo', 'Kafka', 'Rugby'],
+    options: ['Corolle', 'Calice', 'Pistil', 'Étamine'],
+    theme: 'Sciences',
   },
   {
-    question:
-      'Créé par Alexander Bernhardt, quel jeu de société aux cartes colorées consiste à avoir la plus petite valeur cumulée de ses douze cartes que l’on retourne au fil de la partie ?',
+    question: 'Quel jeu de cartes colorées consiste à avoir la plus petite valeur cumulée ?',
     answer: 'Skyjo',
-    options: ['Skyjo', 'Hêtre', 'Chenille', 'Geta'],
+    options: ['Skyjo', 'Uno', 'Skip-Bo', 'Phase 10'],
+    theme: 'Culture Générale',
   },
   {
-    question: 'Quel poisson donne son nom au Quintette en la majeur, D. 667 de Franz Schubert ?',
+    question: 'Quel poisson donne son nom au Quintette D.667 de Schubert ?',
     answer: 'La Truite',
-    options: ['La Truite', 'Columbine', 'Clermont-Ferrand', 'The Witcher'],
+    options: ['La Truite', 'Le Saumon', 'La Carpe', 'Le Brochet'],
+    theme: 'Musique',
   },
   {
-    question:
-      'Quel footballeur, marié à Georgina Rodriguez est un portugais aux 5 ballons d’or surnommé CR7 ?',
+    question: 'Quel footballeur portugais est surnommé CR7 ?',
     answer: 'Cristiano Ronaldo',
-    options: ['Cristiano Ronaldo', 'V', 'Marc-Antoine Charpentier', 'Cerveau'],
+    options: ['Cristiano Ronaldo', 'Luis Figo', 'Eusébio', 'Pepe'],
+    theme: 'Sport',
   },
   {
-    question:
-      'Quel navigateur web a un logo figurant un cercle bleu entouré de rouge, de jaune et de vert ?',
+    question: 'Quel navigateur web possède un logo bleu, rouge, jaune et vert ?',
     answer: 'Chrome',
-    options: ['Chrome', '4chan', 'Motus', 'Oesophage'],
+    options: ['Chrome', 'Firefox', 'Edge', 'Opera'],
+    theme: 'Internet',
   },
   {
-    question:
-      'Quel est le titre français de l’émission inspirée par celle animée par Jeff Probst aux USA et nommée Survivor ?',
+    question: 'Quel est le titre français de Survivor ?',
     answer: 'Koh Lanta',
-    options: ['Koh Lanta', 'Le Vol du Bourdon', 'Oesophage', 'Diogène'],
+    options: ['Koh Lanta', 'Fort Boyard', 'Pékin Express', 'The Island'],
+    theme: 'Séries TV',
   },
   {
-    question:
-      "Quelle province romaine couvrait le sud-ouest de la péninsule ibérique soit la majorité du Portugal actuel ? C'est dans cette province que se rend Astérix dans le dernier album paru en 2025.",
+    question: 'Quelle province romaine couvrait la majorité du Portugal actuel ?',
     answer: 'Lusitanie',
-    options: ['Lusitanie', 'Lump', 'Canada', 'Frégate'],
+    options: ['Lusitanie', 'Hispanie', 'Aquitaine', 'Bétique'],
+    theme: 'Histoire',
   },
   {
-    question:
-      "Quel continent a laissé son nom à l'un des quatre satellites galiléens de Jupiter ? Découvert en 1610 par Galilée, ce satellite tire son nom d'un personnage de la mythologie grecque.",
+    question: 'Quel satellite galiléen de Jupiter porte le nom d’un continent ?',
     answer: 'Europe',
-    options: ['Europe', 'Nolwenn Leroy', 'Valençay', 'Auguste'],
+    options: ['Europe', 'Io', 'Callisto', 'Ganymède'],
+    theme: 'Sciences',
   },
   {
-    question:
-      "À quel point cardinal associe-t-on le levant ? C'est en effet de ce côté que se lève le Soleil.",
+    question: 'À quel point cardinal correspond le levant ?',
     answer: 'Est',
-    options: ['Est', 'Thymine', 'Acide acétique', 'Måneskin'],
+    options: ['Est', 'Ouest', 'Nord', 'Sud'],
+    theme: 'Géographie',
   },
   {
-    question:
-      'Quel groupe à qui l’on doit notamment le titre "Song for Jedi" porte le nom du dieu de la vigne dans la mythologie grecque ? Ce groupe français originaire de Valence et fondé en 1993 a pour chanteur Mathias Malzieu.',
+    question: "Quel groupe français interprète 'Song for Jedi' ?",
     answer: 'Dionysos',
-    options: ['Dionysos', 'Rickshaw', 'Vitamine D', 'Daft Punk'],
+    options: ['Dionysos', 'Indochine', 'Noir Désir', 'Phoenix'],
+    theme: 'Musique',
   },
   {
-    question:
-      'Quel arbre ayant pour fruit les faînes est homophone d’un des deux auxiliaires de la langue française ?',
+    question: 'Quel arbre produit des faînes ?',
     answer: 'Hêtre',
-    options: ['Hêtre', 'The Witcher', 'Cookie', 'Gaule'],
+    options: ['Hêtre', 'Chêne', 'Orme', 'Bouleau'],
+    theme: 'Sciences',
   },
   {
-    question:
-      'À quelle lettre de l’alphabet latin correspond la croix de Saint-Antoine, sachant que celui-ci a été crucifié sur une croix en forme de Tau ?',
+    question: 'À quelle lettre correspond la croix de Saint-Antoine ?',
     answer: 'T',
-    options: ['T', 'Eiffel65', 'Fromage', 'Scroller'],
+    options: ['T', 'X', 'Y', 'L'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      'À quel poète français du XIXe siècle doit-on les recueils Jadis et naguère, Fêtes Galantes et Poèmes saturniens ?',
+    question: "Quel poète a écrit 'Fêtes galantes' ?",
     answer: 'Paul Verlaine',
-    options: ['Paul Verlaine', 'Geta', 'Samoyède', 'Atari'],
+    options: ['Paul Verlaine', 'Arthur Rimbaud', 'Charles Baudelaire', 'Victor Hugo'],
+    theme: 'Littérature',
   },
   {
-    question:
-      'Dans quelle discipline la vénézuélienne Yulimar Rojas détient-elle le record à 15,74m ?',
+    question: 'Dans quelle discipline Yulimar Rojas détient-elle le record ?',
     answer: 'Triple Saut',
-    options: ['Triple Saut', 'Japonais', 'Inde', 'Saint-Marin'],
+    options: ['Triple Saut', 'Saut en longueur', 'Hauteur', 'Perche'],
+    theme: 'Sport',
   },
   {
-    question:
-      'Quel mot anglais de quatre lettres signifiant butin désigne le principe de vidéo consistant à déballer les vêtements qu’on vient d’acheter ou recevoir et les montrer à sa communauté ?',
+    question: 'Quel mot anglais désigne une vidéo de déballage ?',
     answer: 'Haul',
-    options: ['Haul', 'Microsoft', 'Les Voyages de Gulliver', 'Saké'],
+    options: ['Haul', 'Unbox', 'Loot', 'Drop'],
+    theme: 'Internet',
   },
   {
-    question:
-      'Quel film dans lequel Shelley Duvall incarnait Wendy Torrance fut réalisé en 1980 par Stanley Kubrick avec Jack Nicholson, adaptant ainsi un livre de Stephen King ?',
+    question: 'Quel film de Kubrick adapte Stephen King avec Jack Nicholson ?',
     answer: 'The Shining',
-    options: ['The Shining', 'Angélique', 'Darwin', 'Bichon'],
+    options: ['The Shining', 'Orange mécanique', 'Barry Lyndon', 'Psychose'],
+    theme: 'Cinéma',
   },
   {
-    question:
-      'Ayant grandement inspiré le film Monsieur Verdoux de Charlie Chaplin, quel criminel français est surnommé le Barbe-Bleue de Gambais ?',
+    question: 'Quel criminel français est surnommé le Barbe-Bleue de Gambais ?',
     answer: 'Henri-Désiré Landru',
-    options: ['Henri-Désiré Landru', 'Licteur', 'La Révolution du jasmin', 'Bojack Horseman'],
+    options: ['Henri-Désiré Landru', 'Jacques Mesrine', 'Pierre Rivière', 'Joseph Vacher'],
+    theme: 'Histoire',
   },
   {
     question:
-      'Quelle huile minérale naturelle a une étymologie latine signifiant "huile de pierre" ?',
+      "Quelle huile minérale naturelle a une étymologie latine signifiant 'huile de pierre' ?",
     answer: 'Pétrole',
-    options: ['Pétrole', 'Wellington', 'Arlequin', 'Sheila'],
+    options: ['Pétrole', 'Bitume', 'Kérosène', 'Naphta'],
+    theme: 'Sciences',
   },
   {
     question:
       'Quel nom issu de l’allemand désigne la ligne joignant les points les plus bas d’une vallée ?',
     answer: 'Talweg',
-    options: ['Talweg', 'César', 'Ottawa', 'Blanc'],
+    options: ['Talweg', 'Crête', 'Isobare', 'Delta'],
+    theme: 'Géographie',
   },
   {
     question:
-      "Quel homme né sous le nom d’Andreas Cornelis van Kuijk aux Pays-Bas est surtout connu pour avoir été l’impresario exclusif d’Elvis Presley ? Son nom est en partie composé d'un grade militaire.",
+      'Quel homme né sous le nom d’Andreas Cornelis van Kuijk est surtout connu comme l’impresario exclusif d’Elvis Presley ?',
     answer: 'Colonel Parker',
-    options: ['Colonel Parker', 'Le Chanteur de Jazz', 'Pangramme', 'Abracadabra'],
+    options: ['Colonel Parker', 'Brian Epstein', 'Phil Spector', 'Sam Phillips'],
+    theme: 'Musique',
   },
   {
-    question:
-      'Quel animal de l’ordre des dermaptères est également appelé pince ou perce-oreilles ? Son nom vient du latin signifiant "petits ciseaux"',
+    question: 'Quel insecte de l’ordre des dermaptères est aussi appelé perce-oreilles ?',
     answer: 'Forficule',
-    options: ['Forficule', 'Seahawks', 'The Witcher', 'Andy Jassy'],
+    options: ['Forficule', 'Scolopendre', 'Cloporte', 'Staphylin'],
+    theme: 'Animaux',
   },
   {
     question:
-      'Quelle sauce veloutée à base de jaune d’oeuf et de sauce tomate porte un nom évoquant un moment de la journée ?',
+      'Quelle sauce veloutée à base de jaune d’œuf et de sauce tomate porte un nom évoquant un moment de la journée ?',
     answer: 'Sauce Aurore',
-    options: ['Sauce Aurore', 'Taureau', 'Blockchain', 'Bayern'],
+    options: ['Sauce Aurore', 'Sauce Hollandaise', 'Sauce Béarnaise', 'Sauce Choron'],
+    theme: 'Cuisine',
   },
   {
-    question:
-      'Quel peintre est l\'auteur du tableau "Impression, Soleil levant" en 1872, dont le titre a été utilisé par le critique Louis Leroy pour baptiser le mouvement impressionniste ?',
+    question: "Quel peintre est l'auteur du tableau 'Impression, Soleil levant' (1872) ?",
     answer: 'Claude Monet',
-    options: ['Claude Monet', 'Baguette de pain', 'Rugby', 'Sacramento'],
+    options: ['Claude Monet', 'Auguste Renoir', 'Camille Pissarro', 'Édouard Manet'],
+    theme: 'Art',
   },
   {
-    question:
-      'Combien y a-t-il de joueurs dans chaque équipe au cricket mais également au hockey sur gazon ?',
+    question: 'Combien y a-t-il de joueurs dans chaque équipe au cricket et au hockey sur gazon ?',
     answer: '11',
-    options: ['11', 'Kirigami', 'Siamois', 'Watt'],
+    options: ['11', '9', '7', '15'],
+    theme: 'Sport',
   },
   {
     question:
-      'Quelle entreprise étasunienne dont le nom signifie petit et doux a été fondée en 1975 par Paul Allen et Bill Gates ?',
+      "Quelle entreprise fondée en 1975 par Bill Gates et Paul Allen signifie 'micro-ordinateur' et 'logiciel' ?",
     answer: 'Microsoft',
-    options: ['Microsoft', '7', 'Cristiano Ronaldo', 'Benito Mussolini'],
+    options: ['Microsoft', 'Apple', 'Oracle', 'IBM'],
+    theme: 'Culture Générale',
   },
   {
     question:
-      'Dans quelle série de films le personnage de Pete Mitchell est-il interprété par Tom Cruise qui est un jeune prodige du pilotage d’avions ?',
+      'Dans quelle série de films Pete Mitchell, interprété par Tom Cruise, est-il pilote de chasse ?',
     answer: 'Top Gun',
-    options: ['Top Gun', 'Echo', 'Bâtonnier', 'Vaillant'],
+    options: ['Top Gun', 'Mission Impossible', 'Pearl Harbor', 'Armageddon'],
+    theme: 'Cinéma',
   },
   {
     question:
-      "Dans quelle ville eut lieu le grand procès des dirigeants nazis après la Seconde Guerre mondiale ? S'étant tenu entre le 20 novembre 1945 et le 1er octobre 1946, ce procès a été transposé au cinéma en 2026 par James Vanderbilt.",
+      'Dans quelle ville eut lieu le grand procès des dirigeants nazis après la Seconde Guerre mondiale ?',
     answer: 'Nuremberg',
-    options: ['Nuremberg', 'Hêtre', 'Yo-yo', 'Tokyo Drift'],
+    options: ['Nuremberg', 'Berlin', 'Munich', 'Vienne'],
+    theme: 'Histoire',
   },
   {
-    question:
-      'Quelle unité équivalant à un joule par seconde est l’unité dérivée de puissance du système international et symbolisée par la lettre W ?',
+    question: 'Quelle unité équivalant à un joule par seconde est symbolisée par la lettre W ?',
     answer: 'Watt',
-    options: ['Watt', 'Epona', 'Bulgarie', 'Nuremberg'],
+    options: ['Watt', 'Volt', 'Ampère', 'Ohm'],
+    theme: 'Sciences',
   },
   {
-    question:
-      'Quel land allemand est évoqué par la lettre B dans le sigle BMW désignant un constructeur automobile ? Les lettres M et W signifient "Motoren Werke" soit Usines de moteurs',
+    question: 'Quel land allemand est évoqué par la lettre B dans le sigle BMW ?',
     answer: 'Bayern',
-    options: ['Bayern', 'Johnny Cash', 'Ciao Kombucha', 'X'],
+    options: ['Bayern', 'Berlin', 'Brandebourg', 'Bade-Wurtemberg'],
+    theme: 'Géographie',
   },
   {
     question:
-      'Quelle pratique désignée par un anglicisme de deux mots consiste à essayer de reconnaître l’interprète d’une chanson juste par l’écoute ?',
+      'Quelle pratique consiste à reconnaître une chanson uniquement à l’écoute d’un extrait ?',
     answer: 'Blind Test',
-    options: ['Blind Test', 'Angélique', 'L’America', 'Victor Hugo'],
+    options: ['Blind Test', 'Playback', 'Karaoké', 'Freestyle'],
+    theme: 'Musique',
   },
   {
-    question:
-      'Quel légume peut avoir des variétés appelées vitelotte, bintje, Charlotte ou encore ratte du Touquet par exemple ?',
+    question: 'Quel légume possède des variétés appelées vitelotte, bintje ou ratte ?',
     answer: 'Pomme de terre',
-    options: ['Pomme de terre', 'Ombrelle', 'Jazz', 'En éventail'],
+    options: ['Pomme de terre', 'Carotte', 'Navet', 'Betterave'],
+    theme: 'Cuisine',
   },
   {
-    question:
-      'Par quel mot composé d’origine anglaise évoquant la sphère terrestre désigne-t-on un voyageur qui parcourt le monde ?',
+    question: 'Quel mot composé d’origine anglaise désigne un voyageur parcourant le monde ?',
     answer: 'Globe Trotter',
-    options: ['Globe Trotter', 'Bauhaus', 'Omega', 'Pastèque'],
+    options: ['Globe Trotter', 'Backpacker', 'Routard', 'Explorateur'],
+    theme: 'Culture Générale',
   },
   {
     question:
-      'Interprétée par Kate Winslet dans un biopic en 2024, quelle photographe, égérie du surréalisme fut également correspondante de guerre pour Vogue ?',
+      'Quelle photographe surréaliste fut incarnée par Kate Winslet dans un biopic en 2024 ?',
     answer: 'Lee Miller',
-    options: ['Lee Miller', 'Catherine Parr', 'Finistère', 'Bus'],
+    options: ['Lee Miller', 'Diane Arbus', 'Annie Leibovitz', 'Dorothea Lange'],
+    theme: 'Art',
   },
   {
     question:
-      'Quel footballeur et médecin brésilien portait un nom proche de celui d’un philosophe célèbre ? Frère aîné du footballeur Raí, il était engagé politiquement avant son décès en 2011.',
+      'Quel footballeur brésilien, frère de Raí, portait un nom proche d’un philosophe grec ?',
     answer: 'Socrates',
-    options: ['Socrates', 'A7', 'Place de la Concorde', 'Truffe'],
+    options: ['Socrates', 'Zico', 'Romário', 'Kaká'],
+    theme: 'Sport',
   },
   {
     question:
-      'Quel forum anglophone a été créé en 2003 par Christopher Poole sous le pseudonyme de moot ? Ce site décrit comme "le trublion du net" par Le Monde a vu notamment la naissance du mouvement Anonymous.',
+      'Quel forum anglophone créé en 2003 est associé à la naissance du mouvement Anonymous ?',
     answer: '4chan',
-    options: ['4chan', 'Eiffel65', 'Emeraude', 'Marathon'],
+    options: ['4chan', 'Reddit', 'Tumblr', 'Imgur'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      'Ayant laissé son nom à une série TV avec Priyanka Chopra notamment, dans quelle ville de Virginie se situe le camp d’entraînement des recrues du FBI ?',
+    question: 'Dans quelle ville de Virginie se situe le centre d’entraînement du FBI ?',
     answer: 'Quantico',
-    options: ['Quantico', 'Grain de beauté', 'Mer de la Tranquillité', 'Wellington'],
+    options: ['Quantico', 'Richmond', 'Norfolk', 'Arlington'],
+    theme: 'Géographie',
   },
   {
     question:
-      'Quelle bataille des guerres napoléoniennes ayant eu lieu le 14 octobre 1806 a laissé son nom au pont de Paris enjambant la Seine face à la Tour Eiffel ?',
+      'Quelle bataille napoléonienne du 14 octobre 1806 a donné son nom à un pont parisien ?',
     answer: 'Bataille d’Iéna',
-    options: ['Bataille d’Iéna', 'Black M', 'Palindrome', 'Sheila'],
+    options: [
+      'Bataille d’Iéna',
+      'Bataille d’Austerlitz',
+      'Bataille de Wagram',
+      'Bataille de Leipzig',
+    ],
+    theme: 'Histoire',
   },
   {
     question:
       'Avec la cytosine, la guanine et l’adénine, quelle est la quatrième base azotée de l’ADN, associée à l’adénine ?',
     answer: 'Thymine',
-    options: ['Thymine', 'David Duchovny', 'Yo-yo', 'Finistère'],
+    options: ['Thymine', 'Uracile', 'Cytosine', 'Guanine'],
+    theme: 'Sciences',
   },
   {
-    question:
-      'Signifiant citadelle de pierre, quelle ville située près de la frontière avec le Kazakhstan est la capitale de l’Ouzbékistan ?',
+    question: "Signifiant 'citadelle de pierre', quelle ville est la capitale de l’Ouzbékistan ?",
     answer: 'Tachkent',
-    options: ['Tachkent', 'Kuduro', 'HPI', 'Gâche'],
+    options: ['Tachkent', 'Achgabat', 'Bichkek', 'Douchanbé'],
+    theme: 'Géographie',
   },
   {
     question:
-      'Par opposition à legato, quel mot désigne, en musique le fait de jouer les notes de manière détachée ?',
+      'Par opposition à legato, quel mot désigne en musique le fait de jouer les notes de manière détachée ?',
     answer: 'Staccato',
-    options: ['Staccato', 'Shar Pei', 'Pétrichor', 'Autruche'],
+    options: ['Staccato', 'Legato', 'Andante', 'Sforzando'],
+    theme: 'Musique',
   },
   {
-    question:
-      'Quel nom peut à la fois désigner une inflorescence des saules par exemple et le petit d’un félin domestique ?',
+    question: 'Quel nom peut désigner à la fois une inflorescence de saule et le petit d’un chat ?',
     answer: 'Chaton',
-    options: ['Chaton', 'Rouge', 'Louis-Napoléon Bonaparte', 'Chenille'],
+    options: ['Chaton', 'Bourgeon', 'Cabri', 'Pistil'],
+    theme: 'Culture Générale',
   },
   {
     question:
-      'Quelle spécialité laitière islandaise est très proche du yaourt et a un nom valant 22 points au scrabble ?',
+      'Quelle spécialité laitière islandaise proche du yaourt porte un nom valant 22 points au Scrabble ?',
     answer: 'Skyr',
-    options: ['Skyr', 'Kevlar', 'Nolwenn Leroy', 'Iran'],
+    options: ['Skyr', 'Kéfir', 'Faisselle', 'Ricotta'],
+    theme: 'Cuisine',
   },
   {
-    question:
-      "Dans la cathédrale de Reims, quel être spirituel est dit « au sourire » dans le nom d'une statue datant d'environ 1240 ? Cette statue est devenue célèbre au moment de son endommagement par un bombardement lors de la Première Guerre mondiale.",
+    question: "Dans la cathédrale de Reims, quel être spirituel est surnommé 'au sourire' ?",
     answer: 'Ange',
-    options: ['Ange', 'Aladdin', 'Flottantes', 'Bus'],
+    options: ['Ange', 'Apôtre', 'Chérubin', 'Archange'],
+    theme: 'Art',
   },
   {
     question:
-      'Quel nom issu de l’anglais désigne la voiture légère, à deux roues, utilisée pour les courses de trot attelé ?',
+      'Quel nom issu de l’anglais désigne la voiture légère utilisée pour les courses de trot attelé ?',
     answer: 'Sulky',
-    options: ['Sulky', 'Lee Miller', 'Shar Pei', 'Veyron'],
+    options: ['Sulky', 'Buggy', 'Roadster', 'Fiacre'],
+    theme: 'Sport',
   },
   {
     question:
-      'Quel surnom de 4 lettres partagent un youtubeur français d’origine tchétchène associé à TV dans le nom de sa chaîne ainsi qu’un footballeur suédois ayant notamment évolué au Paris Saint-Germain ?',
+      'Quel surnom de quatre lettres partagent un youtubeur français d’origine tchétchène et Zlatan Ibrahimović ?',
     answer: 'Ibra',
-    options: ['Ibra', 'Jazz', 'Chine', 'Gorfou'],
+    options: ['Ibra', 'Zlat', 'Zizou', 'Kaka'],
+    theme: 'Sport',
   },
   {
     question:
-      'Quel présentateur de télévision anime 100% Logique, The Floor, Duels en Famille, Tout le monde veut prendre sa place et La carte aux trésors sur France Télévision ?',
+      'Quel animateur présente 100% Logique et La carte aux trésors sur France Télévisions ?',
     answer: 'Cyril Féraud',
-    options: ['Cyril Féraud', 'Joséphine', 'John Isner', 'Eléphant'],
+    options: ['Cyril Féraud', 'Nagui', 'Arthur', 'Jean-Luc Reichmann'],
+    theme: 'Autres',
   },
   {
-    question:
-      "Qui fut de 27 avant notre ère jusqu'à l'an 14 de notre ère le tout premier empereur romain ?",
+    question: 'Qui fut le tout premier empereur romain de 27 av. J.-C. à 14 ap. J.-C. ?',
     answer: 'Auguste',
-    options: ['Auguste', 'Handball', 'Chaton', 'Rickshaw'],
+    options: ['Auguste', 'Néron', 'Trajan', 'Caligula'],
+    theme: 'Histoire',
   },
   {
     question:
-      "Quel scientifique au centre d'un film réalisé par Christopher Nolan est le principal concepteur de la bombe atomique au sein du projet Manhattan ?",
+      'Quel scientifique fut le principal concepteur de la bombe atomique dans le cadre du projet Manhattan ?',
     answer: 'Oppenheimer',
-    options: ['Oppenheimer', 'Tartan', 'Angélique', 'Bronze'],
+    options: ['Oppenheimer', 'Einstein', 'Fermi', 'Bohr'],
+    theme: 'Sciences',
   },
   {
     question:
-      'Quel mot est commun au slogan en Iran créé pour la défense des femmes et à la devise française ?',
+      'Quel mot est commun au slogan iranien pour la défense des femmes et à la devise française ?',
     answer: 'Liberté',
-    options: ['Liberté', 'Acide acétique', 'Sulky', 'K2'],
+    options: ['Liberté', 'Égalité', 'Justice', 'Dignité'],
+    theme: 'Politique',
   },
   {
     question:
-      "Quel chanteur de reggaeton portoricain, de son vrai nom Benito Antonio Martinez Ocasio a donné un concert de la mi-temps du Super Bowl 2026 ? Avec plus de 15,8 milliards de streams l'année dernière, il est l'artiste le plus écouté de l'année 2025.",
+      'Quel chanteur portoricain de reggaeton, né Benito Antonio Martinez Ocasio, est connu sous le nom de scène Bad Bunny ?',
     answer: 'Bad Bunny',
-    options: ['Bad Bunny', 'Rouge', 'Streaker', 'Adolescence'],
+    options: ['Bad Bunny', 'J Balvin', 'Daddy Yankee', 'Maluma'],
+    theme: 'Musique',
   },
   {
     question:
-      'Quel animal marin ayant laissé son nom à une marque de sel peut-être à bec, bleue, ou à bosses ?',
+      'Quel animal marin, pouvant être à bec ou à bosse, a donné son nom à une marque de sel ?',
     answer: 'Baleine',
-    options: ['Baleine', 'Skyrim', 'Auguste', 'Acide acétique'],
+    options: ['Baleine', 'Dauphin', 'Phoque', 'Orque'],
+    theme: 'Animaux',
   },
   {
-    question: 'Quelle est la couleur du drapeau que votre adversaire agite s’il compte se rendre ?',
+    question: 'Quelle est la couleur du drapeau brandi pour signifier la reddition ?',
     answer: 'Blanc',
-    options: ['Blanc', 'Bayern', 'Microsoft', 'Doechii'],
+    options: ['Blanc', 'Rouge', 'Noir', 'Vert'],
+    theme: 'Culture Générale',
   },
   {
     question:
-      'Quelle école d’architecture qui fut dirigée par Ludwig Mies van der Rohe jusqu’à sa fermeture en 1933 fut fondée à Weimar par Walter Gropius ?',
+      'Quelle école d’architecture fondée à Weimar par Walter Gropius fut dirigée par Mies van der Rohe jusqu’en 1933 ?',
     answer: 'Bauhaus',
-    options: ['Bauhaus', 'Place de la Concorde', 'PSP', 'Palindrome'],
+    options: ['Bauhaus', 'De Stijl', 'Arts & Crafts', 'Constructivisme'],
+    theme: 'Art',
   },
   {
     question:
-      "Quelle franchise évoluant en National Football League et basée à Seattle a remporté le Super Bowl LX face aux New England Patriots sur un score de 29 à 13 ? Il s'agit de leur deuxième victoire au Super Bowl, la première étant en 2013.",
+      'Quelle franchise NFL basée à Seattle a remporté le Super Bowl en 2014 face aux Denver Broncos ?',
     answer: 'Seahawks',
-    options: ['Seahawks', 'ScoobyDoo', 'Chaebol', 'T'],
+    options: ['Seahawks', 'Broncos', 'Patriots', '49ers'],
+    theme: 'Sport',
   },
   {
     question:
-      'Quel nom du choc initial au début d’un combat entre sumotoris est aussi celui d’une entreprise pionnière du jeu-vidéo fondée en 1972 ?',
+      'Quel nom du choc initial en sumo est aussi celui d’une entreprise pionnière du jeu vidéo fondée en 1972 ?',
     answer: 'Atari',
-    options: ['Atari', 'Tokyo Drift', 'Pays-Bas', 'Fun'],
+    options: ['Atari', 'Sega', 'Nintendo', 'Taito'],
+    theme: 'Jeux Vidéo',
   },
   {
     question:
-      'Quelle série Netflix d’animation créée par Raphael Bob-Waksberg met en scène un cheval acteur connu pour avoir joué dans la sitcom fictive Galipettes en famille ?',
+      'Quelle série Netflix d’animation met en scène un cheval acteur ancien héros de sitcom ?',
     answer: 'Bojack Horseman',
-    options: ['Bojack Horseman', 'Nolwenn Leroy', 'Bichon', 'Tibo InShape'],
+    options: ['Bojack Horseman', 'Big Mouth', 'Rick and Morty', 'Disenchantment'],
+    theme: 'Séries TV',
   },
   {
     question:
-      'Comment nommait-on, dans la Rome antique, les protecteurs des magistrats à imperium, qui possédaient notamment des faisceaux ? Ces faisceaux sont présents sur les armoiries de la France, elles-mêmes présentes sur tous les passeports français.',
+      'Comment appelait-on dans la Rome antique les gardes portant des faisceaux et protégeant les magistrats ?',
     answer: 'Licteur',
-    options: ['Licteur', 'Antigone', 'V', 'Banane'],
+    options: ['Licteur', 'Prétorien', 'Centurion', 'Tribun'],
+    theme: 'Histoire',
   },
   {
-    question:
-      'Quelle constellation étant également présente dans le zodiaque a pour étoile la plus brillante celle nommée Aldébaran ?',
+    question: 'Quelle constellation du zodiaque a pour étoile la plus brillante Aldébaran ?',
     answer: 'Taureau',
-    options: ['Taureau', 'Charlie Hebdo', 'Chaebol', 'L’America'],
+    options: ['Taureau', 'Gémeaux', 'Orion', 'Persée'],
+    theme: 'Sciences',
   },
   {
     question:
-      'Quelle ville abritant le palais des vents est la capitale de l’état indien du Rajasthan ?',
+      'Quelle ville est la capitale de l’État indien du Rajasthan et abrite le Palais des Vents ?',
     answer: 'Jaipur',
-    options: ['Jaipur', 'Newton', 'Melodica', 'The Voice'],
+    options: ['Jaipur', 'Udaipur', 'Jodhpur', 'Bhopal'],
+    theme: 'Géographie',
   },
   {
     question:
-      'Quel groupe de blues rock étasunien était mené par le membre du funeste Club des 27 Alan Wilson ? Formé en 1965, le groupe a eu pour grands "On the road again" et "Going Up the Country".',
+      "Quel groupe de blues rock formé en 1965 est notamment connu pour 'On the Road Again' ?",
     answer: 'Canned Heat',
-    options: ['Canned Heat', 'Carrefour', 'Inde', 'Blanc'],
+    options: [
+      'Canned Heat',
+      'Creedence Clearwater Revival',
+      'The Doors',
+      'The Allman Brothers Band',
+    ],
+    theme: 'Musique',
   },
   {
     question:
-      'Portant un nom signifiant peau de sable, quel chien d’origine chinoise est caractérisé par une peau plissée ?',
+      "Quel chien d’origine chinoise, au nom signifiant 'peau de sable', est connu pour sa peau plissée ?",
     answer: 'Shar Pei',
-    options: ['Shar Pei', 'Blind Test', 'Bauhaus', 'Fun'],
+    options: ['Shar Pei', 'Chow-Chow', 'Akita Inu', 'Shiba Inu'],
+    theme: 'Animaux',
   },
   {
     question:
-      'Quelle étoffe de laine typique des peuples celtes, constituée de carreaux de couleurs avec des lignes entrecroisées et de multiples couleurs, est traditionnellement utilisée pour la confection des kilts écossais ?',
+      'Quelle étoffe de laine à carreaux colorés est traditionnellement utilisée pour confectionner les kilts écossais ?',
     answer: 'Tartan',
-    options: ['Tartan', 'Andy Jassy', 'Wellington', 'Palindrome'],
+    options: ['Tartan', 'Tweed', 'Gabardine', 'Velours'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      'Quelle trilogie littéraire également adaptée au cinéma a pour deuxième et troisième volumes "Les Deux Tours" et "Le Retour du Roi" ?',
+    question: "Quelle trilogie comprend les volumes 'Les Deux Tours' et 'Le Retour du Roi' ?",
     answer: 'Le Seigneur des Anneaux',
-    options: ['Le Seigneur des Anneaux', '4chan', 'Artus', 'Orange'],
+    options: ['Le Seigneur des Anneaux', 'Le Monde de Narnia', 'À la Croisée des Mondes', 'Dune'],
+    theme: 'Littérature',
   },
   {
     question:
-      'Quel art martial a été codifié par le japonais Jigorō Kanō ? Ce sport fut le premier art martial japonais à intégrer le programme des Jeux Olympiques en 1964.',
+      'Quel art martial japonais codifié par Jigorō Kanō est devenu discipline olympique en 1964 ?',
     answer: 'Judo',
-    options: ['Judo', 'Gâche', 'Thomas Sydenham', 'Canned Heat'],
+    options: ['Judo', 'Karaté', 'Aïkido', 'Kendo'],
+    theme: 'Sport',
   },
   {
-    question:
-      'Quel anglicisme désigne le fait de faire défiler un contenu sur un écran informatique ?',
+    question: 'Quel anglicisme désigne le fait de faire défiler un contenu sur un écran ?',
     answer: 'Scroller',
-    options: ['Scroller', 'Cyril Féraud', 'Cap Nord', 'Marathon'],
+    options: ['Scroller', 'Uploader', 'Streamer', 'Browser'],
+    theme: 'Culture Générale',
   },
   {
     question:
-      'Quelle actrice apparaissant dans Aquaman est l’ex-épouse de Johnny Depp et lui fut opposée dans un procès retentissant ?',
+      'Quelle actrice, apparue dans Aquaman, fut opposée à Johnny Depp dans un procès médiatisé ?',
     answer: 'Amber Heard',
-    options: ['Amber Heard', 'Gaufre', 'Handball', 'V'],
+    options: ['Amber Heard', 'Margot Robbie', 'Scarlett Johansson', 'Gal Gadot'],
+    theme: 'Cinéma',
   },
   {
-    question:
-      'Quel roi français fut surnommé Le Prudhomme ou bien, à partir de 1297, Saint Louis ? Quel était donc le numéro de règne du Louis dont le surnom actuel est Saint Louis ?',
+    question: 'Quel roi de France, canonisé en 1297, est connu sous le nom de Saint Louis ?',
     answer: 'Louis IX',
-    options: ['Louis IX', 'Iran', 'Charlie Hebdo', 'Bus'],
+    options: ['Louis IX', 'Louis VIII', 'Louis X', 'Louis VII'],
+    theme: 'Histoire',
   },
   {
-    question:
-      'Dans l’appareil digestif, quel tube transporte les aliments solides vers l’estomac ?',
+    question: 'Quel tube transporte les aliments de la bouche vers l’estomac ?',
     answer: 'Oesophage',
-    options: ['Oesophage', 'Kevlar', '8', 'Chirac'],
+    options: ['Oesophage', 'Trachée', 'Duodénum', 'Pharynx'],
+    theme: 'Sciences',
   },
   {
-    question:
-      "Quel nom est partagé par un quartier de Montpellier et par une héroïne de Sophocle ? L'architecte de ce quartier souhaité par l'ancien maire Georges Frêche est le catalan Ricardo Bofill.",
+    question: 'Quel nom est partagé par un quartier de Montpellier et une héroïne de Sophocle ?',
     answer: 'Antigone',
-    options: ['Antigone', 'Ibra', 'One Direction', 'Pyrénées-Atlantiques'],
+    options: ['Antigone', 'Électre', 'Médée', 'Hélène'],
+    theme: 'Littérature',
   },
   {
     question:
-      'Ayant utilisé un temps l’alter-ego de Sasha Fierce, quelle chanteuse texane, sœur de Solange Knowles appartenait au groupe Destiny’s Child ?',
+      'Quelle chanteuse texane, ex-membre des Destiny’s Child, a utilisé l’alter ego Sasha Fierce ?',
     answer: 'Beyoncé',
-    options: ['Beyoncé', 'Troie', 'Rembrandt', 'Kitty'],
+    options: ['Beyoncé', 'Rihanna', 'Alicia Keys', 'Whitney Houston'],
+    theme: 'Musique',
   },
   {
-    question:
-      'Quel nom anglais désignant une personne préposée à la garde temporaire de votre chien est formé sur le modèle de baby-sitter ?',
+    question: 'Quel terme anglais désigne une personne gardant temporairement un chien ?',
     answer: 'Dog-sitter',
-    options: ['Dog-sitter', 'Clash', 'Jules Verne', 'Jaune'],
+    options: ['Dog-sitter', 'Pet-sitter', 'Kennel keeper', 'Dog walker'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      'Quel animal est associé au terme de queue dans la dénomination d’une petite lime ainsi que d’une coiffure caractérisée par une mèche longue à l’arrière du crâne ?',
+    question: "Quel animal est associé à l’expression 'queue-de-rat' ?",
     answer: 'Rat',
-    options: ['Rat', 'Globe Trotter', 'SpiderMan', 'Rembrandt'],
+    options: ['Rat', 'Souris', 'Renard', 'Lézard'],
+    theme: 'Animaux',
   },
   {
     question:
-      'Avec Imbolc, Beltaine et Lugnasad, quelle était la quatrième grande fête annuelle chez les Celtes, considérée parfois, et probablement à tort, comme l’ancêtre d’Halloween ?',
+      'Quelle fête celte, parfois considérée comme l’ancêtre d’Halloween, complétait Imbolc, Beltaine et Lugnasad ?',
     answer: 'Samain',
-    options: ['Samain', 'SpiderMan', 'Olympe de Gouges', 'Antigone'],
+    options: ['Samain', 'Yule', 'Ostara', 'Beltane'],
+    theme: 'Histoire',
   },
   {
     question:
-      'Quel cycliste espagnol détient avec 4 victoires le record de victoires sur la Vuelta en 2000, 2003, 2004 et 2005 ? Sa quatrième victoire lui fut retirée pour dopage avant de lui être finalement réattribuée en 2012.',
+      'Quel cycliste espagnol détient quatre victoires sur la Vuelta au début des années 2000 ?',
     answer: 'Roberto Heras',
-    options: ['Roberto Heras', 'Invader', 'Tulipe', 'Vivaldi'],
+    options: ['Roberto Heras', 'Alberto Contador', 'Miguel Indurain', 'Alejandro Valverde'],
+    theme: 'Sport',
   },
   {
-    question:
-      "Quel sport est dit « for two » dans le titre de ce qui est généralement considéré comme le premier jeu vidéo de l'Histoire, conçu en 1958 par William Higinbotham et développé par Robert Dvorak ? Il fut développé sur un ordinateur analogique et relié à un oscilloscope qui servait d'écran.",
+    question: "Quel sport est mentionné dans le tout premier jeu vidéo 'Tennis for Two' de 1958 ?",
     answer: 'Tennis',
-    options: ['Tennis', 'rue Morgue', 'Trottoir', 'Dionysos'],
+    options: ['Tennis', 'Ping-pong', 'Squash', 'Badminton'],
+    theme: 'Jeux Vidéo',
   },
   {
-    question:
-      'De quel épisode de Fast and Furious les Teriyaki Boyz sont-ils à l’origine du thème musical ? Vous pouvez soit donner le nom du film soit le numéro.',
+    question: 'Quel film de la saga Fast & Furious est associé au morceau des Teriyaki Boyz ?',
     answer: 'Tokyo Drift',
-    options: ['Tokyo Drift', 'Andy Jassy', 'World of Warcraft', 'Atèle'],
+    options: ['Tokyo Drift', 'Fast Five', 'Fast & Furious 6', 'Furious 7'],
+    theme: 'Cinéma',
   },
   {
     question:
-      "Quelle arme, ancêtre de l’arquebuse, possède un nom dérivé de celui d'un serpent non-venimeux présent en France ? Cette pièce d'artillerie était un canon à main pouvant tirer des boulets de pierre ou de métal.",
+      'Quelle arme ancienne, ancêtre de l’arquebuse, tire son nom d’un serpent non venimeux ?',
     answer: 'Couleuvrine',
-    options: ['Couleuvrine', 'Kaaba', '28', 'Bénarès'],
+    options: ['Couleuvrine', 'Bombarde', 'Arquebuse', 'Baliste'],
+    theme: 'Histoire',
   },
   {
     question:
-      'Ayant pour nom latin stapes, lequel des osselets est le plus petit et le plus léger os du corps humain ?',
+      'Quel osselet de l’oreille, nommé stapes en latin, est le plus petit os du corps humain ?',
     answer: 'Etrier',
-    options: ['Etrier', 'A7', 'Rennes', 'Philippines'],
+    options: ['Etrier', 'Marteau', 'Enclume', 'Rotule'],
+    theme: 'Sciences',
   },
   {
-    question:
-      'Nommé Kortz Center dans GTA V, dans quelle ville des USA se situe le campus culturel et de recherche fondé en 1997 nommé Getty Center ?',
+    question: 'Dans quelle ville américaine se situe le Getty Center ?',
     answer: 'Los Angeles',
-    options: ['Los Angeles', 'Spare', 'Lassie', 'K2'],
+    options: ['Los Angeles', 'San Diego', 'San Francisco', 'Phoenix'],
+    theme: 'Géographie',
   },
   {
-    question:
-      'Quel nom porte l’interlude orchestral du troisième acte du "Conte du Tsar Saltan", opéra composé en 1900 par Nikolaï Rimski-Korsakov ?',
+    question: "Quel interlude orchestral du 'Conte du Tsar Saltan' est mondialement connu ?",
     answer: 'Le Vol du Bourdon',
-    options: ['Le Vol du Bourdon', 'Bâtonnier', 'Les Voyages de Gulliver', 'Massive Attack'],
+    options: ['Le Vol du Bourdon', 'Danse macabre', 'Casse-Noisette', 'Boléro'],
+    theme: 'Musique',
   },
   {
     question:
-      'Quel botaniste et zoologiste allemand né en 1709 a laissé son nom à une espèce de pygargue, une espèce d’otarie et une vache de mer appelée rhytine ?',
+      'Quel naturaliste allemand né en 1709 a donné son nom à une espèce de pygargue et à la rhytine ?',
     answer: 'Georg Wilhelm Steller',
-    options: ['Georg Wilhelm Steller', 'Fado', 'Est', 'Phare de Cordouan'],
+    options: ['Georg Wilhelm Steller', 'Carl von Linné', 'Alexander von Humboldt', 'Ernst Haeckel'],
+    theme: 'Sciences',
   },
   {
-    question:
-      'Quel nom désigne l’art japonais du papier découpé, par opposition à l’art du papier plié nommé origami ?',
+    question: 'Comment appelle-t-on l’art japonais du papier découpé ?',
     answer: 'Kirigami',
-    options: ['Kirigami', 'Adolescence', 'Gaufre', 'Sumo'],
+    options: ['Kirigami', 'Origami', 'Ukiyo-e', 'Ikebana'],
+    theme: 'Art',
   },
   {
-    question:
-      "Dans la mythologie grecque, quel fils d’Eson et de Polymédé est à la tête des Argonautes ? Leur objectif est d'aller récupérer la Toison d'Or en Colchide.",
+    question: 'Quel héros grec mène les Argonautes à la conquête de la Toison d’Or ?',
     answer: 'Jason',
-    options: ['Jason', 'Philippines', 'Venus', 'Dormeur'],
+    options: ['Jason', 'Thésée', 'Persée', 'Achille'],
+    theme: 'Histoire',
   },
   {
-    question:
-      'Quel prénom partagent les sportifs français nommés Vauquelin en cyclisme, Séraphin en basket et Mayer en décathlon ?',
+    question: 'Quel prénom partagent les sportifs français Vauquelin, Séraphin et Mayer ?',
     answer: 'Kévin',
-    options: ['Kévin', 'Martin Fourcade', 'Tennis', 'Gotaga'],
+    options: ['Kévin', 'Julien', 'Thomas', 'Nicolas'],
+    theme: 'Sport',
   },
   {
     question:
-      'Quelle lettre est associée à Mister dans le pseudonyme sur internet d’Yvick Le Texier ?',
+      "Quelle lettre est associée à 'Mister' dans le pseudonyme de Yvick Letexier (Mister V) ?",
     answer: 'V',
-    options: ['V', 'Jules Verne', '46', 'Gmail'],
+    options: ['V', 'X', 'M', 'Z'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      'Quel héros de Disney accompagné du singe cleptomane Abu, est l’ennemi de Jafar et vole sur un tapis avec Jasmine ?',
+    question: 'Quel héros Disney vole sur un tapis magique accompagné du singe Abu ?',
     answer: 'Aladdin',
-    options: ['Aladdin', 'Triangulaire', 'Ernst Gräfenberg', 'Siamois'],
+    options: ['Aladdin', 'Hercule', 'Simba', 'Tarzan'],
+    theme: 'Cinéma',
   },
   {
     question:
-      'Quel perche utilisée pour faire tomber les fruits des arbres est homonyme d’une région historique conquise par Jules César ?',
+      'Quel outil servant à faire tomber les fruits est homonyme d’une région conquise par Jules César ?',
     answer: 'Gaule',
-    options: ['Gaule', 'Los Angeles', 'John Adams', 'Kevlar'],
+    options: ['Gaule', 'Perche', 'Serpe', 'Houe'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      'Quel nom porte la marque blanche à la base de l’ongle, en forme de croissant de lune ?',
+    question: 'Comment appelle-t-on la marque blanche en forme de croissant à la base de l’ongle ?',
     answer: 'Lunule',
-    options: ['Lunule', 'Shar Pei', 'Cyril Féraud', 'Eiffel65'],
+    options: ['Lunule', 'Cuticule', 'Phalange', 'Épiderme'],
+    theme: 'Sciences',
   },
   {
     question:
       'Quelle ville originellement appelée Ville-Marie est la plus peuplée de la province canadienne du Québec ?',
     answer: 'Montréal',
-    options: ['Montréal', 'Grain de beauté', 'Bad Bunny', 'Chimpanzés'],
+    options: ['Montréal', 'Québec', 'Gatineau', 'Laval'],
+    theme: 'Géographie',
   },
   {
     question:
-      'Associé à "Jones" dans le nom d’un groupe de punk-rock français, quel nom Haribo a-t-il donné à ses bonbons en forme de fraise ?',
+      "Associé à 'Jones' dans le nom d’un groupe de punk-rock français, quel nom Haribo a-t-il donné à ses bonbons en forme de fraise ?",
     answer: 'Tagada',
-    options: ['Tagada', 'Le Vol du Bourdon', 'Tachkent', 'Chaton'],
+    options: ['Tagada', 'Dragibus', 'Chamallow', 'Rotella'],
+    theme: 'Musique',
   },
   {
     question: 'Quel fruit a pour variétés la kankanbou, la corne, la Cavendish et la plantain ?',
     answer: 'Banane',
-    options: ['Banane', 'Colombe', 'Antigone', 'Bar'],
+    options: ['Banane', 'Mangue', 'Papaye', 'Ananas'],
+    theme: 'Cuisine',
   },
   {
     question:
       'Quelle spécialité culinaire française d’un poids de 250 grammes a été classée par l’Unesco en 2022 ?',
     answer: 'Baguette de pain',
-    options: ['Baguette de pain', 'Bar', 'Saint-Dié-des-Vosges', 'Pascal Légitimus'],
+    options: ['Baguette de pain', 'Croissant', 'Camembert', 'Cassoulet'],
+    theme: 'Cuisine',
   },
   {
     question:
-      "À quel compositeur doit-on l’opéra Nixon in China représenté pour la première fois en 1987 ? Il est le parfait homonyme d'un président étasunien.",
+      'À quel compositeur doit-on l’opéra Nixon in China représenté pour la première fois en 1987 ?',
     answer: 'John Adams',
-    options: ['John Adams', 'Bauhaus', 'Truffe', 'Konami'],
+    options: ['John Adams', 'Philip Glass', 'Steve Reich', 'Leonard Bernstein'],
+    theme: 'Art',
   },
   {
     question:
-      'Par quel nom anglais désigne-t-on un exhibitionniste rentrant sur le terrain pendant un match de sport ? L\'équivalent québécois de ce terme anglais est "nu-vite".',
+      'Par quel nom anglais désigne-t-on un exhibitionniste rentrant sur le terrain pendant un match de sport ?',
     answer: 'Streaker',
-    options: ['Streaker', 'TrackMania', 'Wellington', 'Louis IX'],
+    options: ['Streaker', 'Pitch invader', 'Line jumper', 'Freerunner'],
+    theme: 'Sport',
   },
   {
     question: 'Quel homme d’affaires américain a succédé à Jeff Bezos à la tête d’Amazon en 2021 ?',
     answer: 'Andy Jassy',
-    options: ['Andy Jassy', 'Dharamsala', 'Cockpit', 'Index'],
+    options: ['Andy Jassy', 'Tim Cook', 'Satya Nadella', 'Sundar Pichai'],
+    theme: 'Culture Générale',
   },
   {
     question:
       'Quel personnage de roman pour la jeunesse fut créé par Eric Knight en 1938 avant d’être interprété par Pal en 1943 ?',
     answer: 'Lassie',
-    options: ['Lassie', 'Newton', 'Frégate', 'Iron Man'],
+    options: ['Lassie', 'Rintintin', 'Belle', 'Milou'],
+    theme: 'Littérature',
   },
   {
     question:
-      'Quel nom partagent un anarchiste ayant jeté une bombe dans la chambre des députés français en 1893 et un pigeon voyageur de la Seconde Guerre mondiale auquel un film a été consacré en 2005 ?',
+      'Quel nom partagent un anarchiste ayant jeté une bombe dans la chambre des députés en 1893 et un pigeon voyageur de la Seconde Guerre mondiale ?',
     answer: 'Vaillant',
-    options: ['Vaillant', 'HPI', 'Korrigan', 'Barbie'],
+    options: ['Vaillant', 'Courage', 'Fidèle', 'Héros'],
+    theme: 'Histoire',
   },
   {
     question:
-      'Quel instrument de musique à vent datant du paléolithique se servant du frottement de l’air pour produire un son a le même nom que l’ancienne dénomination du losange ?',
+      'Quel instrument de musique à vent datant du paléolithique a le même nom que l’ancienne dénomination du losange ?',
     answer: 'Rhombe',
-    options: ['Rhombe', 'Kafka', 'Atari', 'Diogène'],
+    options: ['Rhombe', 'Ocarina', 'Flûte', 'Cornemuse'],
+    theme: 'Art',
   },
   {
-    question:
-      "Quelle ville de l'Indre dans laquelle se situe le château ayant appartenu à Talleyrand a laissé son nom à un fromage pyramidal tronqué ?",
+    question: "Quelle ville de l'Indre a laissé son nom à un fromage pyramidal tronqué ?",
     answer: 'Valençay',
-    options: ['Valençay', 'Thymine', 'Cap Nord', 'Domrémy-la-Pucelle'],
+    options: ['Valençay', 'Rocamadour', 'Brie', 'Langres'],
+    theme: 'Géographie',
   },
   {
-    question:
-      'Quel groupe originaire de Bristol dont le chanteur est Robert del Naja, fondateur du style trip hop, a sorti l’album Mezzanine en 1998 ?',
+    question: 'Quel groupe originaire de Bristol a sorti l’album Mezzanine en 1998 ?',
     answer: 'Massive Attack',
-    options: ['Massive Attack', 'Ponte', 'Vitamine D', 'Suavemente'],
+    options: ['Massive Attack', 'Portishead', 'Blur', 'Radiohead'],
+    theme: 'Musique',
   },
   {
     question: 'Par quel nom sont plus couramment désignés les arachnides appelés opilions ?',
     answer: 'Faucheurs',
-    options: ['Faucheurs', 'Suavemente', 'Andy Jassy', '4chan'],
+    options: ['Faucheurs', 'Scorpions', 'Tiques', 'Araignées-loups'],
+    theme: 'Animaux',
   },
   {
     question:
-      'Pouvant faire preuve d’une extrême générosité et également capable d’horribles vengeances, quelle créature légendaire du folklore breton est généralement comparée à un lutin ?',
+      'Quelle créature légendaire du folklore breton est généralement comparée à un lutin ?',
     answer: 'Korrigan',
-    options: ['Korrigan', 'Jaune', 'Usain Bolt', 'PSP'],
+    options: ['Korrigan', 'Gnome', 'Gobelin', 'Faradet'],
+    theme: 'Culture Générale',
   },
   {
     question:
       'Dans le conte de Perrault, en quoi les chevaux du carrosse de Cendrillon se transforment-ils passé minuit ?',
     answer: 'En souris',
-    options: ['En souris', 'Etrier', '28', 'Ham'],
+    options: ['En souris', 'En citrouille', 'En lézards', 'En rats'],
+    theme: 'Littérature',
   },
   {
     question:
-      "Quelle nouvelle règle d’exclusion temporaire au rugby est aussi le nom d’un obstacle de sable au golf ? Ce terme issu de l'anglais désigne aussi un espace fortifié.",
+      'Quelle règle d’exclusion temporaire au rugby est aussi le nom d’un obstacle de sable au golf ?',
     answer: 'Bunker',
-    options: ['Bunker', 'Darwin', 'K2', 'Liberté'],
+    options: ['Bunker', 'Scrum', 'Drop', 'Hooker'],
+    theme: 'Sport',
   },
   {
-    question:
-      'Quel acronyme de trois lettres associé à une carte à puce insérée dans un téléphone signifie Subscriber Identity Module ?',
+    question: 'Quel acronyme signifie Subscriber Identity Module ?',
     answer: 'SIM',
-    options: ['SIM', 'K2', 'Tigre', 'Rhombe'],
+    options: ['SIM', 'CPU', 'USB', 'GPS'],
+    theme: 'Sciences',
   },
   {
-    question:
-      'Quel jour de la semaine constitue le prénom de la fille Adams incarnée Lisa Loring, Christina Ricci puis par Jenna Ortega dans une série dédiée réalisée par Tim Burton ?',
+    question: 'Quel jour de la semaine est le prénom de la fille Adams incarnée par Jenna Ortega ?',
     answer: 'Mercredi',
-    options: ['Mercredi', 'Sulky', 'Black M', 'Jason'],
+    options: ['Mercredi', 'Lundi', 'Mardi', 'Dimanche'],
+    theme: 'Séries TV',
   },
   {
-    question:
-      "Quel nom a-t-on donné au scandale d'espionnage révélé par deux journalistes du Washington Post, Bob Woodward et Carl Bernstein, ayant conduit à la démission de Richard Nixon en 1974 du poste de président des USA ?",
+    question: "Quel scandale d'espionnage conduisit à la démission de Richard Nixon en 1974 ?",
     answer: 'Watergate',
-    options: ['Watergate', 'Lee Miller', 'SIM', 'Koh Lanta'],
+    options: ['Watergate', 'Irangate', 'Pentagon Papers', 'Monicagate'],
+    theme: 'Politique',
   },
   {
     question:
-      'Quelle vitamine, également connue sous le nom de calciférol est synthétisée par le corps humain suite à une exposition au Soleil ?',
+      'Quelle vitamine, également appelée calciférol, est synthétisée par le corps humain grâce au Soleil ?',
     answer: 'Vitamine D',
-    options: ['Vitamine D', 'Emeraude', 'Nord', '28'],
+    options: ['Vitamine D', 'Vitamine C', 'Vitamine A', 'Vitamine B12'],
+    theme: 'Sciences',
   },
   {
     question:
       'Quel département français a pour sous-préfectures Oloron-Sainte-Marie ainsi que la ville de Bayonne ?',
     answer: 'Pyrénées-Atlantiques',
-    options: ['Pyrénées-Atlantiques', 'The Shining', 'Gotaga', 'Couteau'],
+    options: ['Pyrénées-Atlantiques', 'Hautes-Pyrénées', 'Landes', 'Gironde'],
+    theme: 'Géographie',
   },
   {
     question:
-      'De quel personnage de la série Heroes s’est inspirée la chanteuse Aya Coco Danioko pour son pseudonyme ?',
+      'De quel personnage de la série Heroes s’est inspirée Aya Coco Danioko pour son pseudonyme ?',
     answer: 'Nakamura',
-    options: ['Nakamura', 'Rouge', 'Staccato', 'Figaro'],
+    options: ['Nakamura', 'Petrelli', 'Sylar', 'Bennett'],
+    theme: 'Séries TV',
   },
   {
-    question:
-      'Quelle plante du genre citrullus à la chair allant du jaune au rouge vif est parfois appelée melon d’eau ?',
+    question: 'Quelle plante du genre Citrullus est parfois appelée melon d’eau ?',
     answer: 'Pastèque',
-    options: ['Pastèque', 'Barbie', 'Staccato', 'Yo-yo'],
+    options: ['Pastèque', 'Melon', 'Citrouille', 'Courgette'],
+    theme: 'Cuisine',
   },
   {
     question:
-      'Selon une expression signifiant que les médisances ne vous atteignent pas, quel animal n’est pas atteint par la bave du crapaud ?',
+      'Selon l’expression, par quel animal la bave du crapaud n’atteint-elle pas la blanche colombe ?',
     answer: 'Colombe',
-    options: ['Colombe', 'Emeraude', 'Grain de beauté', 'V'],
+    options: ['Colombe', 'Cygne', 'Paon', 'Aigle'],
+    theme: 'Culture Générale',
   },
   {
     question:
-      'Quel philosophe cynique qui vivait selon la légende dans un tonneau aurait dit à Alexandre le Grand de s’ôter de son Soleil ?',
+      'Quel philosophe cynique aurait demandé à Alexandre le Grand de s’ôter de son Soleil ?',
     answer: 'Diogène',
-    options: ['Diogène', 'Darwin', 'Stéphane', 'Liberté'],
+    options: ['Diogène', 'Socrate', 'Platon', 'Aristote'],
+    theme: 'Histoire',
   },
   {
     question:
-      "Face à quel tennisman étasunien Nicolas Mahut a-t-il perdu le plus long match de l’histoire de son sport lors du tournoi de Wimbledon en 2010 ? Ce match a duré 11 heures et 5 minutes, s'est étendu sur trois jours et s'est terminé sur le score de 6-4, 3-6, 67-7, 7-63, 70-68, le français ayant perdu cette rencontre.",
+      'Face à quel joueur Nicolas Mahut a-t-il perdu le plus long match de l’histoire du tennis à Wimbledon en 2010 ?',
     answer: 'John Isner',
-    options: ['John Isner', 'Linkin Park', 'Samothrace', 'Cyril Féraud'],
+    options: ['John Isner', 'Andy Murray', 'Novak Djokovic', 'Roger Federer'],
+    theme: 'Sport',
   },
   {
     question:
-      'Ayant pour véritable nom Corentin Houssein et fondateur de Gentle Mates, quel streamer français surnommé The French Monster est un ancien joueur professionnel de Call of Duty et le plus titré sur console ?',
+      'Quel streamer français, fondateur de Gentle Mates, est surnommé The French Monster ?',
     answer: 'Gotaga',
-    options: ['Gotaga', 'Chameau', 'Dog-sitter', 'Avion'],
+    options: ['Gotaga', 'Squeezie', 'ZeratoR', 'Locklear'],
+    theme: 'Jeux Vidéo',
   },
   {
-    question:
-      'Tenant également le rôle principal de la série Californication, quel acteur a incarné Fox Mulder aux côtés de Gillian Anderson dans X-Files : aux frontières du réel ?',
+    question: 'Quel acteur a incarné Fox Mulder dans X-Files ?',
     answer: 'David Duchovny',
-    options: ['David Duchovny', 'César', 'Streaker', '1997'],
+    options: ['David Duchovny', 'Kyle MacLachlan', 'Bryan Cranston', 'Kiefer Sutherland'],
+    theme: 'Séries TV',
   },
   {
-    question:
-      'Au cours de quel conflit ont eu lieu les batailles d’Antietam, étant le premier grand affrontement du conflit ; de Gettysburg voyant le général Meade remporter la victoire face à Robert E. Lee ? La campagne d’Appomatox, deux ans après Gettysburg, la reddition du général Lee.',
+    question: 'Au cours de quel conflit eurent lieu les batailles d’Antietam et de Gettysburg ?',
     answer: 'Guerre de Sécession',
-    options: ['Guerre de Sécession', 'John Isner', 'Antigone', 'Sumo'],
+    options: [
+      'Guerre de Sécession',
+      'Première Guerre mondiale',
+      'Guerre d’Indépendance américaine',
+      'Guerre de Corée',
+    ],
+    theme: 'Histoire',
   },
   {
-    question:
-      'Quelle espèce de moustique transmet le parasite du genre plasmodium responsable du paludisme ? Son nom vient du grec signifiant "sans bénéfice"',
+    question: 'Quelle espèce de moustique transmet le parasite responsable du paludisme ?',
     answer: 'Anophèle',
-    options: ['Anophèle', 'Rodin', 'Louis XV', 'Dalton'],
+    options: ['Anophèle', 'Aedes', 'Culex', 'Tipule'],
+    theme: 'Sciences',
   },
   {
     question:
-      "Quelle ville ayant fait l'objet d'un très célèbre récit a son site archéologue situé à Hissarlik, nom signifiant en truc \"lieu de la forteresse\". La ville était également appelée Ilios ou Ilion à l'époque antique.",
+      'Quelle ville antique appelée Ilios ou Ilion correspond au site archéologique d’Hissarlik ?',
     answer: 'Troie',
-    options: ['Troie', 'Pauline Ferrand-Prévot', 'A7', 'Valençay'],
+    options: ['Troie', 'Mycènes', 'Sparte', 'Athènes'],
+    theme: 'Histoire',
   },
   {
     question:
-      'Quel label de musique fondé par Suge Knight et Dr. Dre, label phare du gangsta rap étasunien des années 1990 porte un nom anglais faisant référence au couloir de la mort ?',
+      'Quel label fondé par Dr. Dre et Suge Knight fut emblématique du gangsta rap des années 1990 ?',
     answer: 'Death Row Records',
-    options: ['Death Row Records', 'Andy Jassy', 'Suavemente', 'En éventail'],
+    options: ['Death Row Records', 'Bad Boy Records', 'Def Jam', 'Aftermath Entertainment'],
+    theme: 'Musique',
   },
   {
-    question:
-      'Quel autre nom donné au genre de singes surnommé singe-araignée est homophone d\'un synonyme du mot "orthèse" ? Ce singe-araignée est surnommé comme tel du fait de la longueur de ses membres, dont sa queue préhensile.',
+    question: 'Quel autre nom du singe-araignée est homophone d’un synonyme d’orthèse ?',
     answer: 'Atèle',
-    options: ['Atèle', 'Fromage', 'Black M', 'Atari'],
+    options: ['Atèle', 'Babouin', 'Macaque', 'Capucin'],
+    theme: 'Animaux',
   },
   {
     question:
-      'Quel adverbe latin signifiant « selon les termes exacts » est également le nom d’une marque produisant notamment des CD et des DVD ?',
+      "Quel adverbe latin signifiant 'selon les termes exacts' est aussi une marque de supports numériques ?",
     answer: 'Verbatim',
-    options: ['Verbatim', 'Dormeur', 'Konami', 'Aimé Césaire'],
+    options: ['Verbatim', 'Ipso facto', 'Ad vitam', 'In situ'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      'Quel écrivain français né à Nantes en 1828, ville dans laquelle se trouve un musée portant son nom, est l\'auteur de "Vingt Mille Lieues sous les Mers" ou "Le Tour du Monde en 80 Jours" ?',
+    question: "Quel écrivain français est l’auteur de 'Vingt Mille Lieues sous les Mers' ?",
     answer: 'Jules Verne',
-    options: ['Jules Verne', 'Bad Bunny', 'Roberto Heras', 'Johnny Cash'],
+    options: ['Jules Verne', 'Victor Hugo', 'Émile Zola', 'Guy de Maupassant'],
+    theme: 'Littérature',
   },
   {
-    question:
-      'Quel prénom les sportifs français nommés Caristan, Traineau et Diagana partagent-ils ? Caristan et Diagana étaient des athlètes et Traineau était lui judoka.',
+    question: 'Quel prénom partagent les sportifs français Caristan, Traineau et Diagana ?',
     answer: 'Stéphane',
-    options: ['Stéphane', 'T', 'Bâtonnier', 'Oppenheimer'],
+    options: ['Stéphane', 'Pascal', 'Christophe', 'Olivier'],
+    theme: 'Sport',
   },
   {
     question:
-      'Quel pseudonyme le fils de Guy Carlier a-t-il choisi pour s’associer à McFly dans le nom de leur chaîne YouTube ?',
+      'Quel pseudonyme le fils de Guy Carlier a-t-il choisi pour former le duo McFly et Carlito ?',
     answer: 'Carlito',
-    options: ['Carlito', 'Index', 'Shogun', 'Ayrton Senna'],
+    options: ['Carlito', 'Cyprien', 'Norman', 'Mastu'],
+    theme: 'Autres',
   },
   {
     question:
-      'Quel personnage fut incarné par Gene Wilder en 1971 ainsi que par Johnny Depp en 2005 dans les films Charlie et la Chocolaterie ? Ce personnage fut également interprété par Timothée Chalamet dans un film dédié réalisé par Paul King en 2023.',
+      'Quel personnage est incarné par Gene Wilder, Johnny Depp et Timothée Chalamet dans différentes adaptations ?',
     answer: 'Willie Wonka',
-    options: ['Willie Wonka', 'Jazz', 'Abracadabra', 'Beyoncé'],
+    options: ['Willie Wonka', 'Edward aux mains d’argent', 'Mary Poppins', 'Peter Pan'],
+    theme: 'Cinéma',
   },
   {
-    question:
-      'Dans les locaux de quel journal satirique français eut lieu, le 7 janvier 2015, un attentat ayant ôté la vie de 12 personnes ?',
+    question: 'Dans les locaux de quel journal satirique eut lieu l’attentat du 7 janvier 2015 ?',
     answer: 'Charlie Hebdo',
-    options: ['Charlie Hebdo', 'Index', 'Streaker', 'David Duchovny'],
+    options: ['Charlie Hebdo', 'Le Canard Enchaîné', 'Libération', 'Le Monde'],
+    theme: 'Politique',
   },
   {
-    question:
-      'Quelle coordonnée servant à définir la position d’un point le représentant verticalement est opposée à l’abscisse ?',
+    question: 'Quelle coordonnée est opposée à l’abscisse ?',
     answer: 'Ordonnée',
-    options: ['Ordonnée', 'Chaebol', 'Domrémy-la-Pucelle', '46'],
+    options: ['Ordonnée', 'Tangente', 'Hypoténuse', 'Vecteur'],
+    theme: 'Sciences',
   },
   {
-    question:
-      "Bien que Los Angeles et San Francisco soient les deux villes les plus peuplées de cet état, quelle ville est la capitale de l'état étasunien de la Californie ?",
+    question: 'Quelle est la capitale de l’État américain de Californie ?',
     answer: 'Sacramento',
-    options: ['Sacramento', 'First-Person Shooter', 'Roberto Heras', 'Iran'],
+    options: ['Sacramento', 'Los Angeles', 'San Diego', 'San Jose'],
+    theme: 'Géographie',
   },
   {
-    question:
-      'Quel style musical a vu son aventure retracée dans un documentaire de Louis Panassié de 1972 mettant en scène Duke Ellington et Louis Armstrong notamment ?',
+    question: 'Quel style musical est associé à Duke Ellington et Louis Armstrong ?',
     answer: 'Jazz',
-    options: ['Jazz', 'Kevlar', 'Diogène', 'Inde'],
+    options: ['Jazz', 'Blues', 'Soul', 'Swing'],
+    theme: 'Musique',
   },
   {
-    question:
-      'Pouvant être appelé rhinarium, quelle partie d’un animal peut aussi être un champignon du Périgord ?',
+    question: 'Quelle partie du museau d’un chien est aussi un champignon du Périgord ?',
     answer: 'Truffe',
-    options: ['Truffe', 'Orange', 'Inde', 'Ayrton Senna'],
+    options: ['Truffe', 'Museau', 'Vibrisse', 'Moustache'],
+    theme: 'Animaux',
   },
   {
     question:
-      'Quelle enseigne de grande surface française tire son nom du fait que son premier magasin était situé à un croisement de routes ?',
+      'Quelle enseigne française tire son nom du fait que son premier magasin était situé à un croisement de routes ?',
     answer: 'Carrefour',
-    options: ['Carrefour', 'Cyril Féraud', 'Banane', 'Nectarine'],
+    options: ['Carrefour', 'Auchan', 'Leclerc', 'Casino'],
+    theme: 'Culture Générale',
   },
   {
-    question: 'Quel roman satirique datant de 1721 met en scène un personnage prénommé Lemuel ?',
+    question: 'Quel roman satirique publié en 1726 met en scène le personnage de Lemuel Gulliver ?',
     answer: 'Les Voyages de Gulliver',
-    options: ['Les Voyages de Gulliver', 'Chirac', 'Thymine', 'Boccia'],
+    options: ['Les Voyages de Gulliver', 'Candide', 'Robinson Crusoé', 'Don Quichotte'],
+    theme: 'Littérature',
   },
   {
     question:
-      'Quel footballeur né en 1957 à Amnéville fut, pendant la nuit de Séville, percuté par le gardien allemand Harald Schumacher avant de sortir sur civière ?',
+      'Quel footballeur français fut violemment percuté par Harald Schumacher lors de la demi-finale France–RFA de 1982 ?',
     answer: 'Patrick Battiston',
-    options: ['Patrick Battiston', 'Watergate', 'Saint-Marin', 'Auguste'],
+    options: ['Patrick Battiston', 'Michel Platini', 'Alain Giresse', 'Dominique Rocheteau'],
+    theme: 'Sport',
   },
   {
     question:
-      'Quelle plate-forme de distribution en ligne de jeux vidéo développée par Valve et au logo bleu porte un nom anglais signifiant vapeur ?',
+      "Quelle plateforme de distribution de jeux vidéo développée par Valve porte un nom signifiant 'vapeur' en anglais ?",
     answer: 'Steam',
-    options: ['Steam', 'En souris', 'Orange', 'Andy Jassy'],
+    options: ['Steam', 'Origin', 'Epic Games Store', 'GOG'],
+    theme: 'Jeux Vidéo',
   },
   {
-    question:
-      'Incarné par John Hillerman, dans quelle série John Quayle Higgins III est-il le majordome ? Ce personnage généralement désigné par le simple nom de Higgins est apparu dans une série diffusée entre 1980 et 1988.',
+    question: 'Dans quelle série John Quayle Higgins III est-il le majordome de Thomas Magnum ?',
     answer: 'Magnum',
-    options: ['Magnum', 'Nolwenn Leroy', 'Coeliaque', 'Polyphème'],
+    options: ['Magnum', 'Columbo', 'Dallas', 'Deux flics à Miami'],
+    theme: 'Séries TV',
   },
   {
-    question:
-      'Quel pays africain constituait le protectorat britannique du Bechuanaland entre 1885 et son indépendance en 1966 ? On cherche le nom actuel du pays.',
+    question: 'Quel pays africain correspond à l’ancien protectorat britannique du Bechuanaland ?',
     answer: 'Botswana',
-    options: ['Botswana', 'Haul', 'Skyrim', 'Jacaranda'],
+    options: ['Botswana', 'Lesotho', 'Eswatini', 'Namibie'],
+    theme: 'Géographie',
   },
   {
     question:
-      'Quel médecin anglais du XVIIe siècle est associé dans l’autre nom de la danse de Saint-Guy au terme de chorée ?',
+      'Quel médecin anglais a donné son nom à la chorée de Sydenham, aussi appelée danse de Saint-Guy ?',
     answer: 'Thomas Sydenham',
-    options: ['Thomas Sydenham', 'Willie Wonka', 'Streaker', 'Pétrichor'],
+    options: ['Thomas Sydenham', 'William Harvey', 'Edward Jenner', 'Robert Hooke'],
+    theme: 'Sciences',
   },
   {
-    question:
-      'Dans quel pays se trouve la municipalité d’Eeyou Istchee Baie-James, plus grande ville du monde par sa superficie avec 335 000 km² ?',
+    question: 'Dans quel pays se situe la municipalité d’Eeyou Istchee Baie-James ?',
     answer: 'Canada',
-    options: ['Canada', 'A7', 'Jason', 'Marc-Antoine Charpentier'],
+    options: ['Canada', 'États-Unis', 'Russie', 'Brésil'],
+    theme: 'Géographie',
   },
   {
     question:
-      'Quelle chanteuse londonienne née en 1999 et interprète des titres "Man I need", "So Easy (To fall in love)" ou "Nice to each other" a reçu le Grammy Award de la meilleure nouvelle artiste de l\'année en 2026 ?',
+      'Quelle chanteuse londonienne née en 1999 a remporté le Grammy Award de la meilleure nouvelle artiste en 2026 ?',
     answer: 'Olivia Dean',
-    options: ['Olivia Dean', 'Fado', 'Vivaldi', 'Woodrow Wilson'],
+    options: ['Olivia Dean', 'Raye', 'Dua Lipa', 'Jorja Smith'],
+    theme: 'Musique',
   },
   {
     question:
-      'Également appelé cycloptère, quel nom désigne un animal dont les œufs constituent un succédané du caviar ?',
+      'Quel poisson, aussi appelé cycloptère, produit des œufs utilisés comme succédané du caviar ?',
     answer: 'Lump',
-    options: ['Lump', 'Spare', 'Hallux', 'Orange'],
+    options: ['Lump', 'Esturgeon', 'Hareng', 'Cabillaud'],
+    theme: 'Animaux',
   },
   {
     question:
-      'Quel terme désignant un joueur de baccarat est également un personnage influent dans la mafia ?',
+      'Quel terme désigne à la fois un joueur de baccarat et un personnage influent dans la mafia ?',
     answer: 'Ponte',
-    options: ['Ponte', 'Colombe', 'Siamois', 'Seahawks'],
+    options: ['Ponte', 'Parrain', 'Consigliere', 'Capo'],
+    theme: 'Culture Générale',
   },
   {
     question:
-      'Représenté surprenant Galatée dans les bras d\'Acis dans une sculpture de la fontaine Médicis réalisée par Auguste Ottin, quel cyclope de la mythologie grecque également associé au mythe d\'Ulysse porte un nom signifiant "qui parle beaucoup" ou "dont on parle beaucoup" ?',
+      'Quel cyclope de la mythologie grecque, amoureux de Galatée, est associé au mythe d’Ulysse ?',
     answer: 'Polyphème',
-    options: ['Polyphème', 'Hôpital', 'Adidas et Puma', 'Daniel Balavoine'],
+    options: ['Polyphème', 'Argos', 'Chiron', 'Minos'],
+    theme: 'Histoire',
   },
   {
-    question:
-      'Dans quelle ville se situe le stade appelé Roazhon Park, sachant que Roazhon est le nom de la ville en langue bretonne ?',
+    question: 'Dans quelle ville se situe le stade Roazhon Park ?',
     answer: 'Rennes',
-    options: ['Rennes', 'Motus', 'Woodrow Wilson', 'Bataille d’Iéna'],
+    options: ['Rennes', 'Brest', 'Nantes', 'Lorient'],
+    theme: 'Sport',
   },
   {
-    question: 'Quel est le service de messagerie électronique lancé en avril 2004 par Google ?',
+    question: 'Quel service de messagerie électronique a été lancé par Google en 2004 ?',
     answer: 'Gmail',
-    options: ['Gmail', 'Hallux', 'PSP', 'Beowulf'],
+    options: ['Gmail', 'Yahoo Mail', 'Outlook', 'Proton Mail'],
+    theme: 'Sciences',
   },
   {
     question:
-      'Interprétée dans un film de Greta Gerwig par Margot Robbie, quelle poupée fut créée en 1959 ?',
+      'Quelle poupée créée en 1959 est incarnée par Margot Robbie dans un film de Greta Gerwig ?',
     answer: 'Barbie',
-    options: ['Barbie', 'Echo', 'Russe', 'Tokyo Drift'],
+    options: ['Barbie', 'Bratz', 'Polly Pocket', 'Cabbage Patch Kids'],
+    theme: 'Cinéma',
   },
   {
-    question:
-      'De quel appareil l\'invention est-elle contestée entre Clément Ader et son "Eole" datant de 1891 et le "Flyer" des frères Wright datant de 1903 ?',
+    question: 'Quel appareil est au cœur de la rivalité entre Clément Ader et les frères Wright ?',
     answer: 'Avion',
-    options: ['Avion', 'Canada', 'Groom', 'Pyrénées-Atlantiques'],
+    options: ['Avion', 'Hélicoptère', 'Dirigeable', 'Hydravion'],
+    theme: 'Sciences',
   },
   {
-    question:
-      'Quel scientifique anglais du XVIIe siècle est à l\'origine en 1687, dans son ouvrage "Philosophiæ naturalis principia mathematica", de la description de la loi universelle de la gravitation ?',
+    question: "Quel scientifique est l’auteur des 'Principia Mathematica' publiés en 1687 ?",
     answer: 'Newton',
-    options: ['Newton', 'Ordonnée', 'Auguste', 'Olympe de Gouges'],
+    options: ['Newton', 'Galilée', 'Kepler', 'Descartes'],
+    theme: 'Sciences',
   },
   {
-    question: 'Quel état des USA est homonyme d’un pays situé dans le Caucase ?',
+    question: 'Quel État des USA est homonyme d’un pays situé dans le Caucase ?',
     answer: 'Géorgie',
-    options: ['Géorgie', 'Pauline Ferrand-Prévot', 'Aimé Césaire', 'Massive Attack'],
+    options: ['Géorgie', 'Californie', 'Floride', 'Virginie'],
+    theme: 'Géographie',
   },
   {
-    question:
-      'Héroïne de la série de TF1 Brocéliande, à quelle chanteuse native de la région doit-on l’album « Bretonne » ?',
+    question: 'À quelle chanteuse bretonne doit-on l’album « Bretonne » ?',
     answer: 'Nolwenn Leroy',
-    options: ['Nolwenn Leroy', 'Epona', 'Louis-Napoléon Bonaparte', 'Pascal Légitimus'],
+    options: ['Nolwenn Leroy', 'Hélène Ségara', 'Jenifer', 'Zaz'],
+    theme: 'Musique',
   },
   {
-    question:
-      'Quel animal est élevé dans le cadre de la cuniculture ou de la cuniculiculture ? Le terme est lié étymologiquement au mot "conil" qui désignait également l\'animal en ancien français.',
+    question: 'Quel animal est élevé dans le cadre de la cuniculture ?',
     answer: 'Lapin',
-    options: ['Lapin', 'John Isner', 'Chenille', 'Pyrénées-Atlantiques'],
+    options: ['Lapin', 'Lièvre', 'Chinchilla', 'Furet'],
+    theme: 'Animaux',
   },
   {
-    question: 'Selon l’expression, lorsqu’on se la coule douce, comment sont les doigts de pied ?',
+    question: 'Selon l’expression, quand on se la coule douce, comment sont les doigts de pied ?',
     answer: 'En éventail',
-    options: ['En éventail', 'Rugby', 'Victor Hugo', 'Bâtonnier'],
+    options: ['En éventail', 'En bataille', 'En accordéon', 'En spirale'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      'Quel bédéiste né en 1934 et décédé en 2016 a créé les personnages de "Gai-Luron", "Les Aventures de Superdupont" et la "Rubrique-à-brac" ? Ce co-créateur des "Dingodossiers" avec René Goscinny a reçu le Grand Prix du Festival d\'Angoulême en 1991.',
+    question: 'Quel auteur de bande dessinée a créé Gai-Luron et Superdupont ?',
     answer: 'Gotlib',
-    options: ['Gotlib', 'The Turtles', 'Massive Attack', 'Lump'],
+    options: ['Gotlib', 'Franquin', 'Uderzo', 'Moebius'],
+    theme: 'Art',
   },
   {
     question:
-      'Quel sport dans lequel Aurélie Aubert fut championne paralympique en 2024 s’apparente à de la pétanque handisport et tire son nom de l’italien signifiant boule ?',
+      "Quel sport paralympique s’apparente à la pétanque et tire son nom de l’italien signifiant 'boule' ?",
     answer: 'Boccia',
-    options: ['Boccia', 'Johnny Cash', 'Pastèque', 'Scroller'],
+    options: ['Boccia', 'Curling', 'Goalball', 'Pétanque'],
+    theme: 'Sport',
   },
   {
-    question:
-      'Quel tanuki est un agent immobilier à qui l’on doit rembourser des dettes apparaissant dans le jeu vidéo Animal Crossing ?',
+    question: 'Quel tanuki est l’agent immobilier de la série de jeux vidéo Animal Crossing ?',
     answer: 'Tom Nook',
-    options: ['Tom Nook', 'Pascal Légitimus', 'Joséphine', 'Sauce Aurore'],
+    options: ['Tom Nook', 'K.K. Slider', 'Blathers', 'Redd'],
+    theme: 'Jeux Vidéo',
   },
   {
     question:
-      "Présentée par Elisabeth Quin, combien de minutes l’émission d’Arte comporte-t-elle dans son titre ? Malgré son titre, l'émission peut durer jusqu'à 46 minutes désormais.",
+      'Combien de minutes sont mentionnées dans le titre de l’émission d’Arte présentée par Élisabeth Quin ?',
     answer: '28',
-    options: ['28', 'Epona', 'Pangramme', 'Jason'],
+    options: ['28', '30', '52', '60'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      'Quelle femme, interprétée par Alicia Vikander dans le film Le Jeu de la Reine de Karim Aïnouz fut la sixième et dernière épouse d’Henri VIII ? Elle est également la troisième à porter ce prénom.',
+    question: 'Quelle fut la sixième et dernière épouse d’Henri VIII ?',
     answer: 'Catherine Parr',
-    options: ['Catherine Parr', 'Benito Mussolini', 'Mer de la Tranquillité', 'Saké'],
+    options: ['Catherine Parr', 'Anne Boleyn', 'Jane Seymour', 'Catherine Howard'],
+    theme: 'Histoire',
   },
   {
     question: 'Quel adjectif autre qu’éthanoïque qualifie l’acide composant le vinaigre ?',
-    answer: 'Acide acétique',
-    options: ['Acide acétique', 'Magnum', 'Tulipe', 'Boccia'],
+    answer: 'Acétique',
+    options: ['Acétique', 'Citrique', 'Lactique', 'Tartrique'],
+    theme: 'Sciences',
   },
   {
-    question:
-      "Quelle ville surnommée la petite Lhassa est la ville de résidence du Dalaï-lama depuis son exil du Tibet en 1959 ? Elle est située dans l'état de l'Himachal Pradesh, dans le nord de l'Inde.",
+    question: "Quelle ville indienne est surnommée la 'petite Lhassa' ?",
     answer: 'Dharamsala',
-    options: ['Dharamsala', 'Pangramme', 'Souris', 'Ciao Kombucha'],
+    options: ['Dharamsala', 'Katmandou', 'Jaipur', 'Varanasi'],
+    theme: 'Géographie',
   },
   {
-    question:
-      'De QUEL GROUPE formé en 2008 Nate Ruess, qui a chanté en duo sur la chanson "Just Give Me A Reason" avec Pink était-il le chanteur ? Ce groupe a notamment connu le succès avec la chanson "We are young" avec Janelle Monáe et a pour nom un adjectif anglais également utilisé dans la langue française.',
+    question: 'De quel groupe Nate Ruess était-il le chanteur ?',
     answer: 'Fun',
-    options: ['Fun', 'Willie Wonka', 'Tuffeau', 'Konami'],
+    options: ['Fun', 'Train', 'Maroon 5', 'OneRepublic'],
+    theme: 'Musique',
   },
   {
-    question:
-      'Quel animal possédant une espèce dite dorée proche du manchot, parfois appelé manchot à aigrettes, vit, tout comme lui, en Antarctique ?',
+    question: 'Quel oiseau proche du manchot vit en Antarctique et possède une espèce dite dorée ?',
     answer: 'Gorfou',
-    options: ['Gorfou', 'Vaillant', 'Ernst Gräfenberg', 'Roberto Heras'],
+    options: ['Gorfou', 'Albatros', 'Pétrel', 'Cormoran'],
+    theme: 'Animaux',
   },
   {
-    question:
-      'À l’instar de Samsung, quel nom désigne un conglomérat sud-coréen de domaines variés, entretenant des participations croisées, dirigé par la famille fondatrice ?',
+    question: 'Quel terme désigne un conglomérat sud-coréen comme Samsung ?',
     answer: 'Chaebol',
-    options: ['Chaebol', 'Cap Nord', 'SpiderMan', 'Doechii'],
+    options: ['Chaebol', 'Keiretsu', 'Holding', 'Trust'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      'Ayant laissé son nom au grand rideau des théâtres, quel personnage de la Commedia dell’arte est connu pour ses costumes colorés ?',
+    question: 'Quel personnage de la Commedia dell’arte est connu pour son costume coloré ?',
     answer: 'Arlequin',
-    options: ['Arlequin', 'Sodium', 'Sheila', 'Lusitanie'],
+    options: ['Arlequin', 'Pierrot', 'Pantalon', 'Scaramouche'],
+    theme: 'Art',
   },
   {
-    question:
-      'Quel créateur et organisateur de la Kings World Cup de football est l’ancien compagnon de la chanteuse colombienne Shakira ?',
+    question: 'Quel ancien footballeur est à l’origine de la Kings World Cup ?',
     answer: 'Pique',
-    options: ['Pique', 'Martin Fourcade', 'Skyrim', 'Pays-Bas'],
+    options: ['Pique', 'Iniesta', 'Ramos', 'Xavi'],
+    theme: 'Sport',
   },
   {
-    question:
-      'Quelle archéologue et aventurière est l\'héroïne principale de la série de jeux vidéo "Tomb Raider" ? Elle a été incarnée au cinéma par Angelina Jolie puis par Alicia Vikander.',
+    question: 'Quelle archéologue est l’héroïne de la série de jeux vidéo Tomb Raider ?',
     answer: 'Lara Croft',
-    options: ['Lara Croft', 'John Adams', 'Kaizen', 'Streaker'],
+    options: ['Lara Croft', 'Samus Aran', 'Aloy', 'Bayonetta'],
+    theme: 'Jeux Vidéo',
   },
   {
-    question:
-      'Dans quelle série télévisée diffusée à partir de 2006 Miley Stewart était-elle incarnée par Miley Cyrus ?',
+    question: 'Dans quelle série Miley Stewart est-elle incarnée par Miley Cyrus ?',
     answer: 'Hannah Montana',
-    options: ['Hannah Montana', 'Bayern', 'Géorgie', '1984'],
+    options: ['Hannah Montana', 'iCarly', 'Victorious', 'Glee'],
+    theme: 'Séries TV',
   },
   {
-    question:
-      "Ayant permis l'organisation d'un débarquement en Normandie en juin 1944, DANS QUEL PAYS s'est tenue la première rencontre réunissant Winston Churchill, Joseph Staline et Franklin D. Roosevelt entre novembre et décembre 1943 lors de la Conférence de Téhéran ?",
+    question: 'Dans quel pays s’est tenue la conférence de Téhéran en 1943 ?',
     answer: 'Iran',
-    options: ['Iran', 'Pays-Bas', 'Bénarès', 'Eléphant'],
+    options: ['Iran', 'Turquie', 'Égypte', 'Irak'],
+    theme: 'Histoire',
   },
   {
-    question:
-      "De quel pays est originaire un taïkonaute ? Chaque pays possède sa variante nationale du terme d'astronaute qui lui est propre aux USA.",
+    question: 'De quel pays est originaire un taïkonaute ?',
     answer: 'Chine',
-    options: ['Chine', 'Chrome', 'Amiante', 'Rennes'],
+    options: ['Chine', 'Japon', 'Corée du Sud', 'Inde'],
+    theme: 'Sciences',
   },
   {
-    question:
-      'Quelle ville devant son nom à Arthur Wellesley, militaire et homme politique anglais du XIXe siècle, est la troisième ville la plus peuplée de Nouvelle-Zélande ainsi que la capitale de son pays ?',
+    question: 'Quelle est la capitale de la Nouvelle-Zélande ?',
     answer: 'Wellington',
-    options: ['Wellington', 'Tuffeau', 'Victor Hugo', 'Waterpolo'],
+    options: ['Wellington', 'Auckland', 'Christchurch', 'Dunedin'],
+    theme: 'Géographie',
   },
   {
     question:
-      "Quelle formule magique est également le titre d'une chanson de Lady Gaga datant de 2025 ? Elle est issue de l'album Mayhem et le clip fut présenté au cours de la cérémonie des Grammy Awards.",
+      'Quelle formule magique est aussi le titre d’une chanson de Lady Gaga sortie en 2025 ?',
     answer: 'Abracadabra',
-    options: ['Abracadabra', 'Dionysos', 'Couleuvrine', 'Vitamine D'],
+    options: ['Abracadabra', 'Hocus Pocus', 'Alakazam', 'Shazam'],
+    theme: 'Musique',
   },
   {
-    question:
-      'Quel poisson de la famille des moronidés peut aussi désigner un débit de boissons où les consommateurs s’appuient sur un comptoir ?',
+    question: 'Quel poisson peut aussi désigner un débit de boissons ?',
     answer: 'Bar',
-    options: ['Bar', 'Paul Verlaine', 'Usain Bolt', 'Viagra'],
+    options: ['Bar', 'Lieu', 'Mulet', 'Merlan'],
+    theme: 'Animaux',
   },
   {
-    question:
-      'Quel nom désignant la bile des animaux de boucherie est associée à des chevaliers dans un célèbre duo humoristique ?',
+    question: 'Quel mot désigne la bile et un célèbre duo comique ?',
     answer: 'Fiel',
-    options: ['Fiel', 'Rat', 'Bichon', 'Etrier'],
+    options: ['Fiel', 'Sucre', 'Sel', 'Poivre'],
+    theme: 'Culture Générale',
   },
   {
-    question:
-      "Dans quel art, le premier dans la classification des arts, se sont illustrés le mexicain Luis Barragán, l'australien Glenn Murcutt et le portugais Alvaro Siza, tous trois récipiendaires du prix Pritzker ?",
+    question: 'Dans quel art se sont illustrés Luis Barragán et Álvaro Siza ?',
     answer: 'Architecture',
-    options: ['Architecture', 'Palindrome', 'One Direction', 'Amber Heard'],
+    options: ['Architecture', 'Peinture', 'Sculpture', 'Cinéma'],
+    theme: 'Art',
   },
   {
-    question:
-      "Quel sport, l'un des premiers sports collectifs à faire son apparition aux Jeux Olympiques, ce en 1900, voit ses pratiquants arborer des bonnets de bain blancs, bleus ou rouges pour les gardiens ?",
+    question: 'Quel sport collectif aquatique figure au programme olympique depuis 1900 ?',
     answer: 'Waterpolo',
-    options: ['Waterpolo', 'Nuremberg', 'Handball', 'Thomas Sydenham'],
+    options: ['Waterpolo', 'Natation synchronisée', 'Plongeon', 'Handball'],
+    theme: 'Sport',
   },
   {
-    question:
-      "Quel est le nom du cinquième opus de la série de jeux vidéo The Elder Scrolls ? Il suit directement l'opus nommé Oblivion et est sorti en 2011.",
+    question: 'Quel est le cinquième opus de la série The Elder Scrolls sorti en 2011 ?',
     answer: 'Skyrim',
-    options: ['Skyrim', 'Oasis', 'Anophèle', 'Ange'],
+    options: ['Skyrim', 'Morrowind', 'Daggerfall', 'Arena'],
+    theme: 'Jeux Vidéo',
   },
   {
     question:
-      'Quelle série adaptée d’un livre de James Clavell avec Anna Sawai et Hiroyuki Sanada a remporté l’Emmy Award de la meilleure série dramatique en 2024 ? Le livre avait déjà été adapté dans une mini-série de 1980 avec Richard Chamberlain et Toshirō Mifune.',
+      'Quelle série adaptée d’un roman de James Clavell a remporté l’Emmy Award de la meilleure série dramatique en 2024 ?',
     answer: 'Shogun',
-    options: ['Shogun', 'Trottoir', 'Carrefour', 'rue Morgue'],
+    options: ['Shogun', 'The Crown', 'Succession', 'The Last of Us'],
+    theme: 'Séries TV',
   },
   {
-    question:
-      "Si l’âne représente le parti démocrate, quel animal de l'ordre des proboscidiens représente les républicains aux USA ?",
+    question: 'Quel animal représente le Parti républicain aux États-Unis ?',
     answer: 'Eléphant',
-    options: ['Eléphant', 'Gardon', 'Georges Méliès', 'Place de la Concorde'],
+    options: ['Eléphant', 'Bison', 'Aigle', 'Cheval'],
+    theme: 'Politique',
   },
   {
     question:
-      "Quelle femme est la première française depuis Claudie Haigneré, il y a trente ans, à être partie pour l'espace, le 13 février ?",
+      "Quelle femme est la première Française depuis Claudie Haigneré, il y a trente ans, à être partie pour l'espace le 13 février 2025 ?",
     answer: 'Sophie Adenot',
-    options: ['Sophie Adenot', 'Clermont-Ferrand', 'Suavemente', 'Jason'],
+    options: ['Sophie Adenot', 'Claudie Haigneré', 'Samantha Cristoforetti', 'Peggy Whitson'],
+    theme: 'Sciences',
   },
   {
     question:
-      'Quelle autoroute ayant laissé son nom à une mixtape et une chanson du rappeur SCH est surnommée autoroute du soleil ? Cette autoroute relie Oullins-Pierre-Bénite, à côté de Lyon, à Marseille. La réponse attend une lettre et un chiffre.',
+      "Quelle autoroute surnommée 'autoroute du Soleil' relie Lyon à Marseille et a donné son nom à une mixtape du rappeur SCH ? (une lettre et un chiffre)",
     answer: 'A7',
-    options: ['A7', 'Blockchain', 'Adolescence', 'Vitamine D'],
+    options: ['A7', 'A6', 'A9', 'A8'],
+    theme: 'Géographie',
   },
   {
     question:
-      "Ayant représenté Saint-Marin à l'Eurovision 2025 où il finit dernier, QUEL GROUPE ayant connu un succès international en 1999 fut cofondé par le DJ Gabry Ponte ?",
+      "Quel groupe, cofondé par le DJ Gabry Ponte et connu pour son tube 'Blue (Da Ba Dee)' en 1999, a représenté Saint-Marin à l’Eurovision 2025 ?",
     answer: 'Eiffel65',
-    options: ['Eiffel65', 'Forficule', 'Georg Wilhelm Steller', 'Pompon'],
+    options: ['Eiffel65', "Gigi D'Agostino", 'Vengaboys', 'Aqua'],
+    theme: 'Musique',
   },
   {
     question:
-      "Quel oiseau reconnaissable à son sac gulaire rouge est présent sur le drapeau des Kiribati ? Il porte le même nom qu'un type de bateau.",
+      'Quel oiseau au sac gulaire rouge figure sur le drapeau des Kiribati et porte le même nom qu’un type de navire ?',
     answer: 'Frégate',
-    options: ['Frégate', 'Guerre de Sécession', 'Dalmatien', 'Bulgarie'],
+    options: ['Frégate', 'Albatros', 'Goéland', 'Cormoran'],
+    theme: 'Animaux',
   },
   {
     question:
-      'Quel nom issu du grec signifiant "sang de la pierre" désigne l’odeur caractéristique de la terre après la pluie ?',
+      "Quel mot issu du grec signifiant 'sang de la pierre' désigne l’odeur de la terre après la pluie ?",
     answer: 'Pétrichor',
-    options: ['Pétrichor', 'Massive Attack', 'Wellington', 'Tétrimino'],
+    options: ['Pétrichor', 'Effluve', 'Ozone', 'Senteur'],
+    theme: 'Culture Générale',
   },
 ];
