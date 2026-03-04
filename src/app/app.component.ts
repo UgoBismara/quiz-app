@@ -113,8 +113,6 @@ export class AppComponent implements OnInit {
           if (!fullText) {
             this.wikiPopupText = 'Aucune information trouvée.';
           } else {
-            // Découper en paragraphes, garder ceux > 60 car. et sans en-tête
-            // Exclure les paragraphes qui commencent par un pronom ou référence externe
             const pronounStart = /^(Il |Elle |Ils |Elles |Son |Sa |Ses |Leur |Leurs |Celui |Celle |Ceux |Celles |Ce fut|Cette |Ces |Y |En |Après |Lors |Dès lors|Depuis lors)/i;
             this.wikiParagraphs = fullText
               .split(/\n+/)

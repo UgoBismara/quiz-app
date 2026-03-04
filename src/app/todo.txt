@@ -1,10 +1,9 @@
-- Rajouter toutes les questions - Catégoriser chaque questions
-- Changer le fond
-- Changer la couleur des boutons
 - Ajouter la plus de résulats dans le localStorage
 - Le 'En savoir plus' doit doit être une phrase complète
 - Faire quelque chose pour savoir si une question a déjà été bien répondu
 - Afficher directement tout un paragraphe
 - Vérifier erreur de frappe (Louis X alors que la réponse est Louis XV)
+- Après le choix juste au QCM à 4 propositions retirer '❌ Mauvaise réponse ! Choisis parmi 4 propositions :' et retirer aussi après le choix du QCM à 2 propositions
+- Afficher la réponse correcte quand la réponse est acceptée avec une faute d'orthographe
 
 - Demander des idées d'évol à Claude
