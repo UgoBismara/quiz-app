@@ -122,9 +122,13 @@ export class AppComponent implements OnInit {
     const requestId = ++this.wikiRequestId;
     const url = `https://fr.wikipedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrsearch=${encodeURIComponent(answer)}&gsrlimit=1&prop=extracts&exlimit=1&explaintext=true`;
 
-    fetch(url)
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 6000);
+
+    fetch(url, { signal: controller.signal })
       .then((res) => res.json())
       .then((data) => {
+        clearTimeout(timeout);
         if (requestId !== this.wikiRequestId) return;
         const pages = data?.query?.pages;
         if (!pages) {
@@ -149,9 +153,12 @@ export class AppComponent implements OnInit {
         }
         this.cdr.detectChanges();
       })
-      .catch(() => {
+      .catch((err) => {
+        clearTimeout(timeout);
         if (requestId !== this.wikiRequestId) return;
-        this.wikiPopupText = 'Aucune information trouvée.';
+        this.wikiPopupText = err?.name === 'AbortError'
+          ? 'Délai dépassé. Vérifiez votre connexion.'
+          : 'Aucune information trouvée.';
         this.cdr.detectChanges();
       });
   }
