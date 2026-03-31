@@ -1118,7 +1118,8 @@ export const QUESTIONS: Question[] = [
     theme: 'Géographie',
   },
   {
-    question: 'Quelle chanteuse française née Anny Chancel est connue sous le nom de Sheila ?',
+    question:
+      'Parfois accompagnée des Black Devotion, quelle chanteuse française est l’interprète des chansons "Hôtel de la plage", "Spacer" et "L’école est finie" ? Née en 1945, elle a pour véritable identité Anny Chancel.',
     answer: 'Sheila',
     options: ['Sheila', 'Sylvie Vartan', 'France Gall', 'Françoise Hardy'],
     theme: 'Musique',
@@ -1754,7 +1755,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     question:
-      'Quel chanteur portoricain de reggaeton, né Benito Antonio Martinez Ocasio, est connu sous le nom de scène Bad Bunny ?',
+      'Quel chanteur de reggaeton portoricain, de son vrai nom Benito Antonio Martinez Ocasio a donné un concert de la mi-temps du Super Bowl 2026 ? Avec plus de 15,8 milliards de streams l’année dernière, il est l’artiste le plus écouté de l’année 2025.',
     answer: 'Bad Bunny',
     options: ['Bad Bunny', 'J Balvin', 'Daddy Yankee', 'Maluma'],
     theme: 'Musique',

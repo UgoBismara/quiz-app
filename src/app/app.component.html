@@ -22,6 +22,9 @@
       </div>
 
       <h2>{{ selectedQuestions[currentIndex]?.question }}</h2>
+      <span *ngIf="currentMastery > 0 && attemptStage === 0 && !inputFeedback" class="mastery-badge">
+        ✓ ×{{ currentMastery }}
+      </span>
 
       <!-- Mode normal (saisie libre) -->
       <div *ngIf="attemptStage === 0">

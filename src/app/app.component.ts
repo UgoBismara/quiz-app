@@ -54,6 +54,28 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.loadStats();
+    this.loadMastery();
+  }
+
+  // ─── Mastery par question ─────────────────────────────────────────────────
+  questionMastery: Record<string, number> = {};
+
+  private loadMastery() {
+    try {
+      const raw = localStorage.getItem('quiz-app-mastery');
+      this.questionMastery = raw ? JSON.parse(raw) : {};
+    } catch {
+      this.questionMastery = {};
+    }
+  }
+
+  private saveMastery() {
+    localStorage.setItem('quiz-app-mastery', JSON.stringify(this.questionMastery));
+  }
+
+  get currentMastery(): number {
+    if (!this.selectedQuestions.length || this.currentIndex >= this.selectedQuestions.length) return 0;
+    return this.questionMastery[this.selectedQuestions[this.currentIndex].question] ?? 0;
   }
 
   // ─── Stats localStorage ───────────────────────────────────────────────────
@@ -215,6 +237,9 @@ export class AppComponent implements OnInit {
       this.wasFuzzy = isFuzzy;
       this.score += 5;
       this.streak++;
+      const qKey = this.selectedQuestions[this.currentIndex].question;
+      this.questionMastery[qKey] = (this.questionMastery[qKey] ?? 0) + 1;
+      this.saveMastery();
     } else {
       this.inputFeedback = 'wrong';
       this.wasFuzzy = false;
@@ -246,6 +271,9 @@ export class AppComponent implements OnInit {
         this.finished = true;
       }
     } else {
+      const qKey = this.selectedQuestions[this.currentIndex].question;
+      this.questionMastery[qKey] = 0;
+      this.saveMastery();
       this.attemptStage = 1;
       this.showFeedback = false;
       this.selectedOption = null;
