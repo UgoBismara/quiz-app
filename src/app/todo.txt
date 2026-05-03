@@ -1,9 +1,29 @@
-- Ajouter la plus de résulats dans le localStorage
-- Le 'En savoir plus' doit doit être une phrase complète
-- Faire quelque chose pour savoir si une question a déjà été bien répondu
-- Afficher directement tout un paragraphe
+== CORRECTIONS / FINITIONS ==
+- Ajouter plus de résultats dans le localStorage
+- Le 'En savoir plus' doit être une phrase complète
+- Faire quelque chose pour savoir si une question a déjà été bien répondue
+- Afficher directement tout un paragraphe Wikipedia
 - Vérifier erreur de frappe (Louis X alors que la réponse est Louis XV)
 - Après le choix juste au QCM à 4 propositions retirer '❌ Mauvaise réponse ! Choisis parmi 4 propositions :' et retirer aussi après le choix du QCM à 2 propositions
 - Afficher la réponse correcte quand la réponse est acceptée avec une faute d'orthographe
-
-- Demander des idées d'évol à Claude
+ 
+== GAMEPLAY ==
+- Mode "Révision" : cibler en priorité les questions mal maîtrisées (mastery = 0 ou jamais vues)
+- Timer optionnel par question (ex. 30s) avec compte à rebours visible
+- Filtrer les questions par thème au démarrage (Sport, Musique, Histoire…)
+- Mode multijoueur local : deux joueurs en alternance sur le même écran, score comparatif
+- Pondération aléatoire favorisant les questions jamais vues ou souvent ratées
+- Option "Question aléatoire unique" pour s'entraîner question par question sans session complète
+ 
+== UX / INTERFACE ==
+- Page d'accueil plus élaborée avec stats globales visibles dès le départ (nb questions maîtrisées, meilleur score, streak record…)
+- Sons de feedback (bonne réponse, mauvaise réponse, streak)
+- Résumé de fin de quiz listant les questions ratées avec les bonnes réponses
+- Indicateur visuel du niveau de maîtrise par thème (ex. barre de progression par catégorie)
+- Animation/célébration spéciale pour un score parfait
+- Mode sombre / clair toggle
+ 
+== DONNÉES ==
+- Implémenter le parser automatique du fichier Questions.txt → questions.data.ts (npm run parse-questions déjà mentionné mais non implémenté)
+- Ajouter des tags de difficulté aux questions (facile / moyen / difficile) et permettre de filtrer par difficulté
+- Statistiques détaillées par thème : taux de réussite, nb de fois jouées, progression dans le temps
